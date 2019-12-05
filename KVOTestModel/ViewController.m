@@ -59,11 +59,12 @@
     CGFloat buttonW = (KScreenWidth - 50)/4;
     NSArray *tepmStr = @[@"for循环",@"ac自动机",@"清空自动机",@"重建自动机"];
     for (int i = 1; i < 5; i++) {
-        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10*(i+1)+buttonW*i, kNavBarAndStatusBarHeight+45, buttonW, 30)];
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10*(i)+buttonW*(i-1), kNavBarAndStatusBarHeight+45, buttonW, 30)];
         btn.tag = i;
         btn.backgroundColor = [UIColor redColor];
+        btn.titleLabel.font = [UIFont systemFontOfSize:14];
         [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-        [btn setTitle:tepmStr[i] forState:(UIControlStateNormal)];
+        [btn setTitle:tepmStr[i-1] forState:(UIControlStateNormal)];
         [btn addTarget:self action:@selector(actionButtonClick:) forControlEvents:(UIControlEventTouchUpInside)];
         [self.view addSubview:btn];
     }

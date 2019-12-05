@@ -301,13 +301,14 @@ namespace aho_corasick {
 		typedef std::set<key_index>              string_collection;
 		typedef std::vector<ptr>                 state_collection;
 		typedef std::vector<CharType>            transition_collection;
+        //保存节点的map
+        std::map<CharType, unique_ptr>   d_success;
+        string_collection                d_emits;
 
 	private:
 		size_t                         d_depth;
 		ptr                            d_root;
-		std::map<CharType, unique_ptr> d_success;
 		ptr                            d_failure;
-		string_collection              d_emits;
 
 	public:
 		state(): state(0) {}
@@ -446,6 +447,13 @@ namespace aho_corasick {
 			d_config.set_only_whole_words(true);
 			return (*this);
 		}
+        
+        void clearTrie() {
+            state_ptr_type cur_state = d_root.get();
+            cur_state->d_success.clear();
+            cur_state->d_emits.clear();
+//            cur_state->clear_trie_tree();
+        }
 
 		void insert(string_type keyword) {
 			if (keyword.empty())
