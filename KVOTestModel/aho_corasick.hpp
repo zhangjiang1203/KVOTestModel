@@ -513,6 +513,12 @@ namespace aho_corasick {
 			}
 			return emit_collection(collected_emits);
 		}
+        
+        void check_construct_failure_states() {
+            if (!d_constructed_failure_states) {
+                construct_failure_states();
+            }
+        }
 
 	private:
 		token_type create_fragment(const typename token_type::emit_type& e, string_ref_type text, size_t last_pos) const {
@@ -558,11 +564,7 @@ namespace aho_corasick {
 			return result;
 		}
 
-		void check_construct_failure_states() {
-			if (!d_constructed_failure_states) {
-				construct_failure_states();
-			}
-		}
+		
 
 		void construct_failure_states() {
 			std::queue<state_ptr_type> q;
