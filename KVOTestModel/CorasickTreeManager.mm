@@ -77,6 +77,8 @@ void corasickTest() {
         actrie.insert(model.deID.UTF8String);
         actrie.insert(model.title.UTF8String);
     }
+    //调用fail
+    actrie.check_construct_failure_states();
     NSTimeInterval end = [[NSDate date] timeIntervalSince1970]*1000;
     //构造ac自动机
     return [NSString stringWithFormat:@"ac自动机构建===%.0fms",end-start];
