@@ -426,6 +426,12 @@ namespace aho_corasick {
 		unsigned                    d_num_keywords = 0;
 
 	public:
+        
+//        basic_trie()
+//        : d_root(new state_type())
+//        , d_config(config())
+//        , d_constructed_failure_states(false){}
+        
 		basic_trie(): basic_trie(config()) {}
 
 		basic_trie(const config& c)

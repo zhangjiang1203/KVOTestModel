@@ -88,8 +88,17 @@ void corasickTest() {
 - (NSString *) trieFindMyTree:(NSString *)string {
      NSTimeInterval start = [[NSDate date] timeIntervalSince1970]*1000;
     auto result = actrie.parse_text(string.UTF8String);
+    NSInteger chineseCount = 0, location = 0;;
     for (auto& text : result) {
-//        NSLog(@"start %zu===end %zu == key==%s ",text.get_start(),text.get_end(),text.get_keyword().c_str());
+        NSString *tempURL = [NSString stringWithCString:text.get_keyword().c_str() encoding:NSUTF8StringEncoding];
+        NSInteger wordsCount = [self chineseWordLength:tempURL];
+        if (text.get_start() > 0){
+            location = text.get_start() - 2 * chineseCount;
+        }else{
+            location = text.get_start();
+        }
+        chineseCount += wordsCount;
+        NSLog(@"当前的定位信息===%@",[NSValue valueWithRange:NSMakeRange(location, tempURL.length)]);
         cout << "自动机查询结果: start==" << text.get_start();
         cout << "end==" << text.get_end();
         cout << "key==" << text.get_keyword().c_str();
@@ -98,6 +107,15 @@ void corasickTest() {
      NSTimeInterval end = [[NSDate date] timeIntervalSince1970]*1000;
     return [NSString stringWithFormat:@"ac自动机查询===%.0fms",end-start];
 }
+
+- (NSInteger) chineseWordLength:(NSString*)string {
+    NSRegularExpression *tChineseRegularExpression = [NSRegularExpression regularExpressionWithPattern:@"[\u4e00-\u9fa5]" options:NSRegularExpressionCaseInsensitive error:nil];
+
+    NSUInteger tChineseMatchCount = [tChineseRegularExpression numberOfMatchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length)];
+    return tChineseMatchCount;
+}
+
+
 
 - (NSString *)forNormalTimeCal:(NSString *)string {
     NSMutableArray* passArray = [NSMutableArray array];

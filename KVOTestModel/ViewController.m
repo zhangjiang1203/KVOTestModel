@@ -71,6 +71,7 @@
     
     self.findTextField = [[UITextField alloc]initWithFrame:CGRectMake(20, kNavBarAndStatusBarHeight, KScreenWidth-40, 40)];
     self.findTextField.borderStyle = UITextBorderStyleRoundedRect;
+    self.findTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.findTextField.placeholder = @"输入搜索文字";
 //    self.findTextField.textColor = [UIColor whiteColor];
     [self.view addSubview:self.findTextField];
