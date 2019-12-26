@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 创建AC自动机
 - (NSString *)createTrieTree;
 
+///kmp
+- (NSString *)showKMPTest:(NSString*)pStr;
+
 /// ac自动机查询
 - (NSString *) trieFindMyTree:(NSString *)string;
 

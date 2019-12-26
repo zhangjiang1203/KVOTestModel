@@ -12,7 +12,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"id=%@--title=%@", self.deID,self.title];
+    return [NSString stringWithFormat:@"id=%@--title=%@--value=%@", self.deID,self.title,self.rectValue];
 }
 
 @end
@@ -62,7 +62,7 @@
     }
     BOOL isOpen = [[DebenDataManager shareInstance].qdDataBase open];
     NSAssert(isOpen != false, @"数据库打开失败");
-    FMResultSet *result = [[DebenDataManager shareInstance].qdDataBase executeQuery:@"select * from qt_data"];
+    FMResultSet *result = [[DebenDataManager shareInstance].qdDataBase executeQuery:@"SELECT * FROM qt_data WHERE title ORDER BY LENGTH(title)DESC , LENGTH(id) DESC;"];
     NSMutableArray *tempArr = [NSMutableArray array];
     while ([result next]) {
         DebenDataModel *model = [[DebenDataModel alloc]init];
@@ -74,9 +74,16 @@
     return tempArr;
 }
 
+-(NSArray *)debenItemsArr{
+    if (!_debenItemsArr) {
+        _debenItemsArr = [DebenDataManager getAllDebenItems];
+    }
+    return _debenItemsArr;
+}
+
 /// 获取父串中的所有子串，返回对应的range
 + (NSMutableArray<NSValue *> *)getAllSubStringRangeFromString:(NSString*)string withSubString:(NSString*)subString {
-    NSInteger subLength = subString.length;
+//    NSInteger subLength = subString.length;
     NSMutableArray *locationArr = [NSMutableArray array];
     NSRange range = [string rangeOfString:subString];
     if (range.location == NSNotFound) {
@@ -87,14 +94,20 @@
     NSString *tempStr = string;
     while (range.location != NSNotFound) {
         //删除匹配到的字符串
-        tempStr = [tempStr stringByReplacingCharactersInRange:range withString:@""];
-        range = [tempStr rangeOfString:subString];
+//        tempStr = [tempStr stringByReplacingCharactersInRange:range withString:@""];
+//        range = [tempStr rangeOfString:subString];
         //每次都要添加之前删掉的range长度,以数组中的个数来计算
-        if (range.location == NSNotFound) {
+//        if (range.location == NSNotFound) {
+//            continue;
+//        }
+//        NSValue *rangeValue = [NSValue valueWithRange:NSMakeRange(range.location + locationArr.count * subLength, subLength)];
+//        [locationArr addObject:rangeValue];
+        NSInteger location = range.location + range.length;
+        range = [tempStr rangeOfString:subString options:(NSLiteralSearch) range:NSMakeRange(location, tempStr.length-location)];
+        if (range.location == NSNotFound){
             continue;
         }
-        NSValue *rangeValue = [NSValue valueWithRange:NSMakeRange(range.location + locationArr.count * subLength, subLength)];
-        [locationArr addObject:rangeValue];
+        [locationArr addObject:[NSValue valueWithRange:range]];
     }
     return locationArr;
 }

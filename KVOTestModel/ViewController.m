@@ -41,6 +41,8 @@
 
 @property (nonatomic,strong) NSMutableArray<NSString *> *showDataArr;
 
+
+@property (nonatomic,strong) NSArray<NSString *> *randomArr;
 @end
 
 @implementation ViewController
@@ -48,7 +50,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initMyUI];
-    
+    self.randomArr =  @[@"17江苏太仓农村商业银行CD001哦is覅水电费sdfjsdl",
+                        @"16江苏盐城农村商业银行CD007打法胜多负少sfsdafsf",
+                        @"16江苏盐城农村商业银行CD011是否是打发舒服舒服",
+                        @"111697073.IB sfhklsf ",
+                        @"111697073.IBsadflsdkf sdaf",
+                        @"111693786.IBsfsadfdfasdfasf",
+                        @"111693871.IB塑料袋焚枯食淡飞",
+                        @"111695793.IB看手机话费可视对讲",
+                        @"111693960.IB刹帝利方式的f",
+                        @"111694225.IB飞谁知道和田玉",
+                        @"111695314.IB斯维尔无无",
+                        @"111695330.IB4565478465845",
+                        @"111696388.IB转发地址个大概多少个",
+                        @"111696455.IB所得税的任13何人士"];
+    UIButton *temp = [[UIButton alloc]init];
+    [temp setTitle:@"随机" forState:(UIControlStateNormal)];
+    [temp setTitleColor:[UIColor blueColor] forState:(UIControlStateNormal)];
+    [temp addTarget:self action:@selector(randomString) forControlEvents:(UIControlEventTouchUpInside)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:temp];
+}
+
+-(void)randomString {
+    int index = arc4random_uniform(13);
+    self.findTextField.text = self.randomArr[index];
 }
 
 - (void)initMyUI {
@@ -57,8 +82,8 @@
     [self.showDataArr addObject:timeStr];
     
     CGFloat buttonW = (KScreenWidth - 50)/4;
-    NSArray *tepmStr = @[@"for循环",@"ac自动机",@"清空自动机",@"重建自动机"];
-    for (int i = 1; i < 5; i++) {
+    NSArray *tepmStr = @[@"for循环",@"ac自动机",@"KMP算法"];//,@"清空自动机",@"重建自动机"];
+    for (int i = 1; i <= tepmStr.count; i++) {
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(10*(i)+buttonW*(i-1), kNavBarAndStatusBarHeight+45, buttonW, 30)];
         btn.tag = i;
         btn.backgroundColor = [UIColor redColor];
@@ -91,12 +116,12 @@
     if (self.findTextField.text.length <= 0) {
         return;
     }
-    if (sender.tag == 3){
-        [[CorasickTreeManager shareInstance] clearTrieTree];
-        [self.showDataArr removeAllObjects];
-        [self.myTableView reloadData];
-        return;
-    }
+//    if (sender.tag == 3){
+//        [[CorasickTreeManager shareInstance] clearTrieTree];
+//        [self.showDataArr removeAllObjects];
+//        [self.myTableView reloadData];
+//        return;
+//    }
     NSString *timeStr = nil;
     if (sender.tag == 2) {
         timeStr = [[CorasickTreeManager shareInstance]trieFindMyTree:self.findTextField.text];
@@ -104,6 +129,8 @@
         timeStr = [[CorasickTreeManager shareInstance]forNormalTimeCal:self.findTextField.text];
     }else if (sender.tag == 4){
         timeStr = [[CorasickTreeManager shareInstance]createTrieTree];
+    }else if (sender.tag == 3){
+        timeStr = [[CorasickTreeManager shareInstance]showKMPTest:self.findTextField.text];
     }
     [self.showDataArr insertObject:timeStr atIndex:0];
     [self.myTableView reloadData];

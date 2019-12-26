@@ -18,6 +18,7 @@
 		389A752523502DDA00DDBE6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 389A752323502DDA00DDBE6C /* LaunchScreen.storyboard */; };
 		389A752823502DDA00DDBE6C /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 389A752723502DDA00DDBE6C /* main.mm */; };
 		389A753023502E1900DDBE6C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 389A752F23502E1900DDBE6C /* Person.m */; };
+		38A3B59623AA1C6E00430F97 /* MyShowLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 38A3B59523AA1C6E00430F97 /* MyShowLocation.gpx */; };
 		89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		389A752723502DDA00DDBE6C /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		389A752E23502E1900DDBE6C /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		389A752F23502E1900DDBE6C /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		38A3B59523AA1C6E00430F97 /* MyShowLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyShowLocation.gpx; sourceTree = "<group>"; };
 		B8EB8B5647A921C1097C5650 /* Pods-KVOTestModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.debug.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.debug.xcconfig"; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				383B11FD2398A3A600E9DCB9 /* CorasickTreeManager.mm */,
 				383B11FF2398A82800E9DCB9 /* SortCodeManager.h */,
 				383B12002398A82800E9DCB9 /* SortCodeManager.m */,
+				38A3B59523AA1C6E00430F97 /* MyShowLocation.gpx */,
 			);
 			path = KVOTestModel;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				389A752523502DDA00DDBE6C /* LaunchScreen.storyboard in Resources */,
 				389A752223502DDA00DDBE6C /* Assets.xcassets in Resources */,
 				383B11F3239793F500E9DCB9 /* qt_data.db in Resources */,
+				38A3B59623AA1C6E00430F97 /* MyShowLocation.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

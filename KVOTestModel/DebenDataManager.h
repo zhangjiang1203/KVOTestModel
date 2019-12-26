@@ -14,17 +14,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSString *deID;
 @property (nonatomic,strong) NSString *title;
-
+@property (nonatomic,copy)NSValue *rectValue;
 @end
 
 
 @interface DebenDataManager : NSObject
+
+@property (nonatomic,strong)NSArray *debenItemsArr;
 
 + (instancetype) shareInstance;
 
 + (NSArray<DebenDataModel *> *) getAllDebenItems;
 
 + (NSMutableArray<NSValue *> *) getAllSubStringRangeFromString:(NSString*)string withSubString:(NSString*)subString ;
+
+
 
 
 @end

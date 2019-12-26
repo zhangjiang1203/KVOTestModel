@@ -7,5 +7,9 @@ target 'KVOTestModel' do
 
   # Pods for KVOTestModel
   pod 'FMDB', '~> 2.7.5'
+  pod 'LookinServer', :configurations => ['Debug']
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
 
 end
