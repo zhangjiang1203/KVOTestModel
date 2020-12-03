@@ -6,9 +6,9 @@
 //  Copyright © 2019 zhangjiang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZJBaseViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : ZJBaseViewController
 
 
 @end

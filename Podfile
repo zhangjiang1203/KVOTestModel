@@ -10,6 +10,8 @@ target 'KVOTestModel' do
   pod 'LookinServer', :configurations => ['Debug']
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SDWebImage'
+  pod 'FLAnimatedImage'
 
 
 end
