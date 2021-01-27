@@ -45,6 +45,10 @@
 		38B2BA7D24BD97B300F0F52F /* QDTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B2BA7C24BD97B200F0F52F /* QDTableFooterView.m */; };
 		38CD08B2243DA84F009429C9 /* Person+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CD08B1243DA84F009429C9 /* Person+Custom.m */; };
 		38E015F32578E8FC00C52175 /* UIMonitorinManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E015F12578E8FC00C52175 /* UIMonitorinManager.m */; };
+		38E015FA257A11C000C52175 /* TestCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E015F9257A11C000C52175 /* TestCodeViewController.m */; };
+		38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E015FD257A11DB00C52175 /* CodePersonModel.m */; };
+		38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01601257A11EF00C52175 /* CodeStudentModel.m */; };
+		38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01605257A131D00C52175 /* NSObject+Coding.m */; };
 		89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -119,6 +123,14 @@
 		38CD08B3243DA9EF009429C9 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E015F12578E8FC00C52175 /* UIMonitorinManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMonitorinManager.m; sourceTree = "<group>"; };
 		38E015F22578E8FC00C52175 /* UIMonitorinManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMonitorinManager.h; sourceTree = "<group>"; };
+		38E015F8257A11C000C52175 /* TestCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCodeViewController.h; sourceTree = "<group>"; };
+		38E015F9257A11C000C52175 /* TestCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCodeViewController.m; sourceTree = "<group>"; };
+		38E015FC257A11DB00C52175 /* CodePersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodePersonModel.h; sourceTree = "<group>"; };
+		38E015FD257A11DB00C52175 /* CodePersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodePersonModel.m; sourceTree = "<group>"; };
+		38E01600257A11EF00C52175 /* CodeStudentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeStudentModel.h; sourceTree = "<group>"; };
+		38E01601257A11EF00C52175 /* CodeStudentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeStudentModel.m; sourceTree = "<group>"; };
+		38E01604257A131D00C52175 /* NSObject+Coding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
+		38E01605257A131D00C52175 /* NSObject+Coding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
 		B8EB8B5647A921C1097C5650 /* Pods-KVOTestModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.debug.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.debug.xcconfig"; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +293,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				38E015F5257A119B00C52175 /* CodingTest */,
 				38E015F02578E8FC00C52175 /* UIKartu */,
 				386B3DCB254A69640063DF3C /* ConfigurationTest */,
 				3807427C24B6C3D400968CF5 /* ClassTest */,
@@ -324,6 +337,21 @@
 				38E015F22578E8FC00C52175 /* UIMonitorinManager.h */,
 			);
 			path = UIKartu;
+			sourceTree = "<group>";
+		};
+		38E015F5257A119B00C52175 /* CodingTest */ = {
+			isa = PBXGroup;
+			children = (
+				38E015F8257A11C000C52175 /* TestCodeViewController.h */,
+				38E015F9257A11C000C52175 /* TestCodeViewController.m */,
+				38E015FC257A11DB00C52175 /* CodePersonModel.h */,
+				38E015FD257A11DB00C52175 /* CodePersonModel.m */,
+				38E01600257A11EF00C52175 /* CodeStudentModel.h */,
+				38E01601257A11EF00C52175 /* CodeStudentModel.m */,
+				38E01604257A131D00C52175 /* NSObject+Coding.h */,
+				38E01605257A131D00C52175 /* NSObject+Coding.m */,
+			);
+			path = CodingTest;
 			sourceTree = "<group>";
 		};
 		951556380C00FC74BA92BE0B /* Pods */ = {
@@ -455,9 +483,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */,
 				38A2C8662481F4F200E408BB /* ZJPreformLabel.m in Sources */,
 				38B2B95824BD4C9E00F0F52F /* QDDepartmentListView.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
+				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
@@ -479,7 +509,9 @@
 				3807428024B6F10C00968CF5 /* QDSearchResultModel.m in Sources */,
 				38E015F32578E8FC00C52175 /* UIMonitorinManager.m in Sources */,
 				386B3DD2254A69BB0063DF3C /* TestConfigurationCell.m in Sources */,
+				38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */,
 				380742C024B8174100968CF5 /* ZJBaseViewController.m in Sources */,
+				38E015FA257A11C000C52175 /* TestCodeViewController.m in Sources */,
 				382A1ADA2445C9C70017EA2B /* QQLockDictionary.m in Sources */,
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
@@ -622,7 +654,7 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HVZHKR96MQ;
+				DEVELOPMENT_TEAM = B2G6WGLXZ7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
@@ -648,7 +680,7 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HVZHKR96MQ;
+				DEVELOPMENT_TEAM = B2G6WGLXZ7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;

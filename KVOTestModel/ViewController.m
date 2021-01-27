@@ -12,7 +12,7 @@
 #import "ZJPopView.h"
 #import "ClassTestViewController.h"
 #import "ConfigurationViewController.h"
-
+#import "TestCodeViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 
@@ -121,7 +121,7 @@
 //}
 //
 - (void)initMyUI {
-    self.showDataArr = [NSMutableArray arrayWithArray:@[@"搜索",@"差值",@"类测试",@"UItableView configuration"]];
+    self.showDataArr = [NSMutableArray arrayWithArray:@[@"搜索",@"差值",@"类测试",@"UItableView configuration",@"归档解档"]];
 //    NSString *timeStr = [[CorasickTreeManager shareInstance] createTrieTree];
 //    [self.showDataArr addObject:timeStr];
 //
@@ -230,6 +230,9 @@
     }else if (indexPath.row == 3){
         ConfigurationViewController *config = [[ConfigurationViewController alloc]init];
         [self.navigationController pushViewController:config animated:true];
+    }else if (indexPath.row == 4){
+        TestCodeViewController *vc = [[TestCodeViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
     }
 }
 
