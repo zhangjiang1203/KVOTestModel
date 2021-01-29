@@ -15,6 +15,8 @@
 		380742C324B81ED200968CF5 /* QDUISearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 380742C224B81ED200968CF5 /* QDUISearchResultView.m */; };
 		380742C924B8202C00968CF5 /* QDUISearchEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 380742C824B8202C00968CF5 /* QDUISearchEmptyView.m */; };
 		380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 380742CC24B8588900968CF5 /* UIButton+ChangeImagePosition.m */; };
+		380B2B9025C2A003001EAF3F /* TestBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B2B8F25C2A003001EAF3F /* TestBlockViewController.m */; };
+		380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 380B2B9325C2A235001EAF3F /* BlockModelTest.m */; };
 		382A1ADA2445C9C70017EA2B /* QQLockDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 382A1AD82445C9C70017EA2B /* QQLockDictionary.m */; };
 		383B11CE23975FF000E9DCB9 /* benchmark.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 383B11CD23975FEF00E9DCB9 /* benchmark.cpp */; };
 		383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 383B11F023978E6F00E9DCB9 /* DebenDataManager.m */; };
@@ -70,6 +72,10 @@
 		380742C824B8202C00968CF5 /* QDUISearchEmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDUISearchEmptyView.m; sourceTree = "<group>"; };
 		380742CB24B8588900968CF5 /* UIButton+ChangeImagePosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ChangeImagePosition.h"; sourceTree = "<group>"; };
 		380742CC24B8588900968CF5 /* UIButton+ChangeImagePosition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ChangeImagePosition.m"; sourceTree = "<group>"; };
+		380B2B8E25C2A003001EAF3F /* TestBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlockViewController.h; sourceTree = "<group>"; };
+		380B2B8F25C2A003001EAF3F /* TestBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBlockViewController.m; sourceTree = "<group>"; };
+		380B2B9225C2A235001EAF3F /* BlockModelTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockModelTest.h; sourceTree = "<group>"; };
+		380B2B9325C2A235001EAF3F /* BlockModelTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockModelTest.m; sourceTree = "<group>"; };
 		382A1AD82445C9C70017EA2B /* QQLockDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQLockDictionary.m; sourceTree = "<group>"; };
 		382A1AD92445C9C70017EA2B /* QQLockDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQLockDictionary.h; sourceTree = "<group>"; };
 		383B11CC23975FE400E9DCB9 /* aho_corasick.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = aho_corasick.hpp; sourceTree = "<group>"; };
@@ -250,6 +256,17 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		380B2B8C25C29FD2001EAF3F /* BlockTest */ = {
+			isa = PBXGroup;
+			children = (
+				380B2B8E25C2A003001EAF3F /* TestBlockViewController.h */,
+				380B2B8F25C2A003001EAF3F /* TestBlockViewController.m */,
+				380B2B9225C2A235001EAF3F /* BlockModelTest.h */,
+				380B2B9325C2A235001EAF3F /* BlockModelTest.m */,
+			);
+			path = BlockTest;
+			sourceTree = "<group>";
+		};
 		380C0F6E24B6B60100CAAAB4 /* QDSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +310,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				380B2B8C25C29FD2001EAF3F /* BlockTest */,
 				38E015F5257A119B00C52175 /* CodingTest */,
 				38E015F02578E8FC00C52175 /* UIKartu */,
 				386B3DCB254A69640063DF3C /* ConfigurationTest */,
@@ -494,6 +512,7 @@
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
 				380742C924B8202C00968CF5 /* QDUISearchEmptyView.m in Sources */,
+				380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */,
 				38CD08B2243DA84F009429C9 /* Person+Custom.m in Sources */,
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
 				386B3DCE254A69910063DF3C /* ConfigurationViewController.m in Sources */,
@@ -501,6 +520,7 @@
 				38A2C8652481F4F200E408BB /* LHPerformanceUtil.m in Sources */,
 				38B2B6FA24BC412000F0F52F /* QDSearchMoreViewController.m in Sources */,
 				38B2BA7D24BD97B300F0F52F /* QDTableFooterView.m in Sources */,
+				380B2B9025C2A003001EAF3F /* TestBlockViewController.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,

@@ -13,6 +13,7 @@
 #import "ClassTestViewController.h"
 #import "ConfigurationViewController.h"
 #import "TestCodeViewController.h"
+#import "TestBlockViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 
@@ -121,7 +122,7 @@
 //}
 //
 - (void)initMyUI {
-    self.showDataArr = [NSMutableArray arrayWithArray:@[@"搜索",@"差值",@"类测试",@"UItableView configuration",@"归档解档"]];
+    self.showDataArr = [NSMutableArray arrayWithArray:@[@"搜索",@"差值",@"类测试",@"UItableView configuration",@"归档解档",@"Block测试"]];
 //    NSString *timeStr = [[CorasickTreeManager shareInstance] createTrieTree];
 //    [self.showDataArr addObject:timeStr];
 //
@@ -232,6 +233,9 @@
         [self.navigationController pushViewController:config animated:true];
     }else if (indexPath.row == 4){
         TestCodeViewController *vc = [[TestCodeViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
+    }else if (indexPath.row == 5){
+        TestBlockViewController *vc = [[TestBlockViewController alloc]init];
         [self.navigationController pushViewController:vc animated:true];
     }
 }
