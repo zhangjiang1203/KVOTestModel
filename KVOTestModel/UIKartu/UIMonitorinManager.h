@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface UIMonitorinManager : NSObject
 //单例其他的创建方法失效
 + (instancetype)alloc  __attribute__((unavailable("alloc not available, call sharedInstance instead")));
@@ -18,9 +19,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 + (instancetype)shareInstance;
-///开始监控
+
+
+/// 开始监控
+/// @param key 上报对应的key
 -(void)startMonitorWithKey:(NSString*)key;
-///停止监控
+
+
+/// 停止上报
+/// @param key 和上报的我key相对应
 -(void)stopMonitorWithKey:(NSString*)key;
 
 

@@ -52,6 +52,11 @@
 		38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01601257A11EF00C52175 /* CodeStudentModel.m */; };
 		38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01605257A131D00C52175 /* NSObject+Coding.m */; };
 		89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */; };
+		C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC590264525A200B7E26D /* ZJDownloadermanager.m */; };
+		C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC591264525A200B7E26D /* ZJFileManager.m */; };
+		C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC597264525A200B7E26D /* ZJDownloadModel.m */; };
+		C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC59E2645265700B7E26D /* DownloadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +143,17 @@
 		38E01604257A131D00C52175 /* NSObject+Coding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
 		38E01605257A131D00C52175 /* NSObject+Coding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
 		B8EB8B5647A921C1097C5650 /* Pods-KVOTestModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.debug.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.debug.xcconfig"; sourceTree = "<group>"; };
+		C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadOperation.m; sourceTree = "<group>"; };
+		C29EC590264525A200B7E26D /* ZJDownloadermanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadermanager.m; sourceTree = "<group>"; };
+		C29EC591264525A200B7E26D /* ZJFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileManager.m; sourceTree = "<group>"; };
+		C29EC592264525A200B7E26D /* ZJDownloadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDownloadModel.h; sourceTree = "<group>"; };
+		C29EC593264525A200B7E26D /* ZJDownloadermanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDownloadermanager.h; sourceTree = "<group>"; };
+		C29EC594264525A200B7E26D /* ZJDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDownloadOperation.h; sourceTree = "<group>"; };
+		C29EC595264525A200B7E26D /* ZJFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJFileManager.h; sourceTree = "<group>"; };
+		C29EC596264525A200B7E26D /* ZJDownloadDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDownloadDefine.h; sourceTree = "<group>"; };
+		C29EC597264525A200B7E26D /* ZJDownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadModel.m; sourceTree = "<group>"; };
+		C29EC59D2645265700B7E26D /* DownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadViewController.h; sourceTree = "<group>"; };
+		C29EC59E2645265700B7E26D /* DownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -310,6 +326,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C29EC58E264525A200B7E26D /* NSOperationManager */,
 				380B2B8C25C29FD2001EAF3F /* BlockTest */,
 				38E015F5257A119B00C52175 /* CodingTest */,
 				38E015F02578E8FC00C52175 /* UIKartu */,
@@ -351,8 +368,8 @@
 		38E015F02578E8FC00C52175 /* UIKartu */ = {
 			isa = PBXGroup;
 			children = (
-				38E015F12578E8FC00C52175 /* UIMonitorinManager.m */,
 				38E015F22578E8FC00C52175 /* UIMonitorinManager.h */,
+				38E015F12578E8FC00C52175 /* UIMonitorinManager.m */,
 			);
 			path = UIKartu;
 			sourceTree = "<group>";
@@ -379,6 +396,24 @@
 				C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C29EC58E264525A200B7E26D /* NSOperationManager */ = {
+			isa = PBXGroup;
+			children = (
+				C29EC594264525A200B7E26D /* ZJDownloadOperation.h */,
+				C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */,
+				C29EC593264525A200B7E26D /* ZJDownloadermanager.h */,
+				C29EC590264525A200B7E26D /* ZJDownloadermanager.m */,
+				C29EC595264525A200B7E26D /* ZJFileManager.h */,
+				C29EC591264525A200B7E26D /* ZJFileManager.m */,
+				C29EC596264525A200B7E26D /* ZJDownloadDefine.h */,
+				C29EC592264525A200B7E26D /* ZJDownloadModel.h */,
+				C29EC597264525A200B7E26D /* ZJDownloadModel.m */,
+				C29EC59D2645265700B7E26D /* DownloadViewController.h */,
+				C29EC59E2645265700B7E26D /* DownloadViewController.m */,
+			);
+			path = NSOperationManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,10 +539,12 @@
 				38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */,
 				38A2C8662481F4F200E408BB /* ZJPreformLabel.m in Sources */,
 				38B2B95824BD4C9E00F0F52F /* QDDepartmentListView.m in Sources */,
+				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
+				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
@@ -517,6 +554,7 @@
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
 				386B3DCE254A69910063DF3C /* ConfigurationViewController.m in Sources */,
 				3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */,
+				C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */,
 				38A2C8652481F4F200E408BB /* LHPerformanceUtil.m in Sources */,
 				38B2B6FA24BC412000F0F52F /* QDSearchMoreViewController.m in Sources */,
 				38B2BA7D24BD97B300F0F52F /* QDTableFooterView.m in Sources */,
@@ -532,9 +570,11 @@
 				38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */,
 				380742C024B8174100968CF5 /* ZJBaseViewController.m in Sources */,
 				38E015FA257A11C000C52175 /* TestCodeViewController.m in Sources */,
+				C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */,
 				382A1ADA2445C9C70017EA2B /* QQLockDictionary.m in Sources */,
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
+				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
 				389A752823502DDA00DDBE6C /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

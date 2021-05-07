@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import <Bugly/Bugly.h>
 @interface AppDelegate ()
 
 @end
@@ -16,13 +17,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setUpBugly];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController *nav =[[UINavigationController alloc]initWithRootViewController:[[ViewController alloc]init]];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)setUpBugly {
+    BuglyConfig *config = [BuglyConfig new];
+    config.blockMonitorEnable = YES;
+    config.debugMode = YES;
+    [Bugly startWithAppId:@"46584cde7b" config:config];
+    
 }
 
 

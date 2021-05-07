@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (Coding)<NSCoding>
+@interface NSObject (Coding)
 
 - (instancetype)zj_modelInitWithCoder:(NSCoder *)aDecoder;
 
