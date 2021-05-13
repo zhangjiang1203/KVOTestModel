@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '10.0'
 
@@ -17,9 +17,11 @@ target 'KVOTestModel' do
   pod 'RxCocoa'
   pod 'SDWebImage'
   pod 'FLAnimatedImage'
+  pod 'ReactiveObjC', '~> 3.1.1'
+  pod 'Masonry'
   
   #接入bugly
 
-  pod 'Bugly'
+#  pod 'Bugly'
 
 end

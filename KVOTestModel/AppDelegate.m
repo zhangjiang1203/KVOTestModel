@@ -8,7 +8,11 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import <Bugly/Bugly.h>
+//#import <Bugly/Bugly.h>
+#import "KXModuleOrz.h"
+#import "ZJServiceManager.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,7 +21,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self setUpBugly];
+//    [self setUpBugly];
+    
+    //开始
+//    [[KXModuleOrz shareInstance] orz_triggerEvent:KXModuleEventSetup];
+    
+    [ZJServiceManager activeServiceEvent:1];
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController *nav =[[UINavigationController alloc]initWithRootViewController:[[ViewController alloc]init]];
@@ -27,10 +37,10 @@
 }
 
 - (void)setUpBugly {
-    BuglyConfig *config = [BuglyConfig new];
-    config.blockMonitorEnable = YES;
-    config.debugMode = YES;
-    [Bugly startWithAppId:@"46584cde7b" config:config];
+//    BuglyConfig *config = [BuglyConfig new];
+//    config.blockMonitorEnable = YES;
+//    config.debugMode = YES;
+//    [Bugly startWithAppId:@"46584cde7b" config:config];
     
 }
 

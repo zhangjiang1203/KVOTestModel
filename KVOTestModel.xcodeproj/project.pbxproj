@@ -52,11 +52,36 @@
 		38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01601257A11EF00C52175 /* CodeStudentModel.m */; };
 		38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01605257A131D00C52175 /* NSObject+Coding.m */; };
 		89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C21F3717264A3890004F6BD1 /* KXVoiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F370E264A388F004F6BD1 /* KXVoiceManager.m */; };
+		C21F3718264A3890004F6BD1 /* KXVoiceGuestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3712264A388F004F6BD1 /* KXVoiceGuestCell.m */; };
+		C21F371A264A3890004F6BD1 /* KXVoiceSeatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3714264A388F004F6BD1 /* KXVoiceSeatModel.m */; };
+		C21F371B264A3890004F6BD1 /* KXVoicePersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3715264A388F004F6BD1 /* KXVoicePersonModel.m */; };
+		C21F371C264A3890004F6BD1 /* KXVoiceChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3716264A388F004F6BD1 /* KXVoiceChatRoomViewController.m */; };
+		C21F372C264A3A10004F6BD1 /* KXLiveRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F372B264A3A10004F6BD1 /* KXLiveRoomViewController.m */; };
+		C21F3737264A61B8004F6BD1 /* KXRippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3736264A61B8004F6BD1 /* KXRippleView.m */; };
+		C21F37AB264BADBA004F6BD1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C21F379D264BADBA004F6BD1 /* LICENSE */; };
+		C21F37AC264BADBA004F6BD1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C21F379E264BADBA004F6BD1 /* README.md */; };
+		C21F37AD264BADBA004F6BD1 /* KXModuleDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37A2264BADBA004F6BD1 /* KXModuleDefinition.m */; };
+		C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37A5264BADBA004F6BD1 /* KXModuleManager.m */; };
+		C21F37AF264BADBA004F6BD1 /* KXModuleQAService.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37A7264BADBA004F6BD1 /* KXModuleQAService.m */; };
+		C21F37B0264BADBA004F6BD1 /* KXModuleOrz.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37AA264BADBA004F6BD1 /* KXModuleOrz.m */; };
+		C21F37B4264BAE25004F6BD1 /* KXMoudleProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37B3264BAE25004F6BD1 /* KXMoudleProtocolViewController.m */; };
+		C21F37B9264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37B8264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m */; };
+		C21F387A264BEE9F004F6BD1 /* MessageSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3879264BEE9F004F6BD1 /* MessageSendViewController.m */; };
+		C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3893264BF688004F6BD1 /* SendPersonModel.m */; };
+		C21F3898264BFE51004F6BD1 /* SecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3897264BFE51004F6BD1 /* SecondModel.m */; };
+		C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F38FC264CF3B6004F6BD1 /* KXShowAnimationView.m */; };
+		C21F390D264D299A004F6BD1 /* ZJServiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F390C264D299A004F6BD1 /* ZJServiceModel.m */; };
+		C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3911264D2E2B004F6BD1 /* ZJServiceEvent.m */; };
+		C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F391B264D3EF6004F6BD1 /* ZJServiceManager.m */; };
+		C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F391F264D4091004F6BD1 /* TestServiceManagerModel.m */; };
+		C21F3926264D4719004F6BD1 /* ZJServiceDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */; };
 		C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */; };
 		C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC590264525A200B7E26D /* ZJDownloadermanager.m */; };
 		C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC591264525A200B7E26D /* ZJFileManager.m */; };
 		C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC597264525A200B7E26D /* ZJDownloadModel.m */; };
 		C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC59E2645265700B7E26D /* DownloadViewController.m */; };
+		C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC5AB26452F6400B7E26D /* RACTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +168,55 @@
 		38E01604257A131D00C52175 /* NSObject+Coding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
 		38E01605257A131D00C52175 /* NSObject+Coding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
 		B8EB8B5647A921C1097C5650 /* Pods-KVOTestModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.debug.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.debug.xcconfig"; sourceTree = "<group>"; };
+		C21F370A264A388F004F6BD1 /* KXVoiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoiceManager.h; sourceTree = "<group>"; };
+		C21F370B264A388F004F6BD1 /* KXVoicePersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoicePersonModel.h; sourceTree = "<group>"; };
+		C21F370C264A388F004F6BD1 /* KXVoiceSeatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoiceSeatModel.h; sourceTree = "<group>"; };
+		C21F370D264A388F004F6BD1 /* KXVoiceChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoiceChatRoomViewController.h; sourceTree = "<group>"; };
+		C21F370E264A388F004F6BD1 /* KXVoiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXVoiceManager.m; sourceTree = "<group>"; };
+		C21F3710264A388F004F6BD1 /* KXVoiceGuestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoiceGuestCell.h; sourceTree = "<group>"; };
+		C21F3712264A388F004F6BD1 /* KXVoiceGuestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXVoiceGuestCell.m; sourceTree = "<group>"; };
+		C21F3714264A388F004F6BD1 /* KXVoiceSeatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXVoiceSeatModel.m; sourceTree = "<group>"; };
+		C21F3715264A388F004F6BD1 /* KXVoicePersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXVoicePersonModel.m; sourceTree = "<group>"; };
+		C21F3716264A388F004F6BD1 /* KXVoiceChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXVoiceChatRoomViewController.m; sourceTree = "<group>"; };
+		C21F372A264A3A10004F6BD1 /* KXLiveRoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXLiveRoomViewController.h; sourceTree = "<group>"; };
+		C21F372B264A3A10004F6BD1 /* KXLiveRoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXLiveRoomViewController.m; sourceTree = "<group>"; };
+		C21F3735264A61B8004F6BD1 /* KXRippleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXRippleView.h; sourceTree = "<group>"; };
+		C21F3736264A61B8004F6BD1 /* KXRippleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXRippleView.m; sourceTree = "<group>"; };
+		C21F379D264BADBA004F6BD1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C21F379E264BADBA004F6BD1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C21F37A2264BADBA004F6BD1 /* KXModuleDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXModuleDefinition.m; sourceTree = "<group>"; };
+		C21F37A3264BADBA004F6BD1 /* KXModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXModuleManager.h; sourceTree = "<group>"; };
+		C21F37A4264BADBA004F6BD1 /* KXModuleQAService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXModuleQAService.h; sourceTree = "<group>"; };
+		C21F37A5264BADBA004F6BD1 /* KXModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXModuleManager.m; sourceTree = "<group>"; };
+		C21F37A6264BADBA004F6BD1 /* KXModuleDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXModuleDefinition.h; sourceTree = "<group>"; };
+		C21F37A7264BADBA004F6BD1 /* KXModuleQAService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXModuleQAService.m; sourceTree = "<group>"; };
+		C21F37A8264BADBA004F6BD1 /* KXModuleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXModuleProtocol.h; sourceTree = "<group>"; };
+		C21F37A9264BADBA004F6BD1 /* KXModuleOrz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXModuleOrz.h; sourceTree = "<group>"; };
+		C21F37AA264BADBA004F6BD1 /* KXModuleOrz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KXModuleOrz.m; sourceTree = "<group>"; };
+		C21F37B2264BAE25004F6BD1 /* KXMoudleProtocolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXMoudleProtocolViewController.h; sourceTree = "<group>"; };
+		C21F37B3264BAE25004F6BD1 /* KXMoudleProtocolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXMoudleProtocolViewController.m; sourceTree = "<group>"; };
+		C21F37B7264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXMoudleProtocolTestModel.h; sourceTree = "<group>"; };
+		C21F37B8264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXMoudleProtocolTestModel.m; sourceTree = "<group>"; };
+		C21F3878264BEE9F004F6BD1 /* MessageSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageSendViewController.h; sourceTree = "<group>"; };
+		C21F3879264BEE9F004F6BD1 /* MessageSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageSendViewController.m; sourceTree = "<group>"; };
+		C21F3892264BF688004F6BD1 /* SendPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendPersonModel.h; sourceTree = "<group>"; };
+		C21F3893264BF688004F6BD1 /* SendPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendPersonModel.m; sourceTree = "<group>"; };
+		C21F3896264BFE51004F6BD1 /* SecondModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondModel.h; sourceTree = "<group>"; };
+		C21F3897264BFE51004F6BD1 /* SecondModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondModel.m; sourceTree = "<group>"; };
+		C21F38FB264CF3B6004F6BD1 /* KXShowAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXShowAnimationView.h; sourceTree = "<group>"; };
+		C21F38FC264CF3B6004F6BD1 /* KXShowAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXShowAnimationView.m; sourceTree = "<group>"; };
+		C21F390B264D299A004F6BD1 /* ZJServiceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJServiceModel.h; sourceTree = "<group>"; };
+		C21F390C264D299A004F6BD1 /* ZJServiceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJServiceModel.m; sourceTree = "<group>"; };
+		C21F3910264D2E2B004F6BD1 /* ZJServiceEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJServiceEvent.h; sourceTree = "<group>"; };
+		C21F3911264D2E2B004F6BD1 /* ZJServiceEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJServiceEvent.m; sourceTree = "<group>"; };
+		C21F3914264D2F53004F6BD1 /* ZJServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJServiceProtocol.h; sourceTree = "<group>"; };
+		C21F391A264D3EF6004F6BD1 /* ZJServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJServiceManager.h; sourceTree = "<group>"; };
+		C21F391B264D3EF6004F6BD1 /* ZJServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJServiceManager.m; sourceTree = "<group>"; };
+		C21F391E264D4091004F6BD1 /* TestServiceManagerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestServiceManagerModel.h; sourceTree = "<group>"; };
+		C21F391F264D4091004F6BD1 /* TestServiceManagerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestServiceManagerModel.m; sourceTree = "<group>"; };
+		C21F3922264D4107004F6BD1 /* TestServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestServiceProtocol.h; sourceTree = "<group>"; };
+		C21F3924264D4719004F6BD1 /* ZJServiceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJServiceDefine.h; sourceTree = "<group>"; };
+		C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJServiceDefine.m; sourceTree = "<group>"; };
 		C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadOperation.m; sourceTree = "<group>"; };
 		C29EC590264525A200B7E26D /* ZJDownloadermanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadermanager.m; sourceTree = "<group>"; };
 		C29EC591264525A200B7E26D /* ZJFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileManager.m; sourceTree = "<group>"; };
@@ -154,6 +228,8 @@
 		C29EC597264525A200B7E26D /* ZJDownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadModel.m; sourceTree = "<group>"; };
 		C29EC59D2645265700B7E26D /* DownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadViewController.h; sourceTree = "<group>"; };
 		C29EC59E2645265700B7E26D /* DownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
+		C29EC5AA26452F6400B7E26D /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
+		C29EC5AB26452F6400B7E26D /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -326,6 +402,10 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C21F3877264BEE7B004F6BD1 /* MessageSend */,
+				C21F379B264BAD30004F6BD1 /* KXMoudleProtocol */,
+				C21F3709264A388F004F6BD1 /* VoiceChatRoom */,
+				C29EC5A926452F4F00B7E26D /* ReactiveTest */,
 				C29EC58E264525A200B7E26D /* NSOperationManager */,
 				380B2B8C25C29FD2001EAF3F /* BlockTest */,
 				38E015F5257A119B00C52175 /* CodingTest */,
@@ -398,6 +478,124 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C21F3709264A388F004F6BD1 /* VoiceChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				C21F372A264A3A10004F6BD1 /* KXLiveRoomViewController.h */,
+				C21F372B264A3A10004F6BD1 /* KXLiveRoomViewController.m */,
+				C21F370D264A388F004F6BD1 /* KXVoiceChatRoomViewController.h */,
+				C21F3716264A388F004F6BD1 /* KXVoiceChatRoomViewController.m */,
+				C21F370A264A388F004F6BD1 /* KXVoiceManager.h */,
+				C21F370E264A388F004F6BD1 /* KXVoiceManager.m */,
+				C21F370B264A388F004F6BD1 /* KXVoicePersonModel.h */,
+				C21F3715264A388F004F6BD1 /* KXVoicePersonModel.m */,
+				C21F370C264A388F004F6BD1 /* KXVoiceSeatModel.h */,
+				C21F3714264A388F004F6BD1 /* KXVoiceSeatModel.m */,
+				C21F370F264A388F004F6BD1 /* View */,
+			);
+			path = VoiceChatRoom;
+			sourceTree = "<group>";
+		};
+		C21F370F264A388F004F6BD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C21F3710264A388F004F6BD1 /* KXVoiceGuestCell.h */,
+				C21F3712264A388F004F6BD1 /* KXVoiceGuestCell.m */,
+				C21F3735264A61B8004F6BD1 /* KXRippleView.h */,
+				C21F3736264A61B8004F6BD1 /* KXRippleView.m */,
+				C21F38FB264CF3B6004F6BD1 /* KXShowAnimationView.h */,
+				C21F38FC264CF3B6004F6BD1 /* KXShowAnimationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C21F379B264BAD30004F6BD1 /* KXMoudleProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				C21F379C264BADBA004F6BD1 /* KXModuleOrz */,
+				C21F37B2264BAE25004F6BD1 /* KXMoudleProtocolViewController.h */,
+				C21F37B3264BAE25004F6BD1 /* KXMoudleProtocolViewController.m */,
+				C21F37B7264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.h */,
+				C21F37B8264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m */,
+			);
+			path = KXMoudleProtocol;
+			sourceTree = "<group>";
+		};
+		C21F379C264BADBA004F6BD1 /* KXModuleOrz */ = {
+			isa = PBXGroup;
+			children = (
+				C21F379D264BADBA004F6BD1 /* LICENSE */,
+				C21F379E264BADBA004F6BD1 /* README.md */,
+				C21F379F264BADBA004F6BD1 /* KXModuleOrz */,
+			);
+			path = KXModuleOrz;
+			sourceTree = "<group>";
+		};
+		C21F379F264BADBA004F6BD1 /* KXModuleOrz */ = {
+			isa = PBXGroup;
+			children = (
+				C21F37A0264BADBA004F6BD1 /* Classes */,
+			);
+			path = KXModuleOrz;
+			sourceTree = "<group>";
+		};
+		C21F37A0264BADBA004F6BD1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C21F37A1264BADBA004F6BD1 /* Core */,
+				C21F37A9264BADBA004F6BD1 /* KXModuleOrz.h */,
+				C21F37AA264BADBA004F6BD1 /* KXModuleOrz.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C21F37A1264BADBA004F6BD1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C21F37A6264BADBA004F6BD1 /* KXModuleDefinition.h */,
+				C21F37A2264BADBA004F6BD1 /* KXModuleDefinition.m */,
+				C21F37A3264BADBA004F6BD1 /* KXModuleManager.h */,
+				C21F37A5264BADBA004F6BD1 /* KXModuleManager.m */,
+				C21F37A8264BADBA004F6BD1 /* KXModuleProtocol.h */,
+				C21F37A4264BADBA004F6BD1 /* KXModuleQAService.h */,
+				C21F37A7264BADBA004F6BD1 /* KXModuleQAService.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C21F3877264BEE7B004F6BD1 /* MessageSend */ = {
+			isa = PBXGroup;
+			children = (
+				C21F390A264D2830004F6BD1 /* ZJMessageService */,
+				C21F3878264BEE9F004F6BD1 /* MessageSendViewController.h */,
+				C21F3879264BEE9F004F6BD1 /* MessageSendViewController.m */,
+				C21F3892264BF688004F6BD1 /* SendPersonModel.h */,
+				C21F3893264BF688004F6BD1 /* SendPersonModel.m */,
+				C21F3896264BFE51004F6BD1 /* SecondModel.h */,
+				C21F3897264BFE51004F6BD1 /* SecondModel.m */,
+				C21F391E264D4091004F6BD1 /* TestServiceManagerModel.h */,
+				C21F391F264D4091004F6BD1 /* TestServiceManagerModel.m */,
+				C21F3922264D4107004F6BD1 /* TestServiceProtocol.h */,
+			);
+			path = MessageSend;
+			sourceTree = "<group>";
+		};
+		C21F390A264D2830004F6BD1 /* ZJMessageService */ = {
+			isa = PBXGroup;
+			children = (
+				C21F390B264D299A004F6BD1 /* ZJServiceModel.h */,
+				C21F390C264D299A004F6BD1 /* ZJServiceModel.m */,
+				C21F3910264D2E2B004F6BD1 /* ZJServiceEvent.h */,
+				C21F3911264D2E2B004F6BD1 /* ZJServiceEvent.m */,
+				C21F3914264D2F53004F6BD1 /* ZJServiceProtocol.h */,
+				C21F391A264D3EF6004F6BD1 /* ZJServiceManager.h */,
+				C21F391B264D3EF6004F6BD1 /* ZJServiceManager.m */,
+				C21F3924264D4719004F6BD1 /* ZJServiceDefine.h */,
+				C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */,
+			);
+			path = ZJMessageService;
+			sourceTree = "<group>";
+		};
 		C29EC58E264525A200B7E26D /* NSOperationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +612,23 @@
 				C29EC59E2645265700B7E26D /* DownloadViewController.m */,
 			);
 			path = NSOperationManager;
+			sourceTree = "<group>";
+		};
+		C29EC5A926452F4F00B7E26D /* ReactiveTest */ = {
+			isa = PBXGroup;
+			children = (
+				C29EC5AF2645308C00B7E26D /* RACMVVM */,
+				C29EC5AA26452F6400B7E26D /* RACTestViewController.h */,
+				C29EC5AB26452F6400B7E26D /* RACTestViewController.m */,
+			);
+			path = ReactiveTest;
+			sourceTree = "<group>";
+		};
+		C29EC5AF2645308C00B7E26D /* RACMVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RACMVVM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,10 +694,12 @@
 				38A2C85924811C1300E408BB /* first_user_lead_konw@2x.png in Resources */,
 				389A752523502DDA00DDBE6C /* LaunchScreen.storyboard in Resources */,
 				389A752223502DDA00DDBE6C /* Assets.xcassets in Resources */,
+				C21F37AB264BADBA004F6BD1 /* LICENSE in Resources */,
 				383B11F3239793F500E9DCB9 /* qt_data.db in Resources */,
 				38A2C85C24811C1300E408BB /* first_user_lead_show_image@2x.gif in Resources */,
 				38A2C85A24811C1300E408BB /* first_user_lead_title@2x.png in Resources */,
 				38A2C85B24811C1300E408BB /* first_user_lead_title@3x.png in Resources */,
+				C21F37AC264BADBA004F6BD1 /* README.md in Resources */,
 				38A3B59623AA1C6E00430F97 /* MyShowLocation.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,30 +755,51 @@
 			files = (
 				38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */,
 				38A2C8662481F4F200E408BB /* ZJPreformLabel.m in Sources */,
+				C21F371B264A3890004F6BD1 /* KXVoicePersonModel.m in Sources */,
 				38B2B95824BD4C9E00F0F52F /* QDDepartmentListView.m in Sources */,
+				C21F372C264A3A10004F6BD1 /* KXLiveRoomViewController.m in Sources */,
+				C21F3717264A3890004F6BD1 /* KXVoiceManager.m in Sources */,
+				C21F3926264D4719004F6BD1 /* ZJServiceDefine.m in Sources */,
+				C21F37AD264BADBA004F6BD1 /* KXModuleDefinition.m in Sources */,
+				C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */,
+				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
+				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
+				C21F37AF264BADBA004F6BD1 /* KXModuleQAService.m in Sources */,
+				C21F37B4264BAE25004F6BD1 /* KXMoudleProtocolViewController.m in Sources */,
 				380742C924B8202C00968CF5 /* QDUISearchEmptyView.m in Sources */,
+				C21F3898264BFE51004F6BD1 /* SecondModel.m in Sources */,
+				C21F371C264A3890004F6BD1 /* KXVoiceChatRoomViewController.m in Sources */,
+				C21F3718264A3890004F6BD1 /* KXVoiceGuestCell.m in Sources */,
+				C21F3737264A61B8004F6BD1 /* KXRippleView.m in Sources */,
 				380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */,
+				C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */,
 				38CD08B2243DA84F009429C9 /* Person+Custom.m in Sources */,
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
 				386B3DCE254A69910063DF3C /* ConfigurationViewController.m in Sources */,
+				C21F390D264D299A004F6BD1 /* ZJServiceModel.m in Sources */,
 				3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */,
+				C21F37B0264BADBA004F6BD1 /* KXModuleOrz.m in Sources */,
+				C21F371A264A3890004F6BD1 /* KXVoiceSeatModel.m in Sources */,
 				C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */,
 				38A2C8652481F4F200E408BB /* LHPerformanceUtil.m in Sources */,
 				38B2B6FA24BC412000F0F52F /* QDSearchMoreViewController.m in Sources */,
 				38B2BA7D24BD97B300F0F52F /* QDTableFooterView.m in Sources */,
 				380B2B9025C2A003001EAF3F /* TestBlockViewController.m in Sources */,
+				C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
+				C21F37B9264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m in Sources */,
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,
+				C21F387A264BEE9F004F6BD1 /* MessageSendViewController.m in Sources */,
 				380742C324B81ED200968CF5 /* QDUISearchResultView.m in Sources */,
 				383B11CE23975FF000E9DCB9 /* benchmark.cpp in Sources */,
 				3807428024B6F10C00968CF5 /* QDSearchResultModel.m in Sources */,
@@ -575,6 +813,8 @@
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
+				C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */,
+				C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */,
 				389A752823502DDA00DDBE6C /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
