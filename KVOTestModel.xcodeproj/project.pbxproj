@@ -75,7 +75,7 @@
 		C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3911264D2E2B004F6BD1 /* ZJServiceEvent.m */; };
 		C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F391B264D3EF6004F6BD1 /* ZJServiceManager.m */; };
 		C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F391F264D4091004F6BD1 /* TestServiceManagerModel.m */; };
-		C21F3926264D4719004F6BD1 /* ZJServiceDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */; };
+		C21F3926264D4719004F6BD1 /* ZJServiceDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */; };
 		C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC590264525A200B7E26D /* ZJDownloadermanager.m */; };
 		C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC591264525A200B7E26D /* ZJFileManager.m */; };

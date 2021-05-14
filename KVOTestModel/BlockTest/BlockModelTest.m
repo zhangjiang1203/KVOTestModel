@@ -27,7 +27,7 @@ typedef void(^blk_t)(void);
     if (self) {
         _tempArr = [NSMutableArray array];
         blk_ = ^{
-            NSLog(@"self = %@",self);
+//            NSLog(@"self = %@",self);
         };
     }
     return self;

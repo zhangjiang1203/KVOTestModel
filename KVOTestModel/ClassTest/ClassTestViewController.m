@@ -47,13 +47,13 @@ typedef void(^HttpResult)(NSString *value);
     self.testCopyArr = @[person1,person2,person3,person4];
     self.strongArr = @[person1,person2,person3,person4];
     
-    NSArray *test1 = [self.testCopyArr copy];
-    NSArray *test2 = [self.strongArr copy];
+//    NSArray *test1 = [self.testCopyArr copy];
+//    NSArray *test2 = [self.strongArr copy];
     
-    NSArray *test3 = [self.testCopyArr mutableCopy];
-    NSArray *test4 = [self.strongArr mutableCopy];
+//    NSArray *test3 = [self.testCopyArr mutableCopy];
+//    NSArray *test4 = [self.strongArr mutableCopy];
     
-    NSLog(@"当前数据==%@==%@",test1,test2);
+//    NSLog(@"当前数据==%@==%@",test1,test2);
     
     //1.用copy修饰生成的是一个不可变的数组，调用可变数组的一些方法会直接奔溃，
     self.testCopyMutableArr = [NSMutableArray arrayWithArray:@[@"23",@"456",@"456"]];
