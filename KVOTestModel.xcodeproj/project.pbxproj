@@ -76,6 +76,7 @@
 		C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F391B264D3EF6004F6BD1 /* ZJServiceManager.m */; };
 		C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F391F264D4091004F6BD1 /* TestServiceManagerModel.m */; };
 		C21F3926264D4719004F6BD1 /* ZJServiceDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */; };
 		C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */; };
 		C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC590264525A200B7E26D /* ZJDownloadermanager.m */; };
 		C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC591264525A200B7E26D /* ZJFileManager.m */; };
@@ -217,6 +218,8 @@
 		C21F3922264D4107004F6BD1 /* TestServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestServiceProtocol.h; sourceTree = "<group>"; };
 		C21F3924264D4719004F6BD1 /* ZJServiceDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJServiceDefine.h; sourceTree = "<group>"; };
 		C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJServiceDefine.m; sourceTree = "<group>"; };
+		C21F3940264E1AC8004F6BD1 /* MulDelegateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MulDelegateViewController.h; sourceTree = "<group>"; };
+		C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MulDelegateViewController.m; sourceTree = "<group>"; };
 		C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadOperation.m; sourceTree = "<group>"; };
 		C29EC590264525A200B7E26D /* ZJDownloadermanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadermanager.m; sourceTree = "<group>"; };
 		C29EC591264525A200B7E26D /* ZJFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileManager.m; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C21F393F264E1A95004F6BD1 /* MultDelegateMode */,
 				C21F3877264BEE7B004F6BD1 /* MessageSend */,
 				C21F379B264BAD30004F6BD1 /* KXMoudleProtocol */,
 				C21F3709264A388F004F6BD1 /* VoiceChatRoom */,
@@ -594,6 +598,15 @@
 				C21F3925264D4719004F6BD1 /* ZJServiceDefine.m */,
 			);
 			path = ZJMessageService;
+			sourceTree = "<group>";
+		};
+		C21F393F264E1A95004F6BD1 /* MultDelegateMode */ = {
+			isa = PBXGroup;
+			children = (
+				C21F3940264E1AC8004F6BD1 /* MulDelegateViewController.h */,
+				C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */,
+			);
+			path = MultDelegateMode;
 			sourceTree = "<group>";
 		};
 		C29EC58E264525A200B7E26D /* NSOperationManager */ = {
@@ -815,6 +828,7 @@
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
 				C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */,
 				C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */,
+				C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */,
 				389A752823502DDA00DDBE6C /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
