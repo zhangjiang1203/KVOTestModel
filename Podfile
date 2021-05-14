@@ -2,7 +2,7 @@
 #source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '10.0'
-
+inhibit_all_warnings!
 #plugin 'cocoapods-imy-bin'
 #use_binaries!
 

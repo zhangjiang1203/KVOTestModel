@@ -149,10 +149,10 @@
     
     
     // RACTuplePack 把数据包装成RACTuple(元组)
-    RACTuple *tuple = RACTuplePack(@"123",@"456");
+//    RACTuple *tuple = RACTuplePack(@"123",@"456");
     
     // 解包元组,把元组的值 按着顺序给参数里面的变量赋值
-    RACTupleUnpack(NSString *name,NSString *age) = tuple;
+//    RACTupleUnpack(NSString *name,NSString *age) = tuple;
 }
 
 - (void)racAction{

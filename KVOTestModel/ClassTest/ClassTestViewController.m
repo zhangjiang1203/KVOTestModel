@@ -72,8 +72,8 @@ typedef void(^HttpResult)(NSString *value);
     
     [self.strongMutableArr addObject:@"9999"];
     
-    NSMutableArray *array1 = [self.testCopyMutableArr copy];
-    NSMutableArray *array2 = [self.testCopyMutableArr mutableCopy];
+//    NSMutableArray *array1 = [self.testCopyMutableArr copy];
+//    NSMutableArray *array2 = [self.testCopyMutableArr mutableCopy];
     
     
     

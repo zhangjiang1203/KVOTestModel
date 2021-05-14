@@ -61,7 +61,7 @@
 		C21F3737264A61B8004F6BD1 /* KXRippleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3736264A61B8004F6BD1 /* KXRippleView.m */; };
 		C21F37AB264BADBA004F6BD1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C21F379D264BADBA004F6BD1 /* LICENSE */; };
 		C21F37AC264BADBA004F6BD1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C21F379E264BADBA004F6BD1 /* README.md */; };
-		C21F37AD264BADBA004F6BD1 /* KXModuleDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37A2264BADBA004F6BD1 /* KXModuleDefinition.m */; };
+		C21F37AD264BADBA004F6BD1 /* KXModuleDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37A2264BADBA004F6BD1 /* KXModuleDefinition.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37A5264BADBA004F6BD1 /* KXModuleManager.m */; };
 		C21F37AF264BADBA004F6BD1 /* KXModuleQAService.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37A7264BADBA004F6BD1 /* KXModuleQAService.m */; };
 		C21F37B0264BADBA004F6BD1 /* KXModuleOrz.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F37AA264BADBA004F6BD1 /* KXModuleOrz.m */; };

@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) Dog *dog;
 
-- (void)testCategoryMethord;
+//- (void)testCategoryMethord;
 
 @end
 
