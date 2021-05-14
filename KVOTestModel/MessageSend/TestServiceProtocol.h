@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SecondModel.h"
 #ifndef TestServiceProtocol_h
 #define TestServiceProtocol_h
 
@@ -17,7 +17,14 @@
 - (NSString *)showName;
 
 
-+ (NSString *)getMySysInfo;
++ (SecondModel *)getMySysInfo;
+
+@end
+
+
+@protocol TestSingleInstanceProtocol <NSObject>
+
+- (NSString *)testSingleInstance:(NSString *)showName;
 
 @end
 

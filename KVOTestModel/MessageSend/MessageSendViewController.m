@@ -10,6 +10,8 @@
 #import "SendPersonModel.h"
 #import "ZJServiceManager.h"
 #import "TestServiceProtocol.h"
+#import "TeseSingleInstanceModel.h"
+#import "TestServiceManagerModel.h"
 @interface MessageSendViewController ()
 
 @end
@@ -23,9 +25,13 @@
     
     id result = service_Request(@protocol(TestServiceProtocol), @selector(showName),nil);
     NSLog(@"协议转发 获取1 %@",result);
-    
+
     id result2 = service_Request(@protocol(TestServiceProtocol), @selector(getMySysInfo),nil);
     NSLog(@"协议转发 获取2 %@",result2);
+
+
+    id result3 = service_Request(@protocol(TestSingleInstanceProtocol), @selector(testSingleInstance:),nil);
+    NSLog(@"单例使用 ===%@",result3);
     
 //    SendPersonModel *model = [SendPersonModel new];
 //    [model eat];
@@ -41,15 +47,21 @@
     /*
      设置参数的索引不能从0 和 1 当前位置设置，0 放置self  1 放_cmd
      */
-    NSString *number = @"11111";
-    [invocation setArgument:&number atIndex:2];
-    NSString *content = @"2222";
-    [invocation setArgument:&content atIndex:3];
+//    NSString *number = @"11111";
+//    [invocation setArgument:&number atIndex:2];
+//    NSString *content = @"2222";
+//    [invocation setArgument:&content atIndex:3];
     //只要调用invocation的invoke方法 就代表需要执行NSInvocation对象中指定的方法，并且传递指定的参数
-    [invocation invoke];
-    char type[] = @encode(id);
-    NSLog(@"当前使用===%s",type);
-    
+//    [invocation invoke];
+//    char type[] = @encode(id);
+//    NSLog(@"当前使用===%s",type);
+    [self checkProtocol];
+}
+
+-(void)checkProtocol{
+    if ([TeseSingleInstanceModel conformsToProtocol:@protocol(TestSingleInstanceProtocol)]) {
+        NSLog(@"TeseSingleInstanceModel 遵守 TestServiceProtocol");
+    }
 }
 
 

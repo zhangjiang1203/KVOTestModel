@@ -1,5 +1,5 @@
 //
-//  ZJServiceDefine.h
+//  ZJAnswerDefine.h
 //  KVOTestModel
 //
 //  Created by zhangjiang on 2021/5/13.
@@ -7,6 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+
+typedef NS_ENUM(NSUInteger, ZJQuestionEvent) {
+    ZJQuestionEvent_None = 0,
+    ZJQuestionEvent_SetUp = 1,
+    
+    //windown  回调方法
+    ZJQuestionEvent_WillResignActiveEvent = 100,
+    ZJQuestionEvent_DidEnterBackgroundEvent,
+    ZJQuestionEvent_WillEnterBackgroundEvent,
+    ZJQuestionEvent_DidBecomeActiveEvent,
+    ZJQuestionEvent_WillTerminateEvent,
+    
+    //view 生命回调方法
+    ZJQuestionEvent_DidFinishLaunch  = 200,
+    ZJQuestionEvent_ViewDidLoad,
+    ZJQuestionEvent_ViewWillAppear,
+    ZJQuestionEvent_ViewWillDisappear,
+};
 
 
 #ifndef ZJServiceDefine_h

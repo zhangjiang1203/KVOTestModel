@@ -10,6 +10,7 @@
 #import "ZJServiceProtocol.h"
 #import "TestServiceProtocol.h"
 #import "ZJServiceManager.h"
+#import "SecondModel.h"
 @interface TestServiceManagerModel ()<ZJServiceProtocol,TestServiceProtocol>
 
 @end
@@ -38,8 +39,8 @@
     return @"我就是我不一样的烟火";
 }
 
-+ (NSString *)getMySysInfo {
-    return @"我是系统信息";
++ (SecondModel *)getMySysInfo {
+    return [[SecondModel alloc]initWithName:@"TestServiceManagerModel"];
 }
 
 

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SecondModel : NSObject
 
+
+- (instancetype)initWithName:(NSString *)name;
+
 - (void)eat;
 
 @end

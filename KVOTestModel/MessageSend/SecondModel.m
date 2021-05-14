@@ -8,10 +8,31 @@
 
 #import "SecondModel.h"
 
+@interface SecondModel ()
+
+@property (nonatomic,copy) NSString *name;
+
+@end
+
 @implementation SecondModel
+
+- (instancetype)initWithName:(NSString *)name
+{
+    self = [super init];
+    if (self) {
+        self.name = name;
+    }
+    return self;
+}
+
 
 - (void)eat{
     NSLog(@"secondmodel eat");
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"hahahha===%@",self.name];
 }
 
 @end

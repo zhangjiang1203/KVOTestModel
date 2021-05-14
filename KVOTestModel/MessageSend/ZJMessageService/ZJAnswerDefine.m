@@ -1,16 +1,15 @@
 //
-//  ZJServiceDefine.m
+//  ZJAnswerDefine.m
 //  KVOTestModel
 //
 //  Created by zhangjiang on 2021/5/13.
 //  Copyright © 2021 zhangjiang. All rights reserved.
 //
 
-#import "ZJServiceDefine.h"
+#import "ZJAnswerDefine.h"
 #import "ZJServiceManager.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
 
 // 判断是否是objective
 BOOL isObjectType(const char *objcType);
@@ -30,8 +29,6 @@ void matchClassMethodWithClass(Class cls,Protocol *protocol);
 void matchClassInstanceMethodWithClass(Class cls,Protocol *protocol);
 
 
-void addInvocationParamters(NSInvocation *invocation);
-
 
 id NS_REQUIRES_NIL_TERMINATION __serviceRequestion(Protocol *protocol,SEL selector,...){
 
@@ -45,16 +42,18 @@ id NS_REQUIRES_NIL_TERMINATION __serviceRequestion(Protocol *protocol,SEL select
         return NULL;
     }
 
-    NSMethodSignature *clsSignature;
     id target;
     if ([cls respondsToSelector:selector]) {
         target = cls;
-        clsSignature = [target methodSignatureForSelector:selector];
     }else if([[[cls alloc]init] respondsToSelector:selector]) {
+        // 初始化该对象 获取实例
         target = [[cls alloc]init];
-        clsSignature = [target methodSignatureForSelector:selector];
     }
+    
+    NSMethodSignature *clsSignature = [target methodSignatureForSelector:selector];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:clsSignature];
+    //invocation 设置对应的target和selector 并没有强引用，当target被释放 然后再去invoke该invocation，就会造成野指针异常，所以要调用retainArguments方法来强引用参数(包括target 和 selector)
+    [invocation retainArguments];
     [invocation setSelector:selector];
     [invocation setTarget:target];
     
@@ -202,6 +201,11 @@ const char *service_typeWithoutQualifiers(const char *objcType){
 
 
 id service_returnValue(NSInvocation *invocation) {
+    
+    /*
+     考虑到 getReturnValue 方法仅仅是将返回数据拷贝到提供的缓存区（retLoc）内，并不会考虑到此处的内存管理，所以如果返回数据是对象类型的，实际上获取到的返回数据是 __unsafe_unretained 类型的，上层函数再�把它作为返回数据返回的时候就会造成野指针异常。
+     */
+    
     #define WRAP_AND_RETURN(type) \
         do { \
             type val = 0; \
@@ -216,9 +220,14 @@ id service_returnValue(NSInvocation *invocation) {
         }
 
         if (strcmp(returnType, @encode(id)) == 0 || strcmp(returnType, @encode(Class)) == 0 || strcmp(returnType, @encode(void (^)(void))) == 0) {
-            __autoreleasing id returnObj;
+            /*
+             返回为对像的单独处理
+             使用__bridge将缓存区转换为Objective-C类型，这种做法其实跟第一种相似，但是我们建议使用这种方式来解决以上问题，因为getReturnValue本来就是给缓存区写入数据，缓存区声明为void*类型更为合理，然后通过__bridge方式转换为Objective-C类型，并且将该内存区的内存管理交给 ARC。
+             */
+            void  *returnObj = NULL;
             [invocation getReturnValue:&returnObj];
-            return returnObj;
+            id result = (__bridge id)(returnObj);
+            return result;
         } else if (strcmp(returnType, @encode(char)) == 0) {
             WRAP_AND_RETURN(char);
         } else if (strcmp(returnType, @encode(int)) == 0) {
