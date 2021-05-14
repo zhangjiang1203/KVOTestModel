@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZJServiceProtocol.h"
-#import "ZJServiceDefine.h"
+#import "ZJAnswerDefine.h"
 
 //注册对应的 protocol 和 class
 
