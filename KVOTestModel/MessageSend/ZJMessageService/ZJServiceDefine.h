@@ -39,12 +39,3 @@ id NS_REQUIRES_NIL_TERMINATION __serviceRequestion(Protocol *protocol,SEL select
 
 #endif
 
-
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ZJServiceDefine : NSObject
-
-@end
-
-NS_ASSUME_NONNULL_END

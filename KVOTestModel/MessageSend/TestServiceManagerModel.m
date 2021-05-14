@@ -38,5 +38,10 @@
     return @"我就是我不一样的烟火";
 }
 
++ (NSString *)getMySysInfo {
+    return @"我是系统信息";
+}
+
+
 
 @end

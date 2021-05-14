@@ -16,6 +16,9 @@
 
 - (NSString *)showName;
 
+
++ (NSString *)getMySysInfo;
+
 @end
 
 

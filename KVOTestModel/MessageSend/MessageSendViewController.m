@@ -21,8 +21,11 @@
     self.title = @"转发";
     
     
-    id result = service_Request(@protocol(TestServiceProtocol), @selector(showName));
+    id result = service_Request(@protocol(TestServiceProtocol), @selector(showName),nil);
+    NSLog(@"协议转发 获取1 %@",result);
     
+    id result2 = service_Request(@protocol(TestServiceProtocol), @selector(getMySysInfo),nil);
+    NSLog(@"协议转发 获取2 %@",result2);
     
 //    SendPersonModel *model = [SendPersonModel new];
 //    [model eat];
