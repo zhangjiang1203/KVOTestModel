@@ -17,6 +17,8 @@
 @property (nonatomic,strong) KXVoiceChatRoomViewController *voiceRoom;
 
 @property (nonatomic,strong) KXShowAnimationView *rippleView;
+
+@property (nonatomic,strong) UIImageView *animationView;
 @end
 
 @implementation KXLiveRoomViewController
@@ -102,13 +104,46 @@
     [leftBtn7 addTarget:self action:@selector(actionButtonClick:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:leftBtn7];
     
-    self.rippleView = [[KXShowAnimationView alloc]initWithFrame:CGRectMake(20, 430, 100, 100)];
-
-    self.rippleView.fillColor = [UIColor grayColor];
-    self.rippleView.startRadius = 20;
-
-    [self.rippleView addRippleAnimation];
-    [self.view addSubview:self.rippleView];
+    
+    
+    self.animationView = [[UIImageView alloc]init];
+    [self.view addSubview:self.animationView];
+    
+    [self.animationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view).offset(20);
+        make.size.mas_equalTo(CGSizeMake(61, 61));
+        make.top.mas_equalTo(leftBtn7.mas_bottom).offset(10);
+    }];
+    
+    NSMutableArray *imagesArr = [NSMutableArray array];
+    for (NSInteger i = 7; i < 40; i++) {
+        NSString *index = i > 9 ? [NSString stringWithFormat:@"%ld",(long)i] : [NSString stringWithFormat:@"0%ld",(long)i];
+        NSString *imageName = [NSString stringWithFormat:@"voice_000%@",index];
+        UIImage *image = [UIImage imageNamed:imageName];
+        if (image) {
+            [imagesArr addObject:image];
+        }else{
+            NSLog(@"当前i == %ld",(long)i);
+        }
+    }
+    
+    self.animationView.animationImages = imagesArr;
+    self.animationView.animationDuration = 2.47;
+    self.animationView.animationRepeatCount = 0;
+    [self.animationView startAnimating];
+    
+//    self.rippleView = [[KXShowAnimationView alloc]initWithFrame:CGRectMake(20, 430, 100, 100)];
+//    self.rippleView.color = [UIColor colorWithRed:9/255.0 green:225/255.0  blue:213/255.0  alpha:1];
+//    self.rippleView.layer.cornerRadius = 50;
+//    self.rippleView.layer.masksToBounds = YES;
+//    [self.rippleView startWaveAnimationCircleNumber:6];
+//    [self.view addSubview:self.rippleView];
+    
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(25, 435, 90, 90)];
+    headerView.backgroundColor = [UIColor redColor];
+    headerView.layer.cornerRadius = 47;
+    headerView.layer.masksToBounds = YES;
+    [self.view addSubview:headerView];
 }
 
 - (void)actionButtonClick:(UIButton *)sender {
@@ -119,7 +154,7 @@
             seat.seatIndex = i + 1;
             KXVoicePersonModel *person = [KXVoicePersonModel new];
             person.identifierType = KXVoiceType_None;
-            person.name = [@"index=" stringByAppendingFormat:@"%d",i];
+            person.name = [NSString stringWithFormat:@"%d=showName",i];
             seat.person = person;
             
             [tempArr addObject:seat];

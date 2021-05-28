@@ -36,6 +36,7 @@
         @{@"title":@"语聊房",@"class":@"KXLiveRoomViewController"},
         @{@"title":@"协议转发测试",@"class":@"KXMoudleProtocolViewController"},
         @{@"title":@"消息转发",@"class":@"MessageSendViewController"},
+        @{@"title":@"图片模糊处理",@"class":@"BlurryViewController"},
     ]];
     self.myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavBarAndStatusBarHeight, KScreenWidth, KScreenHeight-kNavBarAndStatusBarHeight) style:(UITableViewStylePlain)];
     self.myTableView.delegate = self;

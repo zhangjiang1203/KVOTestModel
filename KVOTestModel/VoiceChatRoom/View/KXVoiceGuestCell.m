@@ -27,8 +27,10 @@
 
 @property (nonatomic,strong) UIButton *giftBtn;
 
-@property (nonatomic,strong) KXShowAnimationView *rippleView;
+//@property (nonatomic,strong) UIImageView *rippleView;
 
+
+@property (nonatomic,strong) UIImageView *voiceAnimationView;
 @end
 
 
@@ -69,9 +71,9 @@
     [[RACObserve(self.seatModel.person, isSpeak) skip:1] subscribeNext:^(NSNumber *_Nullable x) {
         NSLog(@"person isSpeak 开始变化 %d",[x intValue]);
         if ([x boolValue]) {
-            [self.rippleView addRippleAnimation];
+//            [self.rippleView addRippleAnimation];
         }else{
-            [self.rippleView removeRippleAnimation];
+//            [self.rippleView ];
         }
     }];
     
@@ -99,14 +101,26 @@
     self.renderView = [[UIView alloc]init];
     [self.containerView addSubview:self.renderView];
     
-    self.rippleView = [[KXShowAnimationView alloc]init];
-    self.rippleView.storkColor = [UIColor blueColor];
-    self.rippleView.startRadius = 40;
-    self.rippleView.interval = 0.3;
-    self.rippleView.layer.cornerRadius = 35;
-    self.rippleView.layer.masksToBounds = YES;
-    [self.rippleView addRippleAnimation];
-    [self.containerView addSubview:self.rippleView];
+    self.voiceAnimationView = [[UIImageView alloc]init];
+    NSMutableArray *imagesArr = [NSMutableArray array];
+    for (NSInteger i = 7; i < 40; i++) {
+        NSString *index = i > 9 ? [NSString stringWithFormat:@"%ld",(long)i] : [NSString stringWithFormat:@"0%ld",(long)i];
+        NSString *imageName = [NSString stringWithFormat:@"voice_000%@",index];
+        UIImage *image = [UIImage imageNamed:imageName];
+        if (image) {
+            [imagesArr addObject:image];
+        }else{
+            NSLog(@"当前i == %ld",(long)i);
+        }
+    }
+    self.voiceAnimationView.animationImages = imagesArr;
+    self.voiceAnimationView.animationDuration = 2.47;
+    self.voiceAnimationView.animationRepeatCount = 0;
+//    self.rippleView.color = [UIColor colorWithRed:9/255.0 green:225/255.0  blue:213/255.0  alpha:1];
+//    self.rippleView. = [UIColor colorWithRed:9/255.0 green:225/255.0  blue:213/255.0  alpha:1];
+//    self.rippleView.startRadius = 20;
+//    [self.rippleView addRippleAnimation];
+    [self.containerView addSubview:self.voiceAnimationView];
     
     self.userImageView = [[UIImageView alloc]init];
     self.userImageView.backgroundColor = [UIColor redColor];
@@ -138,14 +152,14 @@
         make.edges.mas_equalTo(self.containerView);
     }];
     
-    [self.rippleView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.voiceAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.containerView);
         make.size.mas_equalTo(CGSizeMake(70, 70));
         make.top.mas_equalTo(self.containerView).offset(10);
     }];
     
     [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(self.rippleView);
+        make.center.mas_equalTo(self.voiceAnimationView);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
     
@@ -177,10 +191,26 @@
 - (void)setSeatModel:(KXVoiceSeatModel *)seatModel{
     _seatModel = seatModel;
     //对应设置
-    self.nameLabel.text = _seatModel.person.name;
+    self.nameLabel.text = [self dealWithUserName:_seatModel.person.name];
     [self setUpObserverChange];
 }
 
+
+- (NSString *)dealWithUserName:(NSString *)name{
+    if (name.length <= 4) {
+        return name;
+    }
+    NSString *newName = [name substringToIndex:4];
+    newName = [newName stringByAppendingString:@"…"];
+    return newName;
+}
+
+- (NSString *)dealWithContribution:(NSInteger)contribution{
+    if (contribution <= 999) {
+        return [NSString stringWithFormat:@"%ld",(long)contribution];
+    }
+    return @"999+";
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
 

@@ -78,6 +78,9 @@
 		C21F3926264D4719004F6BD1 /* ZJAnswerDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJAnswerDefine.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */; };
 		C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */; };
+		C272A643265F72FD00F40CBE /* BlurryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C272A642265F72FD00F40CBE /* BlurryViewController.m */; };
+		C296D35F265246B30043A0B0 /* ShowTestDemo1.m in Sources */ = {isa = PBXBuildFile; fileRef = C296D35E265246B30043A0B0 /* ShowTestDemo1.m */; };
+		C296D363265246C10043A0B0 /* ShowTestDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = C296D362265246C10043A0B0 /* ShowTestDemo2.m */; };
 		C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */; };
 		C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC590264525A200B7E26D /* ZJDownloadermanager.m */; };
 		C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC591264525A200B7E26D /* ZJFileManager.m */; };
@@ -223,6 +226,13 @@
 		C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MulDelegateViewController.m; sourceTree = "<group>"; };
 		C21F39B9264E650A004F6BD1 /* TeseSingleInstanceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeseSingleInstanceModel.h; sourceTree = "<group>"; };
 		C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeseSingleInstanceModel.m; sourceTree = "<group>"; };
+		C272A641265F72FD00F40CBE /* BlurryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurryViewController.h; sourceTree = "<group>"; };
+		C272A642265F72FD00F40CBE /* BlurryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurryViewController.m; sourceTree = "<group>"; };
+		C296D358265245DD0043A0B0 /* TestDemoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoDelegate.h; sourceTree = "<group>"; };
+		C296D35D265246B30043A0B0 /* ShowTestDemo1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowTestDemo1.h; sourceTree = "<group>"; };
+		C296D35E265246B30043A0B0 /* ShowTestDemo1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowTestDemo1.m; sourceTree = "<group>"; };
+		C296D361265246C10043A0B0 /* ShowTestDemo2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowTestDemo2.h; sourceTree = "<group>"; };
+		C296D362265246C10043A0B0 /* ShowTestDemo2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowTestDemo2.m; sourceTree = "<group>"; };
 		C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadOperation.m; sourceTree = "<group>"; };
 		C29EC590264525A200B7E26D /* ZJDownloadermanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadermanager.m; sourceTree = "<group>"; };
 		C29EC591264525A200B7E26D /* ZJFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileManager.m; sourceTree = "<group>"; };
@@ -408,6 +418,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C272A640265F72CF00F40CBE /* BlurryImage */,
 				C21F393F264E1A95004F6BD1 /* MultDelegateMode */,
 				C21F3877264BEE7B004F6BD1 /* MessageSend */,
 				C21F379B264BAD30004F6BD1 /* KXMoudleProtocol */,
@@ -608,10 +619,32 @@
 		C21F393F264E1A95004F6BD1 /* MultDelegateMode */ = {
 			isa = PBXGroup;
 			children = (
+				C296D34D26523C270043A0B0 /* MultiDelegateModel */,
 				C21F3940264E1AC8004F6BD1 /* MulDelegateViewController.h */,
 				C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */,
 			);
 			path = MultDelegateMode;
+			sourceTree = "<group>";
+		};
+		C272A640265F72CF00F40CBE /* BlurryImage */ = {
+			isa = PBXGroup;
+			children = (
+				C272A641265F72FD00F40CBE /* BlurryViewController.h */,
+				C272A642265F72FD00F40CBE /* BlurryViewController.m */,
+			);
+			path = BlurryImage;
+			sourceTree = "<group>";
+		};
+		C296D34D26523C270043A0B0 /* MultiDelegateModel */ = {
+			isa = PBXGroup;
+			children = (
+				C296D358265245DD0043A0B0 /* TestDemoDelegate.h */,
+				C296D35D265246B30043A0B0 /* ShowTestDemo1.h */,
+				C296D35E265246B30043A0B0 /* ShowTestDemo1.m */,
+				C296D361265246C10043A0B0 /* ShowTestDemo2.h */,
+				C296D362265246C10043A0B0 /* ShowTestDemo2.m */,
+			);
+			path = MultiDelegateModel;
 			sourceTree = "<group>";
 		};
 		C29EC58E264525A200B7E26D /* NSOperationManager */ = {
@@ -782,12 +815,14 @@
 				C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */,
 				C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */,
 				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
+				C296D35F265246B30043A0B0 /* ShowTestDemo1.m in Sources */,
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
+				C296D363265246C10043A0B0 /* ShowTestDemo2.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
@@ -829,6 +864,7 @@
 				38E015FA257A11C000C52175 /* TestCodeViewController.m in Sources */,
 				C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */,
 				382A1ADA2445C9C70017EA2B /* QQLockDictionary.m in Sources */,
+				C272A643265F72FD00F40CBE /* BlurryViewController.m in Sources */,
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
