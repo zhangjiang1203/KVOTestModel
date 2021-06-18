@@ -14,8 +14,8 @@
             filePath = "KVOTestModel/MessageSend/SendPersonModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-methodSignatureForSelector:"
             landmarkType = "7">
          </BreakpointContent>

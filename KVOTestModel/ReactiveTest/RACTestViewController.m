@@ -8,6 +8,7 @@
 
 #import "RACTestViewController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <ReactiveObjC/NSString+RACKeyPathUtilities.h>
 #import "Person.h"
 @interface RACTestViewController ()
 
@@ -332,6 +333,10 @@
      
      
      */
+    
+    NSString *name123 = @"/Users/zhang/Documents/zhangsan.txt";
+    
+    
 }
 
 
