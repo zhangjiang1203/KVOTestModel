@@ -87,6 +87,8 @@
 		C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC597264525A200B7E26D /* ZJDownloadModel.m */; };
 		C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC59E2645265700B7E26D /* DownloadViewController.m */; };
 		C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC5AB26452F6400B7E26D /* RACTestViewController.m */; };
+		C2A9B8C9267C6BE40050B198 /* InPurchseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A9B8C8267C6BE40050B198 /* InPurchseViewController.m */; };
+		C2A9B8CC267C71160050B198 /* KXInPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A9B8CB267C71160050B198 /* KXInPurchaseManager.m */; };
 		C2D3AE4426662B29005DC10F /* ECOEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D3AE4326662B29005DC10F /* ECOEmployee.m */; };
 /* End PBXBuildFile section */
 
@@ -248,6 +250,10 @@
 		C29EC59E2645265700B7E26D /* DownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
 		C29EC5AA26452F6400B7E26D /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
 		C29EC5AB26452F6400B7E26D /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
+		C2A9B8C7267C6BE40050B198 /* InPurchseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InPurchseViewController.h; sourceTree = "<group>"; };
+		C2A9B8C8267C6BE40050B198 /* InPurchseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InPurchseViewController.m; sourceTree = "<group>"; };
+		C2A9B8CA267C71160050B198 /* KXInPurchaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXInPurchaseManager.h; sourceTree = "<group>"; };
+		C2A9B8CB267C71160050B198 /* KXInPurchaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXInPurchaseManager.m; sourceTree = "<group>"; };
 		C2D3AE4226662B29005DC10F /* ECOEmployee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECOEmployee.h; sourceTree = "<group>"; };
 		C2D3AE4326662B29005DC10F /* ECOEmployee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECOEmployee.m; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2A9B8C6267C6B8F0050B198 /* InPurchse */,
 				C272A640265F72CF00F40CBE /* BlurryImage */,
 				C21F393F264E1A95004F6BD1 /* MultDelegateMode */,
 				C21F3877264BEE7B004F6BD1 /* MessageSend */,
@@ -687,6 +694,17 @@
 			path = RACMVVM;
 			sourceTree = "<group>";
 		};
+		C2A9B8C6267C6B8F0050B198 /* InPurchse */ = {
+			isa = PBXGroup;
+			children = (
+				C2A9B8C7267C6BE40050B198 /* InPurchseViewController.h */,
+				C2A9B8C8267C6BE40050B198 /* InPurchseViewController.m */,
+				C2A9B8CA267C71160050B198 /* KXInPurchaseManager.h */,
+				C2A9B8CB267C71160050B198 /* KXInPurchaseManager.m */,
+			);
+			path = InPurchse;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -839,6 +857,7 @@
 				C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
+				C2A9B8C9267C6BE40050B198 /* InPurchseViewController.m in Sources */,
 				C21F37B9264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m in Sources */,
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,
 				C21F387A264BEE9F004F6BD1 /* MessageSendViewController.m in Sources */,
@@ -856,6 +875,7 @@
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
+				C2A9B8CC267C71160050B198 /* KXInPurchaseManager.m in Sources */,
 				C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */,
 				C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */,
 				C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */,

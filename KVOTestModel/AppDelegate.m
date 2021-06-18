@@ -11,7 +11,7 @@
 //#import <Bugly/Bugly.h>
 #import "KXModuleOrz.h"
 #import "ZJServiceManager.h"
-
+#import "KXInPurchaseManager.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +25,7 @@
     
     //开始
 //    [[KXModuleOrz shareInstance] orz_triggerEvent:KXModuleEventSetup];
-    
+    [KXInPurchaseManager registerTransactionObserver];
     [ZJServiceManager activeServiceEvent:1];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
