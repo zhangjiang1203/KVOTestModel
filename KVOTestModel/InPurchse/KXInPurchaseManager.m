@@ -78,6 +78,7 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
     return self;
 }
 
+///  移除购买监听，程序销毁时
 - (void)handleWillTerminate:(NSNotification *)noti {
     [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
 }
@@ -189,7 +190,7 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
         
     }
     //苹果官方验证
-    [self verifyPurchaseWithTransaction:trans isTestServer:NO];
+    [self verifyPurchaseWithTransaction:trans isTest:NO];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)trans{
@@ -201,8 +202,12 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
     [[SKPaymentQueue defaultQueue] finishTransaction:trans];
 }
 
-
-- (void)verifyPurchaseWithTransaction:(SKPaymentTransaction *)trans isTestServer:(BOOL)isTest {
+/*
+ * 先验证正式服务器，如果正式服务器返回21007 再去苹果测试服务器验证，沙盒测试环境苹果用的是测试服务器
+ * As a best practice, always call the production URL for verifyReceipt first, and proceed to verify with the sandbox URL if you receive a 21007 status code.
+ * 原文出处 https://developer.apple.com/documentation/appstorereceipts/verifyreceipt?language=objc
+ */
+- (void)verifyPurchaseWithTransaction:(SKPaymentTransaction *)trans isTest:(BOOL)isTest {
     NSURL *recepitURL = [[NSBundle mainBundle] appStoreReceiptURL];
     NSData *recepit = [NSData dataWithContentsOfURL:recepitURL];
     if (recepit == nil) {
@@ -240,11 +245,10 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
             }
             //服务器返回的验证结果
             NSLog(@"【KXInPurchaseManager】verify response result = %@",resDict);
-            //先验证正式服务器，如果正式服务器返回21007 再去苹果测试服务器验证，沙盒测试环境苹果用的是测试服务器
             NSString *status = [NSString stringWithFormat:@"%@",resDict[@"status"]];
             if (status && [status isEqualToString:@"21007"]) {
                 //这时候再去测试服务器验证
-                [self verifyPurchaseWithTransaction:trans isTestServer:YES];
+                [self verifyPurchaseWithTransaction:trans isTest:YES];
             }else if(status && [status isEqualToString:@"0"]){
                 [self handlePaymentResult:(KXInPurchse_Success) data:nil];
             }
