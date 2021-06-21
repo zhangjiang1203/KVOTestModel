@@ -49,7 +49,7 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
 
 @property (nonatomic,copy) NSString *purchID;
 
-@property (nonatomic,copy) KXInPurchseResultBlock resultBlock;
+@property (nonatomic,copy) KXInPurchaseResultBlock resultBlock;
 
 @end
 
@@ -89,7 +89,7 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
 }
 
 
-+ (void)startInPurchseWithID:(NSString *)purchID complete:(KXInPurchseResultBlock)complete{
++ (void)startInPurchseWithID:(NSString *)purchID complete:(KXInPurchaseResultBlock)complete{
     [KXInPurchaseManager shareInstance].resultBlock = complete;
     if (purchID.length > 0) {
         [KXInPurchaseManager shareInstance].purchID = purchID;
@@ -97,7 +97,7 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
             [[KXInPurchaseManager shareInstance]startProductsRequest:purchID];
         }else{
             //当前设备不支持内购支付
-            [[KXInPurchaseManager shareInstance] handlePaymentResult:(KXInPurchse_NotAllow) data:nil];
+            [[KXInPurchaseManager shareInstance] handlePaymentResult:(KXInPurchase_NotAllow) data:nil];
         }
     }
 }
@@ -195,9 +195,9 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
 
 - (void)failedTransaction:(SKPaymentTransaction *)trans{
     if (trans.transactionState != SKErrorPaymentCancelled) {
-        [self handlePaymentResult:(KXInPurchse_Fail) data:nil];
+        [self handlePaymentResult:(KXInPurchase_Fail) data:nil];
     }else{
-        [self handlePaymentResult:(KXInPurchse_Cancel) data:nil];
+        [self handlePaymentResult:(KXInPurchase_Cancel) data:nil];
     }
     [[SKPaymentQueue defaultQueue] finishTransaction:trans];
 }
@@ -211,11 +211,11 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
     NSURL *recepitURL = [[NSBundle mainBundle] appStoreReceiptURL];
     NSData *recepit = [NSData dataWithContentsOfURL:recepitURL];
     if (recepit == nil) {
-        [self handlePaymentResult:(KXInPurchse_verifyFailed) data:nil];
+        [self handlePaymentResult:(KXInPurchase_verifyFailed) data:nil];
         return;
     }
     //购买成功将交易凭证发送到后台验证
-    [self handlePaymentResult:(KXInPurchse_Success) data:recepit];
+    [self handlePaymentResult:(KXInPurchase_Success) data:recepit];
     
     //构造参数
     NSError *error;
@@ -224,7 +224,7 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
     };
     NSData *requestData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&error];
     if (requestData == nil) {
-        [self handlePaymentResult:(KXInPurchse_verifyFailed) data:nil];
+        [self handlePaymentResult:(KXInPurchase_verifyFailed) data:nil];
         return;
     }
     
@@ -235,12 +235,12 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
     [[NSURLSession sharedSession] dataTaskWithRequest:storeRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             //苹果服务器校验失败
-            [self handlePaymentResult:(KXInPurchse_verifyFailed) data:nil];
+            [self handlePaymentResult:(KXInPurchase_verifyFailed) data:nil];
         }else{
             NSError *error;
             NSDictionary *resDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             if (resDict == nil || error) {
-                [self handlePaymentResult:(KXInPurchse_verifyFailed) data:nil];
+                [self handlePaymentResult:(KXInPurchase_verifyFailed) data:nil];
                 return;
             }
             //服务器返回的验证结果
@@ -250,7 +250,7 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
                 //这时候再去测试服务器验证
                 [self verifyPurchaseWithTransaction:trans isTest:YES];
             }else if(status && [status isEqualToString:@"0"]){
-                [self handlePaymentResult:(KXInPurchse_Success) data:nil];
+                [self handlePaymentResult:(KXInPurchase_Success) data:nil];
             }
         }
     }];
@@ -259,24 +259,24 @@ static NSString *const serverURL = @"https://buy.itunes.apple.com/verifyReceipt"
 }
 
 
-- (void)handlePaymentResult:(KXInPurchseState)state data:(NSData *)receiptData {
+- (void)handlePaymentResult:(KXInPurchaseState)state data:(NSData *)receiptData {
     switch (state) {
-        case KXInPurchse_Success:
+        case KXInPurchase_Success:
             NSLog(@"【KXInPurchaseManager】内购成功");
             break;
-        case KXInPurchse_Fail:
+        case KXInPurchase_Fail:
             NSLog(@"【KXInPurchaseManager】内购失败");
             break;
-        case KXInPurchse_Cancel:
+        case KXInPurchase_Cancel:
             NSLog(@"【KXInPurchaseManager】取消内购");
             break;
-        case KXInPurchse_verifyFailed:
+        case KXInPurchase_verifyFailed:
             NSLog(@"【KXInPurchaseManager】验证失败");
             break;
-        case KXInPurchse_verifySuccess:
+        case KXInPurchase_verifySuccess:
             NSLog(@"【KXInPurchaseManager】验证成功");
             break;
-        case KXInPurchse_NotAllow:
+        case KXInPurchase_NotAllow:
             NSLog(@"【KXInPurchaseManager】不支持内购");
             break;
     }

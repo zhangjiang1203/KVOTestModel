@@ -9,19 +9,19 @@
 #import <Foundation/Foundation.h>
 
 
-typedef NS_ENUM(NSUInteger, KXInPurchseState) {
-    KXInPurchse_Success = 1,
-    KXInPurchse_Fail,
-    KXInPurchse_Cancel,
-    KXInPurchse_verifyFailed,
-    KXInPurchse_verifySuccess,
-    KXInPurchse_NotAllow
+typedef NS_ENUM(NSUInteger, KXInPurchaseState) {
+    KXInPurchase_Success = 1,
+    KXInPurchase_Fail,
+    KXInPurchase_Cancel,
+    KXInPurchase_verifyFailed,
+    KXInPurchase_verifySuccess,
+    KXInPurchase_NotAllow
 };
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^KXInPurchseResultBlock)(KXInPurchseState status, NSData *data);
+typedef void(^KXInPurchaseResultBlock)(KXInPurchaseState status, NSData *data);
 
 @interface KXInPurchaseManager : NSObject
 
@@ -29,7 +29,7 @@ typedef void(^KXInPurchseResultBlock)(KXInPurchseState status, NSData *data);
 + (void)registerTransactionObserver;
 
 ///开始请求购买
-+ (void)startInPurchseWithID:(NSString *)purchID complete:(KXInPurchseResultBlock)complete;
++ (void)startInPurchseWithID:(NSString *)purchID complete:(KXInPurchaseResultBlock)complete;
 
 @end
 
