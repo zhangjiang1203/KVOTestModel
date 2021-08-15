@@ -19,6 +19,7 @@ target 'KVOTestModel' do
   pod 'FLAnimatedImage'
   pod 'ReactiveObjC', '~> 3.1.1'
   pod 'Masonry'
+  pod 'YYText'
   
   #接入bugly
 

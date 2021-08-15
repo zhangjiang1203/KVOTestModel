@@ -84,6 +84,8 @@
 		C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC597264525A200B7E26D /* ZJDownloadModel.m */; };
 		C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC59E2645265700B7E26D /* DownloadViewController.m */; };
 		C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC5AB26452F6400B7E26D /* RACTestViewController.m */; };
+		C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54426A71B630057941B /* ZJTextViewController.m */; };
+		C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -236,6 +238,10 @@
 		C29EC59E2645265700B7E26D /* DownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
 		C29EC5AA26452F6400B7E26D /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
 		C29EC5AB26452F6400B7E26D /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
+		C2C9B54326A71B630057941B /* ZJTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTextViewController.h; sourceTree = "<group>"; };
+		C2C9B54426A71B630057941B /* ZJTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTextViewController.m; sourceTree = "<group>"; };
+		C2C9B54626A9D5230057941B /* ZTHorizontalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTHorizontalLayout.h; sourceTree = "<group>"; };
+		C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTHorizontalLayout.m; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -408,6 +414,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2C9B54226A71B440057941B /* TextView */,
 				C21F393F264E1A95004F6BD1 /* MultDelegateMode */,
 				C21F3877264BEE7B004F6BD1 /* MessageSend */,
 				C21F379B264BAD30004F6BD1 /* KXMoudleProtocol */,
@@ -649,6 +656,17 @@
 			path = RACMVVM;
 			sourceTree = "<group>";
 		};
+		C2C9B54226A71B440057941B /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				C2C9B54326A71B630057941B /* ZJTextViewController.h */,
+				C2C9B54426A71B630057941B /* ZJTextViewController.m */,
+				C2C9B54626A9D5230057941B /* ZTHorizontalLayout.h */,
+				C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -784,6 +802,7 @@
 				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
+				C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
@@ -832,6 +851,7 @@
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
+				C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */,
 				C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */,
 				C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */,
 				C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */,
