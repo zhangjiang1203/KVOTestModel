@@ -1,14 +1,21 @@
 PODS:
-  - FLAnimatedImage (1.0.16)
+  - FLAnimatedImage (1.0.12)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - LookinServer (1.0.2)
+  - LookinServer (1.0.0)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
+  - RxCocoa (5.1.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.0)
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - FLAnimatedImage
@@ -16,25 +23,37 @@ DEPENDENCIES:
   - LookinServer
   - Masonry
   - ReactiveObjC (~> 3.1.1)
+  - RxCocoa
+  - RxSwift
   - SDWebImage
+  - YYText
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - FLAnimatedImage
     - FMDB
+    - RxCocoa
+    - RxRelay
+    - SDWebImage
+  trunk:
     - LookinServer
     - Masonry
     - ReactiveObjC
-    - SDWebImage
+    - RxSwift
+    - YYText
 
 SPEC CHECKSUMS:
-  FLAnimatedImage: 8f3e854ebf9680b71f0b6e700939687fc4d82b4b
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  LookinServer: d6874df8b58096c8d463817b6baaa3abc21d31f7
+  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
+  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2519fd82dff30a12d14ffc941f1baa871054ef65
+PODFILE CHECKSUM: 2c722d1bd2e71cace1eb6cb38841625ab47a40ff
 
 COCOAPODS: 1.10.1

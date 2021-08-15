@@ -11,31 +11,6 @@
 #import "SecondModel.h"
 
 @implementation SendPersonModel
-{
-    NSMutableSet *_internalFriends;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _internalFriends = [NSMutableSet set];
-    }
-    return self;
-}
-
-- (NSMutableSet *)friendSets{
-    return [_internalFriends copy];
-}
-
-- (void)addFriend:(SendPersonModel *)model{
-    [_internalFriends addObject:model];
-}
-
-- (void)removeFirend:(SendPersonModel *)model{
-    [_internalFriends removeObject:model];
-}
-
 
 
 

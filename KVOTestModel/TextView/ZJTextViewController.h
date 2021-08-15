@@ -1,8 +1,8 @@
 //
-//  MulDelegateViewController.h
+//  ZJTextViewController.h
 //  KVOTestModel
 //
-//  Created by zhangjiang on 2021/5/14.
+//  Created by zj on 2021/7/20.
 //  Copyright © 2021 zhangjiang. All rights reserved.
 //
 
@@ -10,8 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MulDelegateViewController : UIViewController
+@interface ZJTextViewController : UIViewController
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+
+

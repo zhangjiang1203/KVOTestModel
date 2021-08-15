@@ -1,4 +1,4 @@
-module Pods_KVOTestModel {
+framework module Pods_KVOTestModel {
   umbrella header "Pods-KVOTestModel-umbrella.h"
 
   export *

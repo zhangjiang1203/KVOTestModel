@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37FBC0A0314040FFB7A51064 /* libPods-KVOTestModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E631DEFA014AA2CB18B3C8B /* libPods-KVOTestModel.a */; };
 		3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3807427424B6B69C00968CF5 /* QDBaseSearchViewController.m */; };
 		3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3807427824B6B6E700968CF5 /* QDUISearchBar.m */; };
 		3807428024B6F10C00968CF5 /* QDSearchResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3807427F24B6F10C00968CF5 /* QDSearchResultModel.m */; };
@@ -52,6 +51,7 @@
 		38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E015FD257A11DB00C52175 /* CodePersonModel.m */; };
 		38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01601257A11EF00C52175 /* CodeStudentModel.m */; };
 		38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01605257A131D00C52175 /* NSObject+Coding.m */; };
+		89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C21F3717264A3890004F6BD1 /* KXVoiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F370E264A388F004F6BD1 /* KXVoiceManager.m */; };
 		C21F3718264A3890004F6BD1 /* KXVoiceGuestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3712264A388F004F6BD1 /* KXVoiceGuestCell.m */; };
 		C21F371A264A3890004F6BD1 /* KXVoiceSeatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3714264A388F004F6BD1 /* KXVoiceSeatModel.m */; };
@@ -78,18 +78,14 @@
 		C21F3926264D4719004F6BD1 /* ZJAnswerDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJAnswerDefine.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */; };
 		C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */; };
-		C272A643265F72FD00F40CBE /* BlurryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C272A642265F72FD00F40CBE /* BlurryViewController.m */; };
-		C296D35F265246B30043A0B0 /* ShowTestDemo1.m in Sources */ = {isa = PBXBuildFile; fileRef = C296D35E265246B30043A0B0 /* ShowTestDemo1.m */; };
-		C296D363265246C10043A0B0 /* ShowTestDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = C296D362265246C10043A0B0 /* ShowTestDemo2.m */; };
 		C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */; };
 		C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC590264525A200B7E26D /* ZJDownloadermanager.m */; };
 		C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC591264525A200B7E26D /* ZJFileManager.m */; };
 		C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC597264525A200B7E26D /* ZJDownloadModel.m */; };
 		C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC59E2645265700B7E26D /* DownloadViewController.m */; };
 		C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC5AB26452F6400B7E26D /* RACTestViewController.m */; };
-		C2A9B8C9267C6BE40050B198 /* InPurchseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A9B8C8267C6BE40050B198 /* InPurchseViewController.m */; };
-		C2A9B8CC267C71160050B198 /* KXInPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A9B8CB267C71160050B198 /* KXInPurchaseManager.m */; };
-		C2D3AE4426662B29005DC10F /* ECOEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D3AE4326662B29005DC10F /* ECOEmployee.m */; };
+		C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54426A71B630057941B /* ZJTextViewController.m */; };
+		C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,7 +171,6 @@
 		38E01601257A11EF00C52175 /* CodeStudentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeStudentModel.m; sourceTree = "<group>"; };
 		38E01604257A131D00C52175 /* NSObject+Coding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
 		38E01605257A131D00C52175 /* NSObject+Coding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
-		4E631DEFA014AA2CB18B3C8B /* libPods-KVOTestModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KVOTestModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EB8B5647A921C1097C5650 /* Pods-KVOTestModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.debug.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.debug.xcconfig"; sourceTree = "<group>"; };
 		C21F370A264A388F004F6BD1 /* KXVoiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoiceManager.h; sourceTree = "<group>"; };
 		C21F370B264A388F004F6BD1 /* KXVoicePersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoicePersonModel.h; sourceTree = "<group>"; };
@@ -230,13 +225,6 @@
 		C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MulDelegateViewController.m; sourceTree = "<group>"; };
 		C21F39B9264E650A004F6BD1 /* TeseSingleInstanceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeseSingleInstanceModel.h; sourceTree = "<group>"; };
 		C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeseSingleInstanceModel.m; sourceTree = "<group>"; };
-		C272A641265F72FD00F40CBE /* BlurryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurryViewController.h; sourceTree = "<group>"; };
-		C272A642265F72FD00F40CBE /* BlurryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurryViewController.m; sourceTree = "<group>"; };
-		C296D358265245DD0043A0B0 /* TestDemoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoDelegate.h; sourceTree = "<group>"; };
-		C296D35D265246B30043A0B0 /* ShowTestDemo1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowTestDemo1.h; sourceTree = "<group>"; };
-		C296D35E265246B30043A0B0 /* ShowTestDemo1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowTestDemo1.m; sourceTree = "<group>"; };
-		C296D361265246C10043A0B0 /* ShowTestDemo2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowTestDemo2.h; sourceTree = "<group>"; };
-		C296D362265246C10043A0B0 /* ShowTestDemo2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowTestDemo2.m; sourceTree = "<group>"; };
 		C29EC58F264525A200B7E26D /* ZJDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadOperation.m; sourceTree = "<group>"; };
 		C29EC590264525A200B7E26D /* ZJDownloadermanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDownloadermanager.m; sourceTree = "<group>"; };
 		C29EC591264525A200B7E26D /* ZJFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileManager.m; sourceTree = "<group>"; };
@@ -250,13 +238,12 @@
 		C29EC59E2645265700B7E26D /* DownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
 		C29EC5AA26452F6400B7E26D /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
 		C29EC5AB26452F6400B7E26D /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
-		C2A9B8C7267C6BE40050B198 /* InPurchseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InPurchseViewController.h; sourceTree = "<group>"; };
-		C2A9B8C8267C6BE40050B198 /* InPurchseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InPurchseViewController.m; sourceTree = "<group>"; };
-		C2A9B8CA267C71160050B198 /* KXInPurchaseManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KXInPurchaseManager.h; sourceTree = "<group>"; };
-		C2A9B8CB267C71160050B198 /* KXInPurchaseManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KXInPurchaseManager.m; sourceTree = "<group>"; };
-		C2D3AE4226662B29005DC10F /* ECOEmployee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECOEmployee.h; sourceTree = "<group>"; };
-		C2D3AE4326662B29005DC10F /* ECOEmployee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECOEmployee.m; sourceTree = "<group>"; };
+		C2C9B54326A71B630057941B /* ZJTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTextViewController.h; sourceTree = "<group>"; };
+		C2C9B54426A71B630057941B /* ZJTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTextViewController.m; sourceTree = "<group>"; };
+		C2C9B54626A9D5230057941B /* ZTHorizontalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTHorizontalLayout.h; sourceTree = "<group>"; };
+		C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTHorizontalLayout.m; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
+		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,7 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37FBC0A0314040FFB7A51064 /* libPods-KVOTestModel.a in Frameworks */,
+				89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				38CD08B3243DA9EF009429C9 /* FMDB.framework */,
-				4E631DEFA014AA2CB18B3C8B /* libPods-KVOTestModel.a */,
+				E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -427,8 +414,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
-				C2A9B8C6267C6B8F0050B198 /* InPurchse */,
-				C272A640265F72CF00F40CBE /* BlurryImage */,
+				C2C9B54226A71B440057941B /* TextView */,
 				C21F393F264E1A95004F6BD1 /* MultDelegateMode */,
 				C21F3877264BEE7B004F6BD1 /* MessageSend */,
 				C21F379B264BAD30004F6BD1 /* KXMoudleProtocol */,
@@ -629,34 +615,10 @@
 		C21F393F264E1A95004F6BD1 /* MultDelegateMode */ = {
 			isa = PBXGroup;
 			children = (
-				C296D34D26523C270043A0B0 /* MultiDelegateModel */,
 				C21F3940264E1AC8004F6BD1 /* MulDelegateViewController.h */,
 				C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */,
 			);
 			path = MultDelegateMode;
-			sourceTree = "<group>";
-		};
-		C272A640265F72CF00F40CBE /* BlurryImage */ = {
-			isa = PBXGroup;
-			children = (
-				C272A641265F72FD00F40CBE /* BlurryViewController.h */,
-				C272A642265F72FD00F40CBE /* BlurryViewController.m */,
-			);
-			path = BlurryImage;
-			sourceTree = "<group>";
-		};
-		C296D34D26523C270043A0B0 /* MultiDelegateModel */ = {
-			isa = PBXGroup;
-			children = (
-				C296D358265245DD0043A0B0 /* TestDemoDelegate.h */,
-				C296D35D265246B30043A0B0 /* ShowTestDemo1.h */,
-				C296D35E265246B30043A0B0 /* ShowTestDemo1.m */,
-				C296D361265246C10043A0B0 /* ShowTestDemo2.h */,
-				C296D362265246C10043A0B0 /* ShowTestDemo2.m */,
-				C2D3AE4226662B29005DC10F /* ECOEmployee.h */,
-				C2D3AE4326662B29005DC10F /* ECOEmployee.m */,
-			);
-			path = MultiDelegateModel;
 			sourceTree = "<group>";
 		};
 		C29EC58E264525A200B7E26D /* NSOperationManager */ = {
@@ -694,15 +656,15 @@
 			path = RACMVVM;
 			sourceTree = "<group>";
 		};
-		C2A9B8C6267C6B8F0050B198 /* InPurchse */ = {
+		C2C9B54226A71B440057941B /* TextView */ = {
 			isa = PBXGroup;
 			children = (
-				C2A9B8C7267C6BE40050B198 /* InPurchseViewController.h */,
-				C2A9B8C8267C6BE40050B198 /* InPurchseViewController.m */,
-				C2A9B8CA267C71160050B198 /* KXInPurchaseManager.h */,
-				C2A9B8CB267C71160050B198 /* KXInPurchaseManager.m */,
+				C2C9B54326A71B630057941B /* ZJTextViewController.h */,
+				C2C9B54426A71B630057941B /* ZJTextViewController.m */,
+				C2C9B54626A9D5230057941B /* ZTHorizontalLayout.h */,
+				C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */,
 			);
-			path = InPurchse;
+			path = TextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -716,6 +678,7 @@
 				389A750E23502DD500DDBE6C /* Sources */,
 				389A750F23502DD500DDBE6C /* Frameworks */,
 				389A751023502DD500DDBE6C /* Resources */,
+				DB96F70B49719380A92EE79E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -802,6 +765,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DB96F70B49719380A92EE79E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -819,16 +799,14 @@
 				C21F37AD264BADBA004F6BD1 /* KXModuleDefinition.m in Sources */,
 				C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */,
 				C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */,
-				C2D3AE4426662B29005DC10F /* ECOEmployee.m in Sources */,
 				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
-				C296D35F265246B30043A0B0 /* ShowTestDemo1.m in Sources */,
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
+				C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
-				C296D363265246C10043A0B0 /* ShowTestDemo2.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
@@ -857,7 +835,6 @@
 				C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
-				C2A9B8C9267C6BE40050B198 /* InPurchseViewController.m in Sources */,
 				C21F37B9264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m in Sources */,
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,
 				C21F387A264BEE9F004F6BD1 /* MessageSendViewController.m in Sources */,
@@ -871,11 +848,10 @@
 				38E015FA257A11C000C52175 /* TestCodeViewController.m in Sources */,
 				C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */,
 				382A1ADA2445C9C70017EA2B /* QQLockDictionary.m in Sources */,
-				C272A643265F72FD00F40CBE /* BlurryViewController.m in Sources */,
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
-				C2A9B8CC267C71160050B198 /* KXInPurchaseManager.m in Sources */,
+				C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */,
 				C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */,
 				C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */,
 				C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */,

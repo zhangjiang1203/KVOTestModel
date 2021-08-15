@@ -8,17 +8,18 @@ inhibit_all_warnings!
 
 target 'KVOTestModel' do
   # Comment the next line if you don't want to use dynamic frameworks
-#  use_frameworks!
+  use_frameworks!
 
   # Pods for KVOTestModel
   pod 'FMDB', '~> 2.7.5'
   pod 'LookinServer', :configurations => ['Debug']
-#  pod 'RxSwift'
-#  pod 'RxCocoa'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'SDWebImage'
   pod 'FLAnimatedImage'
   pod 'ReactiveObjC', '~> 3.1.1'
   pod 'Masonry'
+  pod 'YYText'
   
   #接入bugly
 

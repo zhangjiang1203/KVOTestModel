@@ -23,12 +23,6 @@ NS_ASSUME_NONNULL_END
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
-{
-    @public
-    NSString *_nickName;
-    @private
-    NSString *_userId;
-}
 
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,assign) NSInteger age;

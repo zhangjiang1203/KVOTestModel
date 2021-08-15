@@ -7,18 +7,6 @@
 //
 
 #import "MulDelegateViewController.h"
-#import "ShowTestDemo1.h"
-#import "ShowTestDemo2.h"
-
-/// 添加对应的日志输出，打印当前的行号
-#define ZJDebugLog(moduleName,format, ...) {\
-    NSString *formatMsg = [NSString stringWithFormat:(format), ##__VA_ARGS__]; \
-    NSString *name = [NSString stringWithFormat:@"[%@],file:%s,function:%s,line:%d,message:%@\n",moduleName,[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__PRETTY_FUNCTION__,__LINE__,formatMsg]; \
-    printf([name UTF8String],nil);\
-                    \
-}
-
-FOUNDATION_EXTERN NSString *const name;
 
 @interface MulDelegateViewController ()
 
@@ -28,23 +16,17 @@ FOUNDATION_EXTERN NSString *const name;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"多代理测试";
-    [self addTestMulDelegate];
+    // Do any additional setup after loading the view.
 }
 
-- (void)addTestMulDelegate {
-//    printDebugMsg("MulDelegate", @"这是测试信息==%@",@"哈哈哈");
-    
-//    char *msg = ["[%s],file:%s Function:%s, Line:%d, message:%s\n", moduleName, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__PRETTY_FUNCTION__, __LINE__ ,[[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String]];
-    
-//    NSString *name = [NSString stringWithFormat:@"[%@],file:%@,function:%@,line:%d,message:%@\n",@"",@"",@"",14,@""];
-    ZJDebugLog(@"你哈", @"来吧==%@", @"zhangsan");
-}
+/*
+#pragma mark - Navigation
 
-- (void)dealMessage:(NSString *)moduleName format:(NSString *)format,... {
-//    char *formatMsg = [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String]];
-//    NSString *name = [NSString stringWithFormat:@"[%@],file:%@,function:%@,line:%d,message:%s\n",@"",@"",@"",14,formatMsg];
-//    NSLog(name);
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end

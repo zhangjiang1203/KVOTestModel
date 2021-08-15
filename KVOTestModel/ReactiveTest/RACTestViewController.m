@@ -8,8 +8,6 @@
 
 #import "RACTestViewController.h"
 #import <ReactiveObjC/ReactiveObjC.h>
-#import <ReactiveObjC/NSString+RACKeyPathUtilities.h>
-#import "Person.h"
 @interface RACTestViewController ()
 
 @property (nonatomic,strong) RACCommand *command;
@@ -24,51 +22,8 @@
     [super viewDidLoad];
     self.title = @"RAC练习";
     self.nameArr = [NSMutableArray array];
-    [self testStringContain];
+    [self testObserver];
 }
-
--(void)testStringContain {
-    NSString *first = @"zhangjiang";
-    NSString *second = @"zhangjiang";
-    NSString *third = @"zhang";
-    
-    if ([first containsString:second]) {
-        NSLog(@"first contains second");
-    }
-    
-    if([first containsString:third]){
-        NSLog(@"first contains third");
-    }
-}
-
-
-- (void)testMapArr {
-    NSMutableArray *tempArr1 = [NSMutableArray array];
-    for (int i = 0; i < 10; i++) {
-        Person *p = [Person new];
-        p.name = [NSString stringWithFormat:@"哈哈--%d",i];
-        p.age = i;
-        [tempArr1 addObject:p];
-    }
-    
-    NSArray *showArr = [[tempArr1.rac_sequence map:^id _Nullable(Person *_Nullable value) {
-        return [NSString stringWithFormat:@"%ld",(long)value.age];
-    }] array];
-    
-    NSArray *subTemArr2 = [tempArr1 subarrayWithRange:NSMakeRange(2, 4)];
-    NSArray *showArr1 = [[subTemArr2.rac_sequence map:^id _Nullable(Person *_Nullable value) {
-        return [NSString stringWithFormat:@"%ld",(long)value.age];
-    }] array];
-    
-//    NSLog(@"当前的arr===%@",showArr);
-    [showArr enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (![showArr1 containsObject:obj]) {
-            NSLog(@"当前不包含你===%@",obj);
-        }
-    }];
-    
-}
-
 
 - (void)testObserver {
     [[RACObserve(self, nameArr) skip:1] subscribeNext:^(id  _Nullable x) {
@@ -333,10 +288,6 @@
      
      
      */
-    
-    NSString *name123 = @"/Users/zhang/Documents/zhangsan.txt";
-    
-    
 }
 
 

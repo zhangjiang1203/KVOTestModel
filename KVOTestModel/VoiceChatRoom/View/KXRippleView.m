@@ -2,156 +2,182 @@
 //  KXRippleView.m
 //  KVOTestModel
 //
-//  Created by zhangjiang on 2021/5/13.
+//  Created by zhangjiang on 2021/5/11.
 //  Copyright © 2021 zhangjiang. All rights reserved.
 //
 
 #import "KXRippleView.h"
 
 @interface KXRippleView ()
-
+//定时器动画
 @property (nonatomic,strong)NSTimer *timer;
-
-@property (nonatomic,assign) NSInteger currentCount;
-
-@property (nonatomic,assign) NSInteger maxCount;
 
 @end
 
 @implementation KXRippleView
 
--(instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
-        [self initValues];
+        self.animationTime = 2;
+        self.scale = 1.3;
+        self.bordWidth = 1.5;
+        self.color = [UIColor whiteColor];
+        self.startAlph = 0.8;
     }
     return self;
 }
--(instancetype)init{
+
+- (instancetype)init
+{
     self = [super init];
     if (self) {
-        [self initValues];
+        self.animationTime = 2;
+        self.scale = 1.3;
+        self.bordWidth = 1.5;
+        self.color = [UIColor whiteColor];
+        self.startAlph = 0.8;
     }
     return self;
 }
 
-- (void)initValues {
-    self.backgroundColor = [UIColor clearColor];
-    self.animationTime = 3;
-    self.scale = 1.2;
-    self.bordWidth = 2;
-    self.startAlph = 1;
-    self.color = [UIColor whiteColor];
-    self.maxCount = 4;
-    self.currentCount = 0;
-}
-
-//动画时间
--(void)setAnimationTime:(CGFloat)animationTime{
+- (void)setAnimationTime:(CGFloat)animationTime{
     _animationTime = animationTime;
 }
-//动画发散的大小
--(void)setScale:(CGFloat)scale{
+
+- (void)setScale:(CGFloat)scale{
     _scale = scale;
 }
-//光圈的宽度
--(void)setBordWidth:(CGFloat)bordWidth{
+
+- (void)setBordWidth:(CGFloat)bordWidth{
     _bordWidth = bordWidth;
 }
-//初始透明度
--(void)setStartAlph:(float)startAlph{
-    _startAlph = startAlph;
-}
-//光圈颜色
--(void)setColor:(UIColor *)color{
+
+- (void)setColor:(UIColor *)color {
     _color = color;
 }
 
-//开始水波纹动画
+///根据添加的num执行对应的次数
+
 -(void)startWaveAnimationCircleNumber:(NSInteger)number{
+    __block NSInteger index = 0;
     if (self.timer) {
-        [self invalidTimer];
+        [self invalidateTimer];
     }
     if (number == 0) {
         number = 1;
     }
-    self.currentCount = 0;
-    self.maxCount = number;
     //每一个圈需要的时间
     CGFloat time = self.animationTime / number;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:time target:self selector:@selector(timerStart) userInfo:nil repeats:YES];
+    __weak typeof(self) weaKSelf = self;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:time repeats:YES block:^(NSTimer * _Nonnull timer) {
+        __strong typeof(weaKSelf) strongSelf = weaKSelf;
+        index ++;
+        if (index > number) {
+            [strongSelf invalidateTimer];
+            return ;
+        }
+        [strongSelf addRippleLayer];
+    }];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     [self.timer setFireDate:[NSDate date]];
 }
 
-- (void)timerStart {
-//    self.currentCount ++;
-//    if (self.currentCount > self.maxCount) {
-//        [self invalidTimer];
-//        return ;
-//    }
-    [self start];
+
+
+//添加水波纹动画
+- (void)addRippleAnimation {
+    [self startWaveAnimationCircleNumber:3];
 }
 
-//停止水波纹
--(void)stopwWaveAnimation{
+- (void)invalidateTimer {
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
+-(void)removeRippleAnimation {
+    [self invalidateTimer];
+    for(int i = 0; i < [self.layer sublayers].count;i++){
+        [[[self.layer sublayers] firstObject] removeFromSuperlayer];
+    }
     [self.layer removeAllAnimations];
-    [self.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
-    [self invalidTimer];
 }
--(void)invalidTimer{
-    [self.timer invalidate];
-    self.timer = nil;
-}
--(void)start{
-    
-    CGFloat sizeW = MIN(self.frame.size.width, self.frame.size.height);
-    //中心
-    CAShapeLayer *layer = [[CAShapeLayer alloc] init];
-    layer.frame = self.bounds;
-    layer.opacity = 0.0;
-    layer.backgroundColor = [UIColor clearColor].CGColor;
-    layer.strokeColor = self.color.CGColor;
-    layer.lineWidth = self.bordWidth;
-    layer.fillColor = self.color.CGColor;//[self.color colorWithAlphaComponent:0.6].CGColor;
-    
-    //创建path
-    CGRect beginRect = CGRectMake(10, 10, sizeW- 2 * 10, sizeW- 2 * 10);
-    UIBezierPath *beiginPath = [UIBezierPath bezierPathWithOvalInRect:beginRect];
-    
-    UIBezierPath *endPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(-8, -8, sizeW+16, sizeW+16)];
-    layer.path = endPath.CGPath;
-    
-    CABasicAnimation *pathAnim = [CABasicAnimation animationWithKeyPath:@"path"];
-    pathAnim.fromValue = (__bridge id _Nullable)(beiginPath.CGPath);
-    pathAnim.toValue = (__bridge id _Nullable)(endPath.CGPath);
-    [self.layer addSublayer:layer];
 
-    //设置图层的透明度，使用关键帧动画
-    CAKeyframeAnimation *opacityAnimation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
-    opacityAnimation.values = @[@0.3, @0.6, @1.0, @0.7,@0.5, @0.3, @0,@0];
-    opacityAnimation.keyTimes = @[@0.2,@0.3,@0.5, @0.6,@0.7, @0.8,@0.9, @1];
 
+- (void)addRippleLayer{
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.position = CGPointMake(self.frame.size.width/2.0, self.frame.size.height/2.0);
+    shapeLayer.bounds = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
+    shapeLayer.opacity = 0;
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    shapeLayer.path = path.CGPath;
+    shapeLayer.strokeColor = [self.color colorWithAlphaComponent:self.startAlph].CGColor;
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.lineWidth = self.bordWidth;
+    [self.layer addSublayer:shapeLayer];
+    
+    //设置动画
+    //透明度改变
+    CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opacityAnimation.fromValue = [NSNumber numberWithFloat:self.startAlph];
+    opacityAnimation.toValue = [NSNumber numberWithFloat:0.0];
+//    opacityAnimation.duration = 0.8;
+    
+    //圈的大小改变(发散效果)
+    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    scaleAnimation.fromValue = @1;
+    scaleAnimation.toValue = @(self.scale);
+    
     //圈的宽度变化
     CABasicAnimation *borderAnimation = [CABasicAnimation animationWithKeyPath:@"lineWidth"];
     borderAnimation.fromValue = @(self.bordWidth);
-    borderAnimation.toValue = @(0.2);
+    borderAnimation.toValue = @(1);
     borderAnimation.duration = 0.2;
     
     //动画组
     CAAnimationGroup *animationGroup = [[CAAnimationGroup alloc] init];
-    animationGroup.animations = @[pathAnim, opacityAnimation,borderAnimation];
-    animationGroup.duration = self.animationTime;
+    animationGroup.animations = @[opacityAnimation,scaleAnimation,borderAnimation];
+    animationGroup.duration = 2;
     animationGroup.removedOnCompletion = YES;
     animationGroup.fillMode = kCAFillModeForwards;
     animationGroup.repeatCount = MAXFLOAT;
-    [layer addAnimation:animationGroup forKey:@""];
+    [shapeLayer addAnimation:animationGroup forKey:@""];
+
     
-    //防止layer添加过多
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSelector:@selector(removeRipperLayer:) withObject:layer afterDelay:self.animationTime];
-    });
     
+//    CGFloat sizeW = MIN(self.bounds.size.width, self.bounds.size.height);
+//
+//    CGRect beginRect = CGRectMake(sizeW/2, sizeW/2, 0, 0);
+//    UIBezierPath *beginPath = [UIBezierPath bezierPathWithOvalInRect:beginRect];
+//    CGRect endRect = CGRectInset(beginRect, -sizeW, -sizeW);
+//    UIBezierPath *endPath = [UIBezierPath bezierPathWithOvalInRect:endRect];
+//
+//    shapeLayer.path = endPath.CGPath;
+//    shapeLayer.opacity = 0.0;
+
+    //add animation
+//    CABasicAnimation *rippleAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
+//    rippleAnimation.fromValue = (__bridge id _Nullable)(beginPath.CGPath);
+//    rippleAnimation.toValue = (__bridge id _Nullable)(endPath.CGPath);
+//        CABasicAnimation *rippleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+//    rippleAnimation.fromValue = @1.0f;//(__bridge id _Nullable)(beginPath.CGPath);
+//    rippleAnimation.toValue = @2.4f;//(__bridge id _Nullable)(endPath.CGPath);
+//    rippleAnimation.duration = 2;
+
+//    CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+//    opacityAnimation.fromValue = @(0.6);
+//    opacityAnimation.toValue = @(0);
+//    opacityAnimation.duration = 2;
+
+//    [shapeLayer addAnimation:rippleAnimation forKey:@""];
+//    [shapeLayer addAnimation:opacityAnimation forKey:@""];
+    
+//    [self performSelector:@selector(removeRipperLayer:) withObject:shapeLayer afterDelay:2];
 }
 
 - (void)removeRipperLayer:(CALayer *)layer{
@@ -159,5 +185,42 @@
     layer = nil;
 }
 
+
+-(void)addAnimateForView:(UIView *)view withRect:(CGRect)rect{
+    CALayer *layer = [CALayer layer];//创建一个layer，最后用来添加到view的图层上展示动画用
+    NSInteger repeatCount = 3;//设置重复次数3次
+    NSInteger keepTiming = 3;// 设置每段动画持续时间3秒
+    
+    for (NSInteger i = 0; i< repeatCount; i++) {//每次执行，创建相关动画
+        // 每个动画对应一个图层。3个动画，需要有3个图层
+        CALayer *animateLayer = [CALayer layer];
+        animateLayer.borderColor = [UIColor redColor].CGColor;
+        animateLayer.borderWidth = 3.5;
+        animateLayer.frame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+        animateLayer.cornerRadius = rect.size.height/2;
+        //到此。每一个图层的大小，形状。颜色设置完毕。
+        // 设置图层的scale 使用CABasicAnimation
+        CABasicAnimation *basicAni = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        basicAni.fromValue = @1.0f;
+        basicAni.toValue = @2.4f;
+        
+        //设置图层的透明度，使用关键帧动画
+        CAKeyframeAnimation *keyani = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
+        keyani.values = @[@1, @0.9, @0.8, @0.7, @0.6, @0.5, @0.4, @0.3, @0.2, @0.1, @0];
+        keyani.keyTimes = @[@0, @0.1, @0.2, @0.3, @0.4, @0.5, @0.6, @0.7, @0.8, @0.9, @1];
+        
+        //我们要让一个动画同时执行scale 和 opacity的变化，需要将他们都加入到layer的动画组
+        CAAnimationGroup *group = [CAAnimationGroup animation];
+        group.fillMode = kCAFillModeBackwards;
+        group.duration = keepTiming;
+        group.repeatCount = HUGE;
+        group.beginTime = CACurrentMediaTime() + (double)i * keepTiming / (double)repeatCount;
+        
+        group.animations = @[keyani,basicAni];
+        [animateLayer addAnimation:group forKey:@"plus"];
+        [layer addSublayer:animateLayer];
+    }
+    [view.layer addSublayer:layer];
+}
 
 @end

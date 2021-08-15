@@ -12,16 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SendPersonModel : NSObject
 
-@property (nonatomic,copy) NSString *firstName;
 
-@property (nonatomic,copy) NSString *lastName;
-
-@property (nonatomic,strong,readonly) NSMutableSet *friendSets;
-
-
-//构造两个方法 添加 删除 friendset中的数据
-- (void)addFriend:(SendPersonModel *)model;
-- (void)removeFirend:(SendPersonModel *)model;
+//- (void)eat;
 
 @end
 
