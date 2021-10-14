@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '10.0'
 inhibit_all_warnings!
@@ -20,6 +20,8 @@ target 'KVOTestModel' do
   pod 'ReactiveObjC', '~> 3.1.1'
   pod 'Masonry'
   pod 'YYText'
+  #奔溃搜集
+  pod 'PLCrashReporter'
   
   #接入bugly
 
