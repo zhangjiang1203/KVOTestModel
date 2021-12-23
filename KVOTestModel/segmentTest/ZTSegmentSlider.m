@@ -275,14 +275,12 @@
     float halfWidth = CGRectGetWidth(self.bounds) / 2.0;
     if (midX < halfWidth) {
         offset = 0;
-    }
-//    else if (midX > contentWidth - halfWidth){
-//
-//        offset = contentWidth - [self calculateArrayWidthWithIndex:index-KTAG];
-//    }
-    else{
+    }else if (midX > contentWidth - halfWidth){
+        offset = contentWidth - 2 * halfWidth;//[self calculateArrayWidthWithIndex:index-KTAG];
+    }else{
         offset = midX - halfWidth;
     }
+    NSLog(@"当前滚动距离=====%f",offset);
     [UIView animateWithDuration:KANIMATION animations:^{
         [self.myScrollView setContentOffset:CGPointMake(offset, 0) animated:NO];
     }];

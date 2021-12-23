@@ -5,6 +5,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - LookinServer (1.0.0)
   - Masonry (1.1.0)
+  - PLCrashReporter (1.10.0)
   - ReactiveObjC (3.1.1)
   - RxCocoa (5.1.0):
     - RxRelay (~> 5)
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - FMDB (~> 2.7.5)
   - LookinServer
   - Masonry
+  - PLCrashReporter
   - ReactiveObjC (~> 3.1.1)
   - RxCocoa
   - RxSwift
@@ -32,6 +34,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - FLAnimatedImage
     - FMDB
+    - PLCrashReporter
     - RxCocoa
     - RxRelay
     - SDWebImage
@@ -47,6 +50,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PLCrashReporter: b8c81dcdb3dd7c4247c00b95ada1f1b37d53fde8
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
@@ -54,6 +58,6 @@ SPEC CHECKSUMS:
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2c722d1bd2e71cace1eb6cb38841625ab47a40ff
+PODFILE CHECKSUM: d9af190d7bc7abb2224abce2ca0df27a9e78311b
 
-COCOAPODS: 1.11.0
+COCOAPODS: 1.11.2

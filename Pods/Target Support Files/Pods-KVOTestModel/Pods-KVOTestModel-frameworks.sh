@@ -178,6 +178,7 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework"
+  install_framework "${PODS_ROOT}/LookinServer/LookinServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"

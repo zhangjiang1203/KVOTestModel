@@ -7,8 +7,9 @@
 //
 
 #import "ZJSegmentViewController.h"
-
+#import "ZTSegmentSlider.h"
 @interface ZJSegmentViewController ()
+@property (nonatomic, strong) ZTSegmentSlider *segmentSlider;
 
 @end
 
@@ -16,17 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"segment设置";
+    [self segmentSetUp];
 }
 
-/*
-#pragma mark - Navigation
+- (void)segmentSetUp{
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    
+    _segmentSlider = [[ZTSegmentSlider alloc]initWithFrame:CGRectMake(0, 100, width,40) titles:@[@"我来了",@"你好了",@"哈哈哈吃饭了没",@"就是这样",@"好了",@"开始睡觉吧",@"还有谁",@"等了很久了吧",@"我们的加就是中国"]];
+    _segmentSlider.titleNorColor = [UIColor blackColor];
+    _segmentSlider.titleSelColor = [UIColor redColor];
+    
+    _segmentSlider.font = [UIFont systemFontOfSize:14];
+    _segmentSlider.segmentBlock = ^(NSInteger clickTag) {
+        //选中对应的cell 更新数据源
+        
+    };
+    [self.view addSubview:_segmentSlider];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+
 
 @end
