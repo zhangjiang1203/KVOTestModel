@@ -31,7 +31,8 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDWebImage
-  - YogaKit
+  - Yoga (from `./Yoga`)
+  - YogaKit (from `./YogaKit`)
   - YYText
 
 SPEC REPOS:
@@ -42,14 +43,18 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - SDWebImage
-    - Yoga
-    - YogaKit
   trunk:
     - LookinServer
     - Masonry
     - ReactiveObjC
     - RxSwift
     - YYText
+
+EXTERNAL SOURCES:
+  Yoga:
+    :path: "./Yoga"
+  YogaKit:
+    :path: "./YogaKit"
 
 SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
@@ -62,10 +67,10 @@ SPEC CHECKSUMS:
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
-  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+  Yoga: b130e399352ced9afb7adfaba58e8af1a473e709
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: b8f2d3dc6889f52a5305df50a36c02dfe3a107d8
+PODFILE CHECKSUM: 4034a3f4bb0fd11ee742fa31efce4ad221587b99
 
 COCOAPODS: 1.11.2
