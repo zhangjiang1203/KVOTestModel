@@ -24,6 +24,7 @@ target 'KVOTestModel' do
   pod 'PLCrashReporter'
   #Yogakit 盒子布局设置
   pod 'YogaKit'
+#  pod 'YogaKitObjC'
   
   #接入bugly
 

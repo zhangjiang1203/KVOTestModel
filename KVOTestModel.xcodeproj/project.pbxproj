@@ -80,6 +80,7 @@
 		C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */; };
 		C233ACE62721105100D0FE39 /* ZTArrayContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */; };
 		C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE82721108500D0FE39 /* ZJPersonModel.m */; };
+		C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */; };
 		C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */; };
 		C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */; };
 		C29358E62750B02100BF7B3C /* ZJTouchEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358E52750B02100BF7B3C /* ZJTouchEventViewController.m */; };
@@ -237,6 +238,8 @@
 		C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTArrayContainViewController.m; sourceTree = "<group>"; };
 		C233ACE72721108500D0FE39 /* ZJPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPersonModel.h; sourceTree = "<group>"; };
 		C233ACE82721108500D0FE39 /* ZJPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPersonModel.m; sourceTree = "<group>"; };
+		C24995F727741EFB003EC8F2 /* YogaKitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaKitTestViewController.h; sourceTree = "<group>"; };
+		C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaKitTestViewController.m; sourceTree = "<group>"; };
 		C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTSegmentSlider.m; sourceTree = "<group>"; };
 		C27448C82717DA5C00D8BF28 /* ZTSegmentSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTSegmentSlider.h; sourceTree = "<group>"; };
 		C27448CA2717DA9F00D8BF28 /* ZJSegmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSegmentViewController.h; sourceTree = "<group>"; };
@@ -438,6 +441,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C24995F627741ECB003EC8F2 /* YogaKitTest */,
 				C29358E32750AFF900BF7B3C /* TouchEvent */,
 				C233ACE32721102E00D0FE39 /* ArrayContain */,
 				C27448C62717DA4C00D8BF28 /* segmentTest */,
@@ -657,6 +661,15 @@
 				C233ACE82721108500D0FE39 /* ZJPersonModel.m */,
 			);
 			path = ArrayContain;
+			sourceTree = "<group>";
+		};
+		C24995F627741ECB003EC8F2 /* YogaKitTest */ = {
+			isa = PBXGroup;
+			children = (
+				C24995F727741EFB003EC8F2 /* YogaKitTestViewController.h */,
+				C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */,
+			);
+			path = YogaKitTest;
 			sourceTree = "<group>";
 		};
 		C27448C62717DA4C00D8BF28 /* segmentTest */ = {
@@ -914,6 +927,7 @@
 				38E015F32578E8FC00C52175 /* UIMonitorinManager.m in Sources */,
 				386B3DD2254A69BB0063DF3C /* TestConfigurationCell.m in Sources */,
 				38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */,
+				C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */,
 				380742C024B8174100968CF5 /* ZJBaseViewController.m in Sources */,
 				38E015FA257A11C000C52175 /* TestCodeViewController.m in Sources */,
 				C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */,
