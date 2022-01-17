@@ -80,6 +80,8 @@
 		C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */; };
 		C233ACE62721105100D0FE39 /* ZTArrayContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */; };
 		C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE82721108500D0FE39 /* ZJPersonModel.m */; };
+		C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */; };
+		C2495078277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */; };
 		C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */; };
 		C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */; };
 		C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */; };
@@ -238,6 +240,10 @@
 		C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTArrayContainViewController.m; sourceTree = "<group>"; };
 		C233ACE72721108500D0FE39 /* ZJPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPersonModel.h; sourceTree = "<group>"; };
 		C233ACE82721108500D0FE39 /* ZJPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPersonModel.m; sourceTree = "<group>"; };
+		C2495073277AB8470026BA32 /* YogaNormalLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaNormalLayoutViewController.h; sourceTree = "<group>"; };
+		C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaNormalLayoutViewController.m; sourceTree = "<group>"; };
+		C2495076277AC1DF0026BA32 /* YogaSpecialLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaSpecialLayoutViewController.h; sourceTree = "<group>"; };
+		C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaSpecialLayoutViewController.m; sourceTree = "<group>"; };
 		C24995F727741EFB003EC8F2 /* YogaKitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaKitTestViewController.h; sourceTree = "<group>"; };
 		C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaKitTestViewController.m; sourceTree = "<group>"; };
 		C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTSegmentSlider.m; sourceTree = "<group>"; };
@@ -668,6 +674,10 @@
 			children = (
 				C24995F727741EFB003EC8F2 /* YogaKitTestViewController.h */,
 				C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */,
+				C2495073277AB8470026BA32 /* YogaNormalLayoutViewController.h */,
+				C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */,
+				C2495076277AC1DF0026BA32 /* YogaSpecialLayoutViewController.h */,
+				C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */,
 			);
 			path = YogaKitTest;
 			sourceTree = "<group>";
@@ -880,6 +890,7 @@
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
 				C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */,
+				C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
@@ -907,6 +918,7 @@
 				C21F390D264D299A004F6BD1 /* ZJServiceModel.m in Sources */,
 				3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */,
 				C21F37B0264BADBA004F6BD1 /* KXModuleOrz.m in Sources */,
+				C2495078277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m in Sources */,
 				C21F371A264A3890004F6BD1 /* KXVoiceSeatModel.m in Sources */,
 				C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */,
 				C29358EC2750B0BF00BF7B3C /* ZJLivingViewController.m in Sources */,

@@ -7,31 +7,15 @@
 //
 
 #import "YogaKitTestViewController.h"
+#import "YogaNormalLayoutViewController.h"
+
 #import <YogaKit/UIView+Yoga.h>
 
-static NSInteger const defaultTag = 100;
+@interface YogaKitTestViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-#define Module1Arr @[@"门票",@"酒店",@"周边游",@"民宿客栈",@"国际酒店",@"周边精选"]
+@property (nonatomic, strong) UITableView *myTableView;
 
-#define Module2Arr @[@"机票",@"火车票",@"汽车票",@"国际机票",@"极速抢票",@"用车*接送机"]
-
-#define Module3Arr @[@"旅游",@"出境游",@"游轮",@"国内游",@"攻略游记"]
-
-#define Module4Arr @[@"金融理财",@"保险",@"贷款*分期游"]
-
-
-#pragma mark - 按钮相关布局设置
-#define kSCREENWIDTH [UIScreen mainScreen].bounds.size.width
-#define paddingNo 3
-#define marginNo .5f
-#define columnNo 3
-#define btnHeight 62
-#define btnWidth ((kSCREENWIDTH - paddingNo*2 - columnNo*marginNo*2) / columnNo)
-
-
-@interface YogaKitTestViewController ()
-
-@property (nonatomic, strong) UIButton *selectedBtn;
+@property (nonatomic, strong) NSArray *dataSourceArr;
 
 @end
 
@@ -46,148 +30,74 @@ static NSInteger const defaultTag = 100;
         layout.isEnabled = YES;
         layout.paddingTop = YGPointValue(100);
     }];
-    [self setUpModule1];
-    [self setUpModule2];
-    [self setUpModule3];
-    [self setUpModule4];
+    [self setUpTableView];
     //父视图执行布局计算并使用结果更新层次结构中视图的帧
     [self.view.yoga applyLayoutPreservingOrigin:YES];
+    
+    [self test_dispatch_time];
 }
 
-- (void)setUpModule1{
-    UIView *bgView = [UIView new];
-    [self.view addSubview:bgView];
-    [bgView configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionRow;//设置水平方向为水平布局
-        layout.padding = YGPointValue(paddingNo);
-        layout.flexWrap = YGWrapWrap; //自动换行
-    }];
+- (void)test_dispatch_time {
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self performSelector:@selector(testLogDispatch) withObject:nil];
+    [self performSelector:@selector(testLogDispatch) withObject:nil afterDelay:5];
+//    });
+}
+
+- (void)testLogDispatch{
+    NSLog(@"开始执行=====");
+}
+
+- (void)dealloc{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    NSLog(@"开始释放=====");
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+
+}
+
+//设置tableview
+- (void)setUpTableView{
+    self.dataSourceArr = @[
+        @{@"title":@"常规布局",@"class":@"YogaNormalLayoutViewController"},
+        @{@"title":@"非常规布局",@"class":@"YogaSpecialLayoutViewController"},
+    ];
     
-    //添加按钮
-    for (int i = 0; i < Module1Arr.count; i++) {
-        UIButton *button = [self createItemButton:Module1Arr[i] bgColor:[UIColor systemPinkColor] index:i];
-        [bgView addSubview:button];
-        [button configureLayoutWithBlock:^(YGLayout *layout) {
-            layout.isEnabled = YES;
-            layout.width = YGPointValue(btnWidth);
-            layout.height = YGPointValue(btnHeight);
-            layout.margin = YGPointValue(marginNo);
-        }];
+    self.myTableView = [[UITableView alloc]init];
+    self.myTableView.delegate = self;
+    self.myTableView.dataSource = self;
+    [self.view addSubview:self.myTableView];
+    
+    [self.myTableView configureLayoutWithBlock:^(YGLayout *layout) {
+        layout.isEnabled = YES;
+        layout.margin = YGPointValue(0);
+        layout.flexDirection = YGFlexDirectionColumn;
+    }];
+}
+
+#pragma mark - tableview
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataSourceArr.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"systemCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"systemCell"];
     }
+    NSDictionary *dict = self.dataSourceArr[indexPath.row];
+    cell.textLabel.text = dict[@"title"];
+    return cell;
 }
 
-- (void)setUpModule2{
-    UIView *bgView = [UIView new];
-    [self.view addSubview:bgView];
-    [bgView configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionRow;
-        layout.padding = YGPointValue(paddingNo);
-        layout.flexWrap = YGWrapWrap;
-    }];
-    
-    NSInteger index = Module1Arr.count;
-    for (NSInteger i = 0 ; i < Module2Arr.count; i++) {
-        UIButton *button = [self createItemButton:Module2Arr[i] bgColor:[UIColor systemBlueColor] index:i + index];
-        [bgView addSubview:button];
-        
-        [button configureLayoutWithBlock:^(YGLayout *layout) {
-            layout.isEnabled = YES;
-            layout.width = YGPointValue(btnWidth);
-            layout.height = YGPointValue(btnHeight);
-            layout.margin = YGPointValue(marginNo);
-        }];
-    }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *dict = self.dataSourceArr[indexPath.row];
+    Class class = NSClassFromString(dict[@"class"]);
+    UIViewController *baseVC = [[class alloc]init];
+    [self.navigationController pushViewController:baseVC animated:YES];
 }
 
-- (void)setUpModule3{
-    //对于这种要分为两个模块进行布局
-    UIView *bgView = [UIView new];
-    [self.view addSubview:bgView];
-    [bgView configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionRow;
-        layout.padding = YGPointValue(paddingNo);
-    }];
-    
-    //设置大button
-    NSInteger index = Module1Arr.count + Module2Arr.count;
-    UIButton *button = [self createItemButton:Module3Arr[0] bgColor:[UIColor systemGreenColor] index:index];
-    [bgView addSubview:button];
-    [button configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.width = YGPointValue(btnWidth);
-        layout.height = YGPointValue(btnHeight * 2);
-        layout.margin = YGPointValue(marginNo);
-    }];
-    
-    //右边的小视图
-    UIView *rightView = [UIView new];
-    [bgView addSubview:rightView];
-    [rightView configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionRow;
-        layout.flexWrap = YGWrapWrap;
-        layout.width = YGPointValue(KScreenWidth / columnNo * (columnNo - 1));
-    }];
-    
-    for (NSInteger i = 1 ; i < Module3Arr.count; i++) {
-        UIButton *button = [self createItemButton:Module3Arr[i] bgColor:[UIColor systemGreenColor] index:i + index];
-        [rightView addSubview:button];
-        [button configureLayoutWithBlock:^(YGLayout *layout) {
-            layout.isEnabled = YES;
-            layout.width = YGPointValue(btnWidth);
-            layout.height = YGPointValue(btnHeight);
-            layout.margin = YGPointValue(marginNo);
-        }];
-    }
-}
-
-- (void)setUpModule4{
-    UIView *bgView = [UIView new];
-    [self.view addSubview:bgView];
-    [bgView configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionRow;
-        layout.padding = YGPointValue(paddingNo);
-        layout.flexWrap = YGWrapWrap;
-    }];
-    
-    NSInteger index = Module1Arr.count + Module2Arr.count + Module3Arr.count;
-    for (NSInteger i = 0 ; i < Module4Arr.count; i++) {
-        UIButton *button = [self createItemButton:Module4Arr[i] bgColor:[UIColor systemYellowColor] index:i + index];
-        [bgView addSubview:button];
-        [button configureLayoutWithBlock:^(YGLayout *layout) {
-            layout.isEnabled = YES;
-            layout.width = YGPointValue(btnWidth);
-            layout.height = YGPointValue(btnHeight);
-            layout.margin = YGPointValue(marginNo);
-        }];
-    }
-}
-
-#pragma mark - 创建按钮快捷方式
-- (UIButton *)createItemButton:(NSString *)title bgColor:(UIColor *)bgColor index:(NSInteger)index {
-    UIButton *button = [UIButton new];
-    button.tag = defaultTag + index;
-    [button setTitle:title forState:(UIControlStateNormal)];
-    button.backgroundColor = bgColor;
-    [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-    [button addTarget:self action:@selector(showCommonTarget:) forControlEvents:(UIControlEventTouchUpInside)];
-    return button;
-}
-
-/// 按钮响应事件
-- (void)showCommonTarget:(UIButton *)sender {
-    
-    self.selectedBtn.selected = NO;
-    sender.selected = YES;
-    self.selectedBtn = sender;
-    
-    UIViewAnimationTransition tra = sender.selected?UIViewAnimationTransitionFlipFromLeft:UIViewAnimationTransitionFlipFromRight;
-    [UIView animateWithDuration:.35 animations:^{
-        [UIView setAnimationTransition:tra forView:sender cache:YES];
-    }];
-}
 @end
