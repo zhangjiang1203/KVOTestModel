@@ -85,6 +85,8 @@
 		C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */; };
 		C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */; };
 		C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */; };
+		C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4D827B635BE0009C755 /* ShowLayerViewController.m */; };
+		C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4DB27B635DC0009C755 /* CustomShowView.m */; };
 		C29358E62750B02100BF7B3C /* ZJTouchEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358E52750B02100BF7B3C /* ZJTouchEventViewController.m */; };
 		C29358E92750B06200BF7B3C /* ZJContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358E82750B06200BF7B3C /* ZJContainerViewController.m */; };
 		C29358EC2750B0BF00BF7B3C /* ZJLivingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358EB2750B0BF00BF7B3C /* ZJLivingViewController.m */; };
@@ -254,6 +256,10 @@
 		C27448C82717DA5C00D8BF28 /* ZTSegmentSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTSegmentSlider.h; sourceTree = "<group>"; };
 		C27448CA2717DA9F00D8BF28 /* ZJSegmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSegmentViewController.h; sourceTree = "<group>"; };
 		C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSegmentViewController.m; sourceTree = "<group>"; };
+		C288C4D727B635BE0009C755 /* ShowLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowLayerViewController.h; sourceTree = "<group>"; };
+		C288C4D827B635BE0009C755 /* ShowLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowLayerViewController.m; sourceTree = "<group>"; };
+		C288C4DA27B635DC0009C755 /* CustomShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShowView.h; sourceTree = "<group>"; };
+		C288C4DB27B635DC0009C755 /* CustomShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomShowView.m; sourceTree = "<group>"; };
 		C29358E42750B02100BF7B3C /* ZJTouchEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTouchEventViewController.h; sourceTree = "<group>"; };
 		C29358E52750B02100BF7B3C /* ZJTouchEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTouchEventViewController.m; sourceTree = "<group>"; };
 		C29358E72750B06200BF7B3C /* ZJContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJContainerViewController.h; sourceTree = "<group>"; };
@@ -460,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				C2C7EA6F26EA66C30050EA67 /* TestCollection */,
+				C288C4D627B635820009C755 /* AnimationTest */,
 				C24995F627741ECB003EC8F2 /* YogaKitTest */,
 				C29358E32750AFF900BF7B3C /* TouchEvent */,
 				C233ACE32721102E00D0FE39 /* ArrayContain */,
@@ -706,6 +713,17 @@
 			path = segmentTest;
 			sourceTree = "<group>";
 		};
+		C288C4D627B635820009C755 /* AnimationTest */ = {
+			isa = PBXGroup;
+			children = (
+				C288C4D727B635BE0009C755 /* ShowLayerViewController.h */,
+				C288C4D827B635BE0009C755 /* ShowLayerViewController.m */,
+				C288C4DA27B635DC0009C755 /* CustomShowView.h */,
+				C288C4DB27B635DC0009C755 /* CustomShowView.m */,
+			);
+			path = AnimationTest;
+			sourceTree = "<group>";
+		};
 		C29358E32750AFF900BF7B3C /* TouchEvent */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,6 +950,7 @@
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				C2C7EA7C26EA693D0050EA67 /* ZJShowContentView.m in Sources */,
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
+				C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
 				C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */,
 				C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */,
@@ -971,6 +990,7 @@
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
 				C21F37B9264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m in Sources */,
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,
+				C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */,
 				C21F387A264BEE9F004F6BD1 /* MessageSendViewController.m in Sources */,
 				C29358EF2750B3ED00BF7B3C /* ZJCustomScrollView.m in Sources */,
 				380742C324B81ED200968CF5 /* QDUISearchResultView.m in Sources */,
@@ -1142,6 +1162,59 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYText/YYText.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga/yoga.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit/YogaKit.framework/Headers\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB\"",
+					"-iframework",
+					"\"${PODS_ROOT}/LookinServer\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"-iframework",
+					"\"${PODS_ROOT}/PLCrashReporter\"",
+					"-iframework",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/PLCrashReporter\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYText\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1168,6 +1241,57 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYText/YYText.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga/yoga.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit/YogaKit.framework/Headers\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"-iframework",
+					"\"${PODS_ROOT}/PLCrashReporter\"",
+					"-iframework",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/PLCrashReporter\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYText\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
