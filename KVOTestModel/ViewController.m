@@ -20,8 +20,8 @@
     [super viewDidLoad];
     self.title = @"测试";
     self.view.backgroundColor = [UIColor whiteColor];
-//    [self initMyUI];
-    [self testDictSort];
+    [self initMyUI];
+//    [self testDictSort];
 }
 
 

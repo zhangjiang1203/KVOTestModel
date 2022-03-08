@@ -24,6 +24,30 @@
     [super viewDidLoad];
     self.title = @"collectionView测试";
     [self setUpCollection];
+    [self showTestCollection];
+}
+
+- (void)showTestCollection{
+//    for (int i = 0; i < 100000; i++) {
+//        NSString *name = [[NSString alloc]initWithFormat:@"show name %zd",i];
+//        NSLog(@"开始打印====%@",name);
+//    }
+    
+//    for (int i = 0; i < 100000; i++) {
+//        @autoreleasepool {
+//            NSString *name = [[NSString alloc]initWithFormat:@"show name %zd",i];
+//            NSLog(@"开始打印====%@",name);
+//        }
+//    }
+//    
+    for (int i = 0; i < 100000; i++) {
+        @autoreleasepool {
+            UIImage *name = [[UIImage alloc]init];//:@"searchbar_search"];
+            
+            NSLog(@"开始打印====%@",name);
+        }
+    }
+
 }
 
 - (void)setUpCollection{
