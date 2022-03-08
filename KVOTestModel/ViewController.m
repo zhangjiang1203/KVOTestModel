@@ -55,7 +55,11 @@
         @{@"title":@"协议转发测试",@"class":@"KXMoudleProtocolViewController"},
         @{@"title":@"消息转发",@"class":@"MessageSendViewController"},
         @{@"title":@"文本控制",@"class":@"ZJTextViewController"},
-        @{@"title":@"collection测试",@"class":@"ZJShowCollectionViewController"}
+        @{@"title":@"collection测试",@"class":@"ZJShowCollectionViewController"},
+        @{@"title":@"分段控制器",@"class":@"ZJSegmentViewController"},
+        @{@"title":@"数组包含测试",@"class":@"ZTArrayContainViewController"},
+        @{@"title":@"点击事件穿透",@"class":@"ZJTouchEventViewController"},
+        @{@"title":@"YogaKit测试",@"class":@"YogaKitTestViewController"},
     ]];
     self.myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavBarAndStatusBarHeight, KScreenWidth, KScreenHeight-kNavBarAndStatusBarHeight) style:(UITableViewStylePlain)];
     self.myTableView.delegate = self;
