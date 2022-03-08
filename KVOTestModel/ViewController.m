@@ -20,7 +20,25 @@
     [super viewDidLoad];
     self.title = @"测试";
     self.view.backgroundColor = [UIColor whiteColor];
-    [self initMyUI];
+//    [self initMyUI];
+    [self testDictSort];
+}
+
+
+- (void)testDictSort{
+    NSDictionary *dict = @{@"name":@"zhangsan",@"age":@"18",@"sex":@"女",@"address":@"上海市浦东",@"salary":@"12000"};
+    NSLog(@"sortArr:%@",[dict allKeys]);
+    NSArray *sortedKeysArr = [[dict allKeys] sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
+        return [obj1 compare:obj2];
+    }];
+    
+    NSLog(@"sortedArr:%@",sortedKeysArr);
+    __block NSString *sign = @"";
+    [sortedKeysArr enumerateObjectsUsingBlock:^(NSString  *obj, NSUInteger idx, BOOL *stop) {
+        NSString *value = dict[obj];
+        sign = [sign stringByAppendingFormat:@"%@:%@",obj,value];
+    }];
+    NSLog(@"拼接字符串===%@",sign);
 }
 
 - (void)initMyUI {
@@ -37,6 +55,7 @@
         @{@"title":@"协议转发测试",@"class":@"KXMoudleProtocolViewController"},
         @{@"title":@"消息转发",@"class":@"MessageSendViewController"},
         @{@"title":@"文本控制",@"class":@"ZJTextViewController"},
+        @{@"title":@"collection测试",@"class":@"ZJShowCollectionViewController"}
     ]];
     self.myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavBarAndStatusBarHeight, KScreenWidth, KScreenHeight-kNavBarAndStatusBarHeight) style:(UITableViewStylePlain)];
     self.myTableView.delegate = self;

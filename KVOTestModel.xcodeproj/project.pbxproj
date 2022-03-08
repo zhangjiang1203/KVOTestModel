@@ -84,6 +84,10 @@
 		C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC597264525A200B7E26D /* ZJDownloadModel.m */; };
 		C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC59E2645265700B7E26D /* DownloadViewController.m */; };
 		C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC5AB26452F6400B7E26D /* RACTestViewController.m */; };
+		C2C7EA7226EA66E50050EA67 /* ZJShowCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7EA7126EA66E50050EA67 /* ZJShowCollectionViewController.m */; };
+		C2C7EA7626EA67E60050EA67 /* ZJFullBigCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7EA7526EA67E60050EA67 /* ZJFullBigCell.m */; };
+		C2C7EA7926EA67FC0050EA67 /* ZJSmallOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7EA7826EA67FC0050EA67 /* ZJSmallOneCell.m */; };
+		C2C7EA7C26EA693D0050EA67 /* ZJShowContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7EA7B26EA693D0050EA67 /* ZJShowContentView.m */; };
 		C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54426A71B630057941B /* ZJTextViewController.m */; };
 		C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */; };
 /* End PBXBuildFile section */
@@ -238,6 +242,14 @@
 		C29EC59E2645265700B7E26D /* DownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
 		C29EC5AA26452F6400B7E26D /* RACTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
 		C29EC5AB26452F6400B7E26D /* RACTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
+		C2C7EA7026EA66E50050EA67 /* ZJShowCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJShowCollectionViewController.h; sourceTree = "<group>"; };
+		C2C7EA7126EA66E50050EA67 /* ZJShowCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJShowCollectionViewController.m; sourceTree = "<group>"; };
+		C2C7EA7426EA67E60050EA67 /* ZJFullBigCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJFullBigCell.h; sourceTree = "<group>"; };
+		C2C7EA7526EA67E60050EA67 /* ZJFullBigCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJFullBigCell.m; sourceTree = "<group>"; };
+		C2C7EA7726EA67FC0050EA67 /* ZJSmallOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSmallOneCell.h; sourceTree = "<group>"; };
+		C2C7EA7826EA67FC0050EA67 /* ZJSmallOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSmallOneCell.m; sourceTree = "<group>"; };
+		C2C7EA7A26EA693D0050EA67 /* ZJShowContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJShowContentView.h; sourceTree = "<group>"; };
+		C2C7EA7B26EA693D0050EA67 /* ZJShowContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJShowContentView.m; sourceTree = "<group>"; };
 		C2C9B54326A71B630057941B /* ZJTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTextViewController.h; sourceTree = "<group>"; };
 		C2C9B54426A71B630057941B /* ZJTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTextViewController.m; sourceTree = "<group>"; };
 		C2C9B54626A9D5230057941B /* ZTHorizontalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTHorizontalLayout.h; sourceTree = "<group>"; };
@@ -414,6 +426,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2C7EA6F26EA66C30050EA67 /* TestCollection */,
 				C2C9B54226A71B440057941B /* TextView */,
 				C21F393F264E1A95004F6BD1 /* MultDelegateMode */,
 				C21F3877264BEE7B004F6BD1 /* MessageSend */,
@@ -656,6 +669,29 @@
 			path = RACMVVM;
 			sourceTree = "<group>";
 		};
+		C2C7EA6F26EA66C30050EA67 /* TestCollection */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7EA7326EA67B20050EA67 /* View */,
+				C2C7EA7026EA66E50050EA67 /* ZJShowCollectionViewController.h */,
+				C2C7EA7126EA66E50050EA67 /* ZJShowCollectionViewController.m */,
+			);
+			path = TestCollection;
+			sourceTree = "<group>";
+		};
+		C2C7EA7326EA67B20050EA67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2C7EA7426EA67E60050EA67 /* ZJFullBigCell.h */,
+				C2C7EA7526EA67E60050EA67 /* ZJFullBigCell.m */,
+				C2C7EA7726EA67FC0050EA67 /* ZJSmallOneCell.h */,
+				C2C7EA7826EA67FC0050EA67 /* ZJSmallOneCell.m */,
+				C2C7EA7A26EA693D0050EA67 /* ZJShowContentView.h */,
+				C2C7EA7B26EA693D0050EA67 /* ZJShowContentView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C2C9B54226A71B440057941B /* TextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,6 +828,7 @@
 				38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */,
 				38A2C8662481F4F200E408BB /* ZJPreformLabel.m in Sources */,
 				C21F371B264A3890004F6BD1 /* KXVoicePersonModel.m in Sources */,
+				C2C7EA7626EA67E60050EA67 /* ZJFullBigCell.m in Sources */,
 				38B2B95824BD4C9E00F0F52F /* QDDepartmentListView.m in Sources */,
 				C21F372C264A3A10004F6BD1 /* KXLiveRoomViewController.m in Sources */,
 				C21F3717264A3890004F6BD1 /* KXVoiceManager.m in Sources */,
@@ -805,6 +842,7 @@
 				C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
+				C2C7EA7C26EA693D0050EA67 /* ZJShowContentView.m in Sources */,
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
@@ -816,6 +854,7 @@
 				380742C924B8202C00968CF5 /* QDUISearchEmptyView.m in Sources */,
 				C21F3898264BFE51004F6BD1 /* SecondModel.m in Sources */,
 				C21F371C264A3890004F6BD1 /* KXVoiceChatRoomViewController.m in Sources */,
+				C2C7EA7926EA67FC0050EA67 /* ZJSmallOneCell.m in Sources */,
 				C21F3718264A3890004F6BD1 /* KXVoiceGuestCell.m in Sources */,
 				C21F3737264A61B8004F6BD1 /* KXRippleView.m in Sources */,
 				380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */,
@@ -827,6 +866,7 @@
 				3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */,
 				C21F37B0264BADBA004F6BD1 /* KXModuleOrz.m in Sources */,
 				C21F371A264A3890004F6BD1 /* KXVoiceSeatModel.m in Sources */,
+				C2C7EA7226EA66E50050EA67 /* ZJShowCollectionViewController.m in Sources */,
 				C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */,
 				38A2C8652481F4F200E408BB /* LHPerformanceUtil.m in Sources */,
 				38B2B6FA24BC412000F0F52F /* QDSearchMoreViewController.m in Sources */,
@@ -998,7 +1038,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1024,7 +1064,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
