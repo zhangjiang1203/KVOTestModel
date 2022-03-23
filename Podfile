@@ -26,6 +26,8 @@ target 'KVOTestModel' do
   #Yogakit 盒子布局设置
   pod 'Yoga', :path => './Yoga'
   pod 'YogaKit' , :path => './YogaKit'
+  
+  pod 'libpag'
 
   
   #接入bugly

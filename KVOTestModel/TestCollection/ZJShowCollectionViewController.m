@@ -8,6 +8,7 @@
 
 #import "ZJShowCollectionViewController.h"
 #import "ZJFullBigCell.h"
+#import <libpag/PAGView.h>
 
 #define kWidth [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
@@ -16,6 +17,10 @@
 
 @property (strong,nonatomic) UICollectionView *contentCollectionView;
 
+@property (nonatomic, strong) dispatch_queue_t queue;
+
+@property (nonatomic, copy) NSString *testStr;
+
 @end
 
 @implementation ZJShowCollectionViewController
@@ -23,8 +28,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"collectionView测试";
-    [self setUpCollection];
-    [self showTestCollection];
+    self.queue = dispatch_queue_create("showTest", DISPATCH_QUEUE_CONCURRENT);
+    [self showStringTest];
+//    [self setUpCollection];
+//    [self showTestCollection];
+}
+
+- (void)showStringTest{
+    
+//    for (int i = 0; i< 10000; i++) {
+//        dispatch_async(self.queue, ^{
+//            self.testStr = [NSString stringWithFormat:@"nihao"];
+//            NSLog(@"%@",self.testStr);
+//        });
+//    }
+    
+    for (int i = 0; i< 10000; i++) {
+        dispatch_async(self.queue, ^{
+            self.testStr = [NSString stringWithFormat:@"nihao 一二三我来了哈哈哈"];
+            NSLog(@"%@",self.testStr);
+        });
+    }
+    
 }
 
 - (void)showTestCollection{
@@ -43,7 +68,6 @@
     for (int i = 0; i < 100000; i++) {
         @autoreleasepool {
             UIImage *name = [[UIImage alloc]init];//:@"searchbar_search"];
-            
             NSLog(@"开始打印====%@",name);
         }
     }
