@@ -12,6 +12,7 @@
 @interface CustomShowView ()
 
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
+
 @end
 
 @implementation CustomShowView

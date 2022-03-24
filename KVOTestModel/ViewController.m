@@ -86,6 +86,8 @@
         @{@"title":@"点击事件穿透",@"class":@"ZJTouchEventViewController"},
         @{@"title":@"YogaKit测试",@"class":@"YogaKitTestViewController"},
         @{@"title":@"layer测试",@"class":@"ShowLayerViewController"},
+        @{@"title":@"Interview测试",@"class":@"InterviewViewController"},
+        
         
     ]];
     self.myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavBarAndStatusBarHeight, KScreenWidth, KScreenHeight-kNavBarAndStatusBarHeight) style:(UITableViewStylePlain)];

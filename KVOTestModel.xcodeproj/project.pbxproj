@@ -52,6 +52,9 @@
 		38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01601257A11EF00C52175 /* CodeStudentModel.m */; };
 		38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E01605257A131D00C52175 /* NSObject+Coding.m */; };
 		89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C2110A3127EC570F00A0C7AF /* YZCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = C2110A3027EC570F00A0C7AF /* YZCallStack.m */; };
+		C21B579C27CDB76A004FC028 /* InterviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21B579B27CDB76A004FC028 /* InterviewViewController.m */; };
+		C21B57B727D7847B004FC028 /* ZJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = C21B57B627D7847B004FC028 /* ZJPerson.m */; };
 		C21F3717264A3890004F6BD1 /* KXVoiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F370E264A388F004F6BD1 /* KXVoiceManager.m */; };
 		C21F3718264A3890004F6BD1 /* KXVoiceGuestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3712264A388F004F6BD1 /* KXVoiceGuestCell.m */; };
 		C21F371A264A3890004F6BD1 /* KXVoiceSeatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3714264A388F004F6BD1 /* KXVoiceSeatModel.m */; };
@@ -189,6 +192,12 @@
 		38E01604257A131D00C52175 /* NSObject+Coding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
 		38E01605257A131D00C52175 /* NSObject+Coding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
 		B8EB8B5647A921C1097C5650 /* Pods-KVOTestModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.debug.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.debug.xcconfig"; sourceTree = "<group>"; };
+		C2110A2F27EC570F00A0C7AF /* YZCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZCallStack.h; sourceTree = "<group>"; };
+		C2110A3027EC570F00A0C7AF /* YZCallStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZCallStack.m; sourceTree = "<group>"; };
+		C21B579A27CDB76A004FC028 /* InterviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterviewViewController.h; sourceTree = "<group>"; };
+		C21B579B27CDB76A004FC028 /* InterviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterviewViewController.m; sourceTree = "<group>"; };
+		C21B57B527D7847B004FC028 /* ZJPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPerson.h; sourceTree = "<group>"; };
+		C21B57B627D7847B004FC028 /* ZJPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPerson.m; sourceTree = "<group>"; };
 		C21F370A264A388F004F6BD1 /* KXVoiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoiceManager.h; sourceTree = "<group>"; };
 		C21F370B264A388F004F6BD1 /* KXVoicePersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoicePersonModel.h; sourceTree = "<group>"; };
 		C21F370C264A388F004F6BD1 /* KXVoiceSeatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KXVoiceSeatModel.h; sourceTree = "<group>"; };
@@ -466,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				C2C7EA6F26EA66C30050EA67 /* TestCollection */,
+				C21B579927CDB720004FC028 /* InterviewTest */,
 				C288C4D627B635820009C755 /* AnimationTest */,
 				C24995F627741ECB003EC8F2 /* YogaKitTest */,
 				C29358E32750AFF900BF7B3C /* TouchEvent */,
@@ -519,6 +529,8 @@
 		38E015F02578E8FC00C52175 /* UIKartu */ = {
 			isa = PBXGroup;
 			children = (
+				C2110A2F27EC570F00A0C7AF /* YZCallStack.h */,
+				C2110A3027EC570F00A0C7AF /* YZCallStack.m */,
 				38E015F22578E8FC00C52175 /* UIMonitorinManager.h */,
 				38E015F12578E8FC00C52175 /* UIMonitorinManager.m */,
 			);
@@ -547,6 +559,17 @@
 				C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C21B579927CDB720004FC028 /* InterviewTest */ = {
+			isa = PBXGroup;
+			children = (
+				C21B579A27CDB76A004FC028 /* InterviewViewController.h */,
+				C21B579B27CDB76A004FC028 /* InterviewViewController.m */,
+				C21B57B527D7847B004FC028 /* ZJPerson.h */,
+				C21B57B627D7847B004FC028 /* ZJPerson.m */,
+			);
+			path = InterviewTest;
 			sourceTree = "<group>";
 		};
 		C21F3709264A388F004F6BD1 /* VoiceChatRoom */ = {
@@ -970,6 +993,7 @@
 				C29358E62750B02100BF7B3C /* ZJTouchEventViewController.m in Sources */,
 				380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */,
 				C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */,
+				C2110A3127EC570F00A0C7AF /* YZCallStack.m in Sources */,
 				38CD08B2243DA84F009429C9 /* Person+Custom.m in Sources */,
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
 				386B3DCE254A69910063DF3C /* ConfigurationViewController.m in Sources */,
@@ -992,12 +1016,14 @@
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,
 				C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */,
 				C21F387A264BEE9F004F6BD1 /* MessageSendViewController.m in Sources */,
+				C21B57B727D7847B004FC028 /* ZJPerson.m in Sources */,
 				C29358EF2750B3ED00BF7B3C /* ZJCustomScrollView.m in Sources */,
 				380742C324B81ED200968CF5 /* QDUISearchResultView.m in Sources */,
 				383B11CE23975FF000E9DCB9 /* benchmark.cpp in Sources */,
 				3807428024B6F10C00968CF5 /* QDSearchResultModel.m in Sources */,
 				38E015F32578E8FC00C52175 /* UIMonitorinManager.m in Sources */,
 				386B3DD2254A69BB0063DF3C /* TestConfigurationCell.m in Sources */,
+				C21B579C27CDB76A004FC028 /* InterviewViewController.m in Sources */,
 				38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */,
 				C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */,
 				380742C024B8174100968CF5 /* ZJBaseViewController.m in Sources */,
@@ -1152,6 +1178,7 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = B2G6WGLXZ7;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

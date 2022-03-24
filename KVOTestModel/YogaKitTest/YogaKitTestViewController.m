@@ -69,7 +69,11 @@
     self.myTableView = [[UITableView alloc]init];
     self.myTableView.delegate = self;
     self.myTableView.dataSource = self;
+//    self.myTableView.layer.cornerRadius = 10;
+//    self.myTableView.layer.masksToBounds = YES;
     [self.view addSubview:self.myTableView];
+    
+    
     
     [self.myTableView configureLayoutWithBlock:^(YGLayout *layout) {
         layout.isEnabled = YES;
