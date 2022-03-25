@@ -87,7 +87,7 @@
         @{@"title":@"YogaKit测试",@"class":@"YogaKitTestViewController"},
         @{@"title":@"layer测试",@"class":@"ShowLayerViewController"},
         @{@"title":@"Interview测试",@"class":@"InterviewViewController"},
-        
+        @{@"title":@"AR-太阳系",@"class":@"MyARKitViewController"},
         
     ]];
     self.myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavBarAndStatusBarHeight, KScreenWidth, KScreenHeight-kNavBarAndStatusBarHeight) style:(UITableViewStylePlain)];
