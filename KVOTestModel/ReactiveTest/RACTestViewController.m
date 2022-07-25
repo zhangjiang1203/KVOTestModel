@@ -22,7 +22,24 @@
     [super viewDidLoad];
     self.title = @"RAC练习";
     self.nameArr = [NSMutableArray array];
-    [self testObserver];
+    [self testReplyObserver];
+}
+
+- (void)testReplyObserver {
+    RACReplaySubject *subject = [RACReplaySubject subject];
+    
+    [subject sendNext:@1];
+//    [subject sendNext:@123];
+//    [subject sendNext:@12345];
+    
+    [subject subscribeNext:^(id  _Nullable x) {
+        NSLog(@"111111获取到接收的数据===%@",x);
+    }];
+    [subject sendNext:@123];
+    [subject subscribeNext:^(id  _Nullable x) {
+        NSLog(@"222222获取到接收的数据===%@",x);
+    }];
+    [subject sendNext:@12345];
 }
 
 - (void)testObserver {

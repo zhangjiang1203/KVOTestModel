@@ -68,6 +68,7 @@
 
 - (void)initMyUI {
     self.showDataArr = [NSMutableArray arrayWithArray:@[
+        @{@"title":@"tableView高度",@"class":@"ZJTableLayoutViewController"},
         @{@"title":@"搜索",@"class":@"QDBaseSearchViewController"},
         @{@"title":@"差值",@"class":@"ClassTestViewController"},
         @{@"title":@"类测试",@"class":@"ClassTestViewController"},

@@ -88,6 +88,7 @@
 		C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */; };
 		C2495078277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */; };
 		C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */; };
+		C2514143288E3AFB00866303 /* ZJTableLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */; };
 		C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */; };
 		C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */; };
 		C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4D827B635BE0009C755 /* ShowLayerViewController.m */; };
@@ -698,6 +699,8 @@
 		C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaSpecialLayoutViewController.m; sourceTree = "<group>"; };
 		C24995F727741EFB003EC8F2 /* YogaKitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaKitTestViewController.h; sourceTree = "<group>"; };
 		C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaKitTestViewController.m; sourceTree = "<group>"; };
+		C2514141288E3AFB00866303 /* ZJTableLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTableLayoutViewController.h; sourceTree = "<group>"; };
+		C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTableLayoutViewController.m; sourceTree = "<group>"; };
 		C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTSegmentSlider.m; sourceTree = "<group>"; };
 		C27448C82717DA5C00D8BF28 /* ZTSegmentSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTSegmentSlider.h; sourceTree = "<group>"; };
 		C27448CA2717DA9F00D8BF28 /* ZJSegmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSegmentViewController.h; sourceTree = "<group>"; };
@@ -1343,6 +1346,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2514140288E3AC700866303 /* TabViewLayout */,
 				C2110A5827ED56E100A0C7AF /* ARKit */,
 				C2C7EA6F26EA66C30050EA67 /* TestCollection */,
 				C21B579927CDB720004FC028 /* InterviewTest */,
@@ -1604,6 +1608,15 @@
 				C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */,
 			);
 			path = YogaKitTest;
+			sourceTree = "<group>";
+		};
+		C2514140288E3AC700866303 /* TabViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C2514141288E3AFB00866303 /* ZJTableLayoutViewController.h */,
+				C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */,
+			);
+			path = TabViewLayout;
 			sourceTree = "<group>";
 		};
 		C27448C62717DA4C00D8BF28 /* segmentTest */ = {
@@ -2838,6 +2851,7 @@
 				C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
+				C2514143288E3AFB00866303 /* ZJTableLayoutViewController.m in Sources */,
 				C21F37B9264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m in Sources */,
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,
 				C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */,
@@ -3003,6 +3017,7 @@
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = B2G6WGLXZ7;
@@ -3070,6 +3085,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3084,6 +3100,7 @@
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2G6WGLXZ7;
 				ENABLE_BITCODE = NO;
@@ -3148,6 +3165,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

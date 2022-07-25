@@ -25,6 +25,9 @@
 /// 互动表情
 @property (nonatomic,strong) UIImageView *emotionImageView;
 
+
+@property (nonatomic, strong) UILabel *nameLabel;
+
 @end
 
 @implementation ZJShowCollectionViewController
@@ -33,7 +36,8 @@
     [super viewDidLoad];
     self.title = @"collectionView测试";
     self.queue = dispatch_queue_create("showTest", DISPATCH_QUEUE_CONCURRENT);
-    [self createImageView];
+    [self showTestLabelAnimation];
+//    [self createImageView];
 //    [self showStringTest:1000];
 //    [self showStringTest:22332];
 //    [self showStringTest:453453];
@@ -45,6 +49,65 @@
 //    [self showStringTest:875765755765];
 //    [self setUpCollection];
 //    [self showTestCollection];
+}
+
+- (void)showTestLabelAnimation{
+    
+    NSValue *value = [NSValue valueWithCGRect:CGRectMake(10, 20, 100, 200)];
+    NSLog(@"value====%@",value);
+    
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(200, 100, 80, 40)];
+    bgView.backgroundColor = [UIColor redColor];
+    bgView.clipsToBounds = YES;
+    [self.view addSubview:bgView];
+    
+    self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 60, 40)];
+    self.nameLabel.backgroundColor = [UIColor blueColor];
+    self.nameLabel.textAlignment = NSTextAlignmentCenter;
+    self.nameLabel.textColor = [UIColor whiteColor];
+    self.nameLabel.font = [UIFont systemFontOfSize:12];
+    self.nameLabel.text = @"展示展示";
+    [bgView addSubview:self.nameLabel];
+    [self fromAnimation];
+    
+//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position.x"];
+//    animation.duration = 1;
+//    animation.fromValue = @45;
+//    animation.toValue = @(35);
+//    animation.repeatCount = MAXFLOAT;
+//    animation.autoreverses = YES;
+//    [self.nameLabel.layer addAnimation:animation forKey:@"animation"];
+    
+//    CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
+//    anim.values = @[@45,@40,@35,@40,@45];
+//
+//    anim.keyTimes = @[@0.5,@1.5,@0.5,@0.5,@1.5];
+////    anim.duration = 4.5;
+//    anim.repeatCount = MAXFLOAT;
+//    anim.autoreverses = YES;
+//    [self.nameLabel.layer addAnimation:anim forKey:@"keyPath"];
+    
+    
+}
+
+- (void)fromAnimation{
+    [UIView animateWithDuration:1.5 animations:^{
+        self.nameLabel.frame = CGRectMake(5, 0, 60, 40);
+    } completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self toAnimation];
+        });
+    }];
+}
+
+- (void)toAnimation{
+    [UIView animateWithDuration:1.5 animations:^{
+        self.nameLabel.frame = CGRectMake(10, 0, 60, 40);
+    } completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self fromAnimation];
+        });
+    }];
 }
 
 - (void)showStringTest:(NSInteger)score{
@@ -202,7 +265,7 @@
         return;
     }
     [self.emotionImageView stopAnimating];
-    [self createImageView];
+//    [self createImageView];
     NSLog(@"开始执行动画====");
     NSString *imagePre = dict[facialId];
     NSMutableArray *imageArr = [NSMutableArray array];
@@ -215,9 +278,9 @@
     self.emotionImageView.animationDuration = imageArr.count * 0.04;
     self.emotionImageView.animationImages = imageArr;
     NSLog(@"开始执行动画====count:%zd",imageArr.count);
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.emotionImageView startAnimating];
-//    });
+    });
 }
 
 - (void)createImageView{
