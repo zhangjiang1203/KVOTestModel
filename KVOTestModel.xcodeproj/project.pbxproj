@@ -541,6 +541,7 @@
 		C2C7EA7C26EA693D0050EA67 /* ZJShowContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7EA7B26EA693D0050EA67 /* ZJShowContentView.m */; };
 		C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54426A71B630057941B /* ZJTextViewController.m */; };
 		C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */; };
+		C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1174,6 +1175,8 @@
 		C2C9B54426A71B630057941B /* ZJTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTextViewController.m; sourceTree = "<group>"; };
 		C2C9B54626A9D5230057941B /* ZTHorizontalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTHorizontalLayout.h; sourceTree = "<group>"; };
 		C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTHorizontalLayout.m; sourceTree = "<group>"; };
+		C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		C2CEDA3627F7384D009E7934 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1347,6 +1350,7 @@
 			isa = PBXGroup;
 			children = (
 				C2514140288E3AC700866303 /* TabViewLayout */,
+				C2CEDA3427F7383B009E7934 /* CrashHandle */,
 				C2110A5827ED56E100A0C7AF /* ARKit */,
 				C2C7EA6F26EA66C30050EA67 /* TestCollection */,
 				C21B579927CDB720004FC028 /* InterviewTest */,
@@ -2236,6 +2240,15 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		C2CEDA3427F7383B009E7934 /* CrashHandle */ = {
+			isa = PBXGroup;
+			children = (
+				C2CEDA3627F7384D009E7934 /* UncaughtExceptionHandler.h */,
+				C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */,
+			);
+			path = CrashHandle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2803,6 +2816,7 @@
 				C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */,
 				C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */,
 				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
+				C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */,
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
 				C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */,

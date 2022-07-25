@@ -1,0 +1,79 @@
+PODS:
+  - FLAnimatedImage (1.0.16)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - libpag (3.2.7.44)
+  - LookinServer (1.0.4)
+  - Masonry (1.1.0)
+  - PLCrashReporter (1.10.1)
+  - ReactiveObjC (3.1.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
+  - Yoga (1.14.0)
+  - YogaKit (1.18.1):
+    - Yoga (~> 1.14)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - FLAnimatedImage
+  - FMDB (~> 2.7.5)
+  - libpag
+  - LookinServer
+  - Masonry
+  - PLCrashReporter
+  - ReactiveObjC (~> 3.1.1)
+  - RxCocoa
+  - RxSwift
+  - SDWebImage
+  - Yoga (from `./Yoga`)
+  - YogaKit (from `./YogaKit`)
+  - YYText
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FLAnimatedImage
+    - FMDB
+    - libpag
+    - LookinServer
+    - Masonry
+    - PLCrashReporter
+    - ReactiveObjC
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDWebImage
+    - YYText
+
+EXTERNAL SOURCES:
+  Yoga:
+    :path: "./Yoga"
+  YogaKit:
+    :path: "./YogaKit"
+
+SPEC CHECKSUMS:
+  FLAnimatedImage: 8f3e854ebf9680b71f0b6e700939687fc4d82b4b
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  libpag: a92d280f5a6b9d5c43ec572827106761c5eec109
+  LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  PLCrashReporter: b30195e509f07299ea277d1997b3a39449d05698
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
+  Yoga: b130e399352ced9afb7adfaba58e8af1a473e709
+  YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: cebbd05898745b5b1865e8b4fc294f5143aaecb4
+
+COCOAPODS: 1.10.1
