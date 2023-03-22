@@ -38,12 +38,13 @@ DEPENDENCIES:
   - YYText
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  "git@mgit.dz11.com:douyu-ios/DouyuSpecs.git":
+    - Masonry
+  trunk:
     - FLAnimatedImage
     - FMDB
     - libpag
     - LookinServer
-    - Masonry
     - PLCrashReporter
     - ReactiveObjC
     - RxCocoa
@@ -63,7 +64,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   libpag: a92d280f5a6b9d5c43ec572827106761c5eec109
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Masonry: f9c14b4ae3be54cfef0f7ef790ee58d79c27ea4c
   PLCrashReporter: b30195e509f07299ea277d1997b3a39449d05698
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -74,6 +75,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: cebbd05898745b5b1865e8b4fc294f5143aaecb4
+PODFILE CHECKSUM: 69091defdce1338e7154bd4872379872797df3c5
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.12.0

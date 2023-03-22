@@ -542,9 +542,17 @@
 		C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54426A71B630057941B /* ZJTextViewController.m */; };
 		C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */; };
 		C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */; };
+		DF09175029B5B6FA00A02A0A /* ZJModuleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */; };
+		DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09175229B5B77A00A02A0A /* MTMediatorModel.m */; };
+		DF916B4729C8865000FC92B0 /* ZJPipelineTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4629C8865000FC92B0 /* ZJPipelineTestViewController.m */; };
+		DF916B4D29C8870F00FC92B0 /* ZJPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4929C8870E00FC92B0 /* ZJPipeline.m */; };
+		DF916B5029C88C9400FC92B0 /* ZJPipelineCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4F29C88C9400FC92B0 /* ZJPipelineCenter.m */; };
+		DF916B5329C9440400FC92B0 /* ZJShowTestParserFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B5229C9440400FC92B0 /* ZJShowTestParserFilter.m */; };
+		DFEE13EC29CB03D4005397B2 /* ZJTestQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEE13EB29CB03D4005397B2 /* ZJTestQueueManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1543C95041FE9F37264A5476 /* Pods-KVOTestModel.mytest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.mytest.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.mytest.xcconfig"; sourceTree = "<group>"; };
 		3807427424B6B69C00968CF5 /* QDBaseSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDBaseSearchViewController.m; sourceTree = "<group>"; };
 		3807427524B6B69C00968CF5 /* QDBaseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDBaseSearchViewController.h; sourceTree = "<group>"; };
 		3807427724B6B6E700968CF5 /* QDUISearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QDUISearchBar.h; sourceTree = "<group>"; };
@@ -1178,6 +1186,22 @@
 		C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		C2CEDA3627F7384D009E7934 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
+		DF09174E29B5B6FA00A02A0A /* ZJModuleTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJModuleTestViewController.h; sourceTree = "<group>"; };
+		DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJModuleTestViewController.m; sourceTree = "<group>"; };
+		DF09175129B5B77A00A02A0A /* MTMediatorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTMediatorModel.h; sourceTree = "<group>"; };
+		DF09175229B5B77A00A02A0A /* MTMediatorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTMediatorModel.m; sourceTree = "<group>"; };
+		DF916B4529C8865000FC92B0 /* ZJPipelineTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPipelineTestViewController.h; sourceTree = "<group>"; };
+		DF916B4629C8865000FC92B0 /* ZJPipelineTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPipelineTestViewController.m; sourceTree = "<group>"; };
+		DF916B4929C8870E00FC92B0 /* ZJPipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPipeline.m; sourceTree = "<group>"; };
+		DF916B4A29C8870E00FC92B0 /* ZJPipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPipeline.h; sourceTree = "<group>"; };
+		DF916B4B29C8870E00FC92B0 /* ZJPipeline+Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZJPipeline+Filter.h"; sourceTree = "<group>"; };
+		DF916B4C29C8870E00FC92B0 /* ZJPipeline+Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZJPipeline+Input.h"; sourceTree = "<group>"; };
+		DF916B4E29C88C9400FC92B0 /* ZJPipelineCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPipelineCenter.h; sourceTree = "<group>"; };
+		DF916B4F29C88C9400FC92B0 /* ZJPipelineCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPipelineCenter.m; sourceTree = "<group>"; };
+		DF916B5129C9440400FC92B0 /* ZJShowTestParserFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJShowTestParserFilter.h; sourceTree = "<group>"; };
+		DF916B5229C9440400FC92B0 /* ZJShowTestParserFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJShowTestParserFilter.m; sourceTree = "<group>"; };
+		DFEE13EA29CB03D4005397B2 /* ZJTestQueueManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTestQueueManager.h; sourceTree = "<group>"; };
+		DFEE13EB29CB03D4005397B2 /* ZJTestQueueManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTestQueueManager.m; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1349,6 +1373,8 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				DF916B4429C8862D00FC92B0 /* PipelineTest */,
+				DF09174D29B5B6CD00A02A0A /* ModuleTrans */,
 				C2514140288E3AC700866303 /* TabViewLayout */,
 				C2CEDA3427F7383B009E7934 /* CrashHandle */,
 				C2110A5827ED56E100A0C7AF /* ARKit */,
@@ -1436,6 +1462,7 @@
 			children = (
 				B8EB8B5647A921C1097C5650 /* Pods-KVOTestModel.debug.xcconfig */,
 				C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */,
+				1543C95041FE9F37264A5476 /* Pods-KVOTestModel.mytest.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2249,6 +2276,44 @@
 			path = CrashHandle;
 			sourceTree = "<group>";
 		};
+		DF09174D29B5B6CD00A02A0A /* ModuleTrans */ = {
+			isa = PBXGroup;
+			children = (
+				DF09174E29B5B6FA00A02A0A /* ZJModuleTestViewController.h */,
+				DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */,
+				DF09175129B5B77A00A02A0A /* MTMediatorModel.h */,
+				DF09175229B5B77A00A02A0A /* MTMediatorModel.m */,
+				DFEE13EA29CB03D4005397B2 /* ZJTestQueueManager.h */,
+				DFEE13EB29CB03D4005397B2 /* ZJTestQueueManager.m */,
+			);
+			path = ModuleTrans;
+			sourceTree = "<group>";
+		};
+		DF916B4429C8862D00FC92B0 /* PipelineTest */ = {
+			isa = PBXGroup;
+			children = (
+				DF916B4829C8870100FC92B0 /* Pipeline */,
+				DF916B4529C8865000FC92B0 /* ZJPipelineTestViewController.h */,
+				DF916B4629C8865000FC92B0 /* ZJPipelineTestViewController.m */,
+				DF916B4E29C88C9400FC92B0 /* ZJPipelineCenter.h */,
+				DF916B4F29C88C9400FC92B0 /* ZJPipelineCenter.m */,
+			);
+			path = PipelineTest;
+			sourceTree = "<group>";
+		};
+		DF916B4829C8870100FC92B0 /* Pipeline */ = {
+			isa = PBXGroup;
+			children = (
+				DF916B4A29C8870E00FC92B0 /* ZJPipeline.h */,
+				DF916B4929C8870E00FC92B0 /* ZJPipeline.m */,
+				DF916B4B29C8870E00FC92B0 /* ZJPipeline+Filter.h */,
+				DF916B4C29C8870E00FC92B0 /* ZJPipeline+Input.h */,
+				DF916B5129C9440400FC92B0 /* ZJShowTestParserFilter.h */,
+				DF916B5229C9440400FC92B0 /* ZJShowTestParserFilter.m */,
+			);
+			path = Pipeline;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2806,6 +2871,7 @@
 			files = (
 				38E01602257A11EF00C52175 /* CodeStudentModel.m in Sources */,
 				38A2C8662481F4F200E408BB /* ZJPreformLabel.m in Sources */,
+				DFEE13EC29CB03D4005397B2 /* ZJTestQueueManager.m in Sources */,
 				C21F371B264A3890004F6BD1 /* KXVoicePersonModel.m in Sources */,
 				C2C7EA7626EA67E60050EA67 /* ZJFullBigCell.m in Sources */,
 				38B2B95824BD4C9E00F0F52F /* QDDepartmentListView.m in Sources */,
@@ -2814,6 +2880,8 @@
 				C21F3926264D4719004F6BD1 /* ZJAnswerDefine.m in Sources */,
 				C21F37AD264BADBA004F6BD1 /* KXModuleDefinition.m in Sources */,
 				C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */,
+				DF916B5029C88C9400FC92B0 /* ZJPipelineCenter.m in Sources */,
+				DF916B5329C9440400FC92B0 /* ZJShowTestParserFilter.m in Sources */,
 				C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */,
 				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
 				C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */,
@@ -2835,6 +2903,7 @@
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
 				C21F37AF264BADBA004F6BD1 /* KXModuleQAService.m in Sources */,
 				C21F37B4264BAE25004F6BD1 /* KXMoudleProtocolViewController.m in Sources */,
+				DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */,
 				380742C924B8202C00968CF5 /* QDUISearchEmptyView.m in Sources */,
 				C29358E92750B06200BF7B3C /* ZJContainerViewController.m in Sources */,
 				C21F3898264BFE51004F6BD1 /* SecondModel.m in Sources */,
@@ -2885,11 +2954,14 @@
 				C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */,
 				C233ACE62721105100D0FE39 /* ZTArrayContainViewController.m in Sources */,
 				382A1ADA2445C9C70017EA2B /* QQLockDictionary.m in Sources */,
+				DF916B4729C8865000FC92B0 /* ZJPipelineTestViewController.m in Sources */,
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
+				DF916B4D29C8870F00FC92B0 /* ZJPipeline.m in Sources */,
 				C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
 				C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */,
+				DF09175029B5B6FA00A02A0A /* ZJModuleTestViewController.m in Sources */,
 				C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */,
 				C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */,
 				C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */,
@@ -3039,7 +3111,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3121,7 +3193,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3184,6 +3256,147 @@
 			};
 			name = Release;
 		};
+		DF47B28129B1EB3000F36AC6 /* myTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = myTest;
+		};
+		DF47B28229B1EB3000F36AC6 /* myTest */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1543C95041FE9F37264A5476 /* Pods-KVOTestModel.mytest.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B2G6WGLXZ7;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
+				INFOPLIST_FILE = KVOTestModel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYText/YYText.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga/yoga.framework/Headers\"",
+					"-isystem",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit/YogaKit.framework/Headers\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB\"",
+					"-iframework",
+					"\"${PODS_ROOT}/LookinServer\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
+					"-iframework",
+					"\"${PODS_ROOT}/PLCrashReporter\"",
+					"-iframework",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/PLCrashReporter\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYText\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga\"",
+					"-iframework",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = myTest;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3191,6 +3404,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				389A752923502DDA00DDBE6C /* Debug */,
+				DF47B28129B1EB3000F36AC6 /* myTest */,
 				389A752A23502DDA00DDBE6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -3200,6 +3414,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				389A752C23502DDA00DDBE6C /* Debug */,
+				DF47B28229B1EB3000F36AC6 /* myTest */,
 				389A752D23502DDA00DDBE6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

@@ -1,1 +1,1 @@
-${PODS_XCFRAMEWORKS_BUILD_DIR}/CrashReporter
+${PODS_XCFRAMEWORKS_BUILD_DIR}/PLCrashReporter/CrashReporter.framework

@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 inhibit_all_warnings!
 #plugin 'cocoapods-imy-bin'
 #use_binaries!

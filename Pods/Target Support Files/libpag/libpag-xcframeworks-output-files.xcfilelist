@@ -1,1 +1,1 @@
-${PODS_XCFRAMEWORKS_BUILD_DIR}/libpag
+${PODS_XCFRAMEWORKS_BUILD_DIR}/libpag/libpag.framework

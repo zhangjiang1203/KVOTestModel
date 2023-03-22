@@ -44,6 +44,18 @@
     
 }
 
+/// UI回调监听
+- (void)sendEvent:(UIEvent *)event{
+    [super sendEvent:event];
+    
+//    NSSet *allTouches = [event allTouches];
+//    if ([allTouches count] > 0) {
+//        UITouchPhase phase = ((UITouch *)[allTouches anyObject]).phase;
+//        if(phase == UITouchPhaseBegan)
+//            NSLog(@"send event");
+//    }
+}
+
 
 #pragma mark - UISceneSession lifecycle
 
