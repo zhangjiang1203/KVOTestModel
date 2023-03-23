@@ -17,7 +17,17 @@
 
 @end
 
+static ZJPipelineCenter *_instance;
+
 @implementation ZJPipelineCenter
+
++ (instancetype)shareInstance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[ZJPipelineCenter alloc]init];
+    });
+    return _instance;
+}
 
 - (instancetype)init
 {
@@ -35,7 +45,7 @@
 
 - (void)insertMsg:(NSString *)message{
     if(message) {
-        [self.pipeline process:message];
+        [self.pipeline produce:message];
     }
 }
 
@@ -54,6 +64,6 @@
     }
     NSString *obj = (NSString *)object;
     
-    return [NSString stringWithFormat:@"我是测试数据====="];
+    return [NSString stringWithFormat:@"我是测试数据=====%@",obj];
 }
 @end

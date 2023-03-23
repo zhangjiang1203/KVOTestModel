@@ -10,6 +10,10 @@
 #import "ZJPipeline+Filter.h"
 #import <objc/runtime.h>
 
+#define kOperationLock(...) dispatch_semaphore_wait(self.arrOperationLock,DISPATCH_TIME_FOREVER); \
+__VA_ARGS__; \
+dispatch_semaphore_signal(self.arrOperationLock);
+
 @interface ZJPipelineBatch ()
 
 /// 产品所在的流水线
@@ -72,27 +76,27 @@
     }
     
     // 加锁
-    dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-    NSInteger index = [self.filters indexOfObjectPassingTest:^BOOL(id<ZJPipelineFilterProtocol>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSInteger objPriority = 0;
-        if ([obj respondsToSelector:@selector(filterPriority)]) {
-            objPriority = obj.filterPriority;
-        }
-        
-        return objPriority > priority;
-    }];
-    if (index != NSNotFound) {
-        [self.filters insertObject:filter atIndex:index];
-    } else {
-        [self.filters addObject:filter];
-    }
-    dispatch_semaphore_signal(self.arrOperationLock);
+    kOperationLock(
+       NSInteger index = [self.filters indexOfObjectPassingTest:^BOOL(id<ZJPipelineFilterProtocol>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+           NSInteger objPriority = 0;
+           if ([obj respondsToSelector:@selector(filterPriority)]) {
+               objPriority = obj.filterPriority;
+           }
+           
+           return objPriority > priority;
+       }];
+       if (index != NSNotFound) {
+           [self.filters insertObject:filter atIndex:index];
+       } else {
+           [self.filters addObject:filter];
+       }
+    );
 }
 
 - (void)removeFilter:(id<ZJPipelineFilterProtocol>)filter {
-    dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-    [self.filters removeObject:filter];
-    dispatch_semaphore_signal(self.arrOperationLock);
+    kOperationLock(
+       [self.filters removeObject:filter];
+   );
 }
 
 - (void)produce:(NSObject *)object {
@@ -103,10 +107,9 @@
 
 - (NSObject *)process:(NSObject *)object {
     NSObject *rs = object;
-    
-    dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-    NSArray *filters = [self.filters copy];
-    dispatch_semaphore_signal(self.arrOperationLock);
+    kOperationLock(
+     NSArray *filters = [self.filters copy];
+   );
     
     for (id<ZJPipelineFilterProtocol> filter in filters) {
         rs = [filter pipelineFilter:rs];
@@ -146,9 +149,8 @@
 
 - (void)destroy {
     self.bufferBatch = nil;
-    dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-    [self.filters removeAllObjects];
-    dispatch_semaphore_signal(self.arrOperationLock);
+    
+    kOperationLock([self.filters removeAllObjects];);
     dispatch_semaphore_signal(self.product);
     dispatch_semaphore_signal(self.mutex);  // 还原为1
 }
@@ -179,10 +181,9 @@
         dispatch_semaphore_wait(self.mutex, DISPATCH_TIME_FOREVER);
         dispatch_semaphore_wait(self.product, DISPATCH_TIME_FOREVER);
         
-        dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-        NSRange range = NSMakeRange(0, MIN(self.batchSize, self.mArr.count - 1));
-        dispatch_semaphore_signal(self.arrOperationLock);
-        
+        kOperationLock(
+           NSRange range = NSMakeRange(0, MIN(self.batchSize, self.mArr.count - 1));
+        );
         if (range.length == 0) {
             return 0;
         }
@@ -192,16 +193,20 @@
             dispatch_semaphore_wait(self.product, DISPATCH_TIME_FOREVER);
         }
         
-        dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-        NSArray<NSObject *> *batchObjects = [self.mArr subarrayWithRange:range];
-        [self.mArr removeObjectsInRange:range];
-        dispatch_semaphore_signal(self.arrOperationLock);
+        kOperationLock(
+           NSArray<NSObject *> *batchObjects = [self.mArr subarrayWithRange:range];
+           [self.mArr removeObjectsInRange:range];
+        );
         
         NSMutableArray<NSObject *> *mFilteredArr = [NSMutableArray array];
         
-        dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-        NSArray *filters = [self.filters copy];
-        dispatch_semaphore_signal(self.arrOperationLock);
+//        dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
+//        NSArray *filters = [self.filters copy];
+//        dispatch_semaphore_signal(self.arrOperationLock);
+        
+        kOperationLock(
+           NSArray *filters = [self.filters copy];
+        );
         
         for (NSInteger i = 0; i < batchObjects.count; i++) {
             NSObject *filterObj = batchObjects[i];
@@ -238,10 +243,15 @@
 
 #pragma mark - Private
 - (void)insertProduct:(NSObject *)object {
-    dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-    NSUInteger index = self.mArr.count - 1;
-    [self.mArr insertObject:object atIndex:index];
-    dispatch_semaphore_signal(self.arrOperationLock);
+//    dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
+//    NSUInteger index = self.mArr.count - 1;
+//    [self.mArr insertObject:object atIndex:index];
+    
+    kOperationLock(
+       NSUInteger index = self.mArr.count - 1;
+       [self.mArr insertObject:object atIndex:index];
+    );
+//    dispatch_semaphore_signal(self.arrOperationLock);
     
     dispatch_semaphore_signal(self.product);
 }

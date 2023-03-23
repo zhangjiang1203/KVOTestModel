@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZJPipelineCenter : NSObject
 
++ (instancetype)shareInstance;
+
 /// 插入消息
 - (void)insertMsg:(NSString *)message;
 

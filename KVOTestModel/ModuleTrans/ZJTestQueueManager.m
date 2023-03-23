@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <Masonry/Masonry.h>
 
-@interface ZJTestQueueManager ()
+@interface ZJTestQueueManager ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
@@ -84,38 +84,35 @@
     }
     NSString *dataStr = self.dataArr.firstObject;
     [self.dataArr removeObjectAtIndex:0];
-    NSLog(@"开始执行任务===%@",dataStr);
+    //设置位移动画 和 透明度动画
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:2 animations:^{
         [self.animView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(0);
         }];
         [[UIApplication sharedApplication].delegate.window layoutIfNeeded];
         [[UIApplication sharedApplication].delegate.window setNeedsLayout];
     } completion:^(BOOL finished) {
-        [self.animView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(-100);
+        [UIView animateWithDuration:1 animations:^{
+            self.animView.alpha = 0;
+        } completion:^(BOOL finished) {
+            self.animView.alpha = 1;
+            [self.animView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(-100);
+            }];
+            [[UIApplication sharedApplication].delegate.window layoutIfNeeded];
+            [[UIApplication sharedApplication].delegate.window setNeedsLayout];
+            action();
         }];
-        [[UIApplication sharedApplication].delegate.window layoutIfNeeded];
-        [[UIApplication sharedApplication].delegate.window setNeedsLayout];
-        NSLog(@"任务执行完毕===%@",dataStr);
-        action();
     }];
 }
 
 - (void)cleanSemaphore{
-    
     dispatch_semaphore_wait(self.dataSeamphore, DISPATCH_TIME_FOREVER);
     [self.dataArr removeAllObjects];
     dispatch_semaphore_signal(self.dataSeamphore);
     dispatch_semaphore_signal(self.tipsSemaphore);//还原为1
     self.isExecuting = NO;
-    
-//    dispatch_semaphore_wait(self.tipsSemaphore, DISPATCH_TIME_FOREVER);
-//    self.dataSeamphore = nil;
-//    self.tipsSemaphore = nil;
-    
-    
 }
 
 - (void)dealloc{

@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) UIButton *cleanBtn;
 
-@property (nonatomic, strong) ZJPipelineCenter *pipelineCenter;
+//@property (nonatomic, strong) ZJPipelineCenter *pipelineCenter;
 
 @end
 
@@ -31,7 +31,7 @@
 
 - (void)setUpUI {
     
-    self.pipelineCenter = [[ZJPipelineCenter alloc] init];
+//    self.pipelineCenter = [[ZJPipelineCenter alloc] init];
     
     _insertBtn = [[UIButton alloc]init];
     _insertBtn.tag = 1;
@@ -64,9 +64,9 @@
 
 - (void)testPipelineAction:(UIButton *)sender {
     if(sender.tag == 1) {
-        [self.pipelineCenter insertMsg:[NSString stringWithFormat:@"我上海测试数据===%zd",arc4random_uniform(1000)]];
+        [[ZJPipelineCenter shareInstance] insertMsg:[NSString stringWithFormat:@"我上海测试数据===%zd",arc4random_uniform(1000)]];
     } else {
-        [self.pipelineCenter clean];
+        [[ZJPipelineCenter shareInstance] clean];
     }
     
 }
