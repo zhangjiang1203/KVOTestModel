@@ -133,15 +133,13 @@ dispatch_semaphore_signal(self.arrOperationLock);
         // 如果没有请求到锁，说明流水线的正常‘消费’也在等待生产锁，缓冲区中没有数据，直接返回
     } else {
         // 数组操作锁
-        dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-        
-        // 仅留下最后一个哨兵
-        if (self.mArr.count > 1) {
-            NSRange range = NSMakeRange(0, self.mArr.count - 1);
-            [self.mArr removeObjectsInRange:range];
-        }
-        
-        dispatch_semaphore_signal(self.arrOperationLock);
+        kOperationLock(
+           // 仅留下最后一个哨兵
+           if (self.mArr.count > 1) {
+               NSRange range = NSMakeRange(0, self.mArr.count - 1);
+               [self.mArr removeObjectsInRange:range];
+           }
+       );
         
         dispatch_semaphore_signal(self.mutex);
     }
@@ -197,12 +195,8 @@ dispatch_semaphore_signal(self.arrOperationLock);
            NSArray<NSObject *> *batchObjects = [self.mArr subarrayWithRange:range];
            [self.mArr removeObjectsInRange:range];
         );
-        
+
         NSMutableArray<NSObject *> *mFilteredArr = [NSMutableArray array];
-        
-//        dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-//        NSArray *filters = [self.filters copy];
-//        dispatch_semaphore_signal(self.arrOperationLock);
         
         kOperationLock(
            NSArray *filters = [self.filters copy];
@@ -243,16 +237,10 @@ dispatch_semaphore_signal(self.arrOperationLock);
 
 #pragma mark - Private
 - (void)insertProduct:(NSObject *)object {
-//    dispatch_semaphore_wait(self.arrOperationLock, DISPATCH_TIME_FOREVER);
-//    NSUInteger index = self.mArr.count - 1;
-//    [self.mArr insertObject:object atIndex:index];
-    
     kOperationLock(
        NSUInteger index = self.mArr.count - 1;
        [self.mArr insertObject:object atIndex:index];
     );
-//    dispatch_semaphore_signal(self.arrOperationLock);
-    
     dispatch_semaphore_signal(self.product);
 }
 @end
