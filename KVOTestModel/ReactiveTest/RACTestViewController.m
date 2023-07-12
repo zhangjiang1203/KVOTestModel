@@ -7,12 +7,20 @@
 //
 
 #import "RACTestViewController.h"
-#import <ReactiveObjC/ReactiveObjC.h>
+
 @interface RACTestViewController ()
 
 @property (nonatomic,strong) RACCommand *command;
 
 @property (nonatomic,strong) NSMutableArray<NSString *> *nameArr;
+
+
+@property (nonatomic, strong) LoginViewModel *loginViewModel;
+
+@property (strong, nonatomic)  UITextField *accountField;
+@property (strong, nonatomic)  UITextField *pwdField;
+
+@property (strong, nonatomic)  UIButton *loginBtn;
 
 @end
 
@@ -239,6 +247,30 @@
         NSLog(@"combine reduce ==%@",x);
     }];
     
+    UITextField *textField = [UITextField new];
+    // 1.0.5s内只响应一次
+    // 2.相同文字不做处理
+    // 3.对字符串进行过滤
+    [[[[textField.rac_textSignal throttle:0.5] distinctUntilChanged] filter:^BOOL(NSString
+        *value) {
+        return value.length > 3;
+    }] subscribeNext:^(NSString *x) {
+        
+    }];
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(NSNotification *x) {
+        CGRect keyboardRect = [x.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        double duration = [x.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+        [UIView animateWithDuration:duration animations:^{
+            //修改其他控件高度
+        }];
+    }];
+    
+    [RACObserve(textField, text) subscribeNext:^(id  _Nullable x) {
+        //只要值变化就会有回调
+    }];
+
+    
     /*
      filter 过滤信号，获得满足条件的信号
      [_textField.rac_textSignal filter:^BOOL(NSString
@@ -305,7 +337,171 @@
      
      
      */
+    
+    RACSignal *signal1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        /// 模拟网络延迟
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"123"];
+            [subscriber sendCompleted];
+        });
+        return nil;
+    }];
+    
+    RACSignal *signal2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        /// 模拟网络延迟
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"123"];
+            [subscriber sendCompleted];
+        });
+        return nil;
+    }];
+    
+    /// 聚合多个signal 每个signal都必须触发一次才会执行
+    [[RACSignal combineLatest:@[signal1,signal2] reduce:^id (id result1,id result2){
+        return @"";
+    }] subscribeNext:^(id  _Nullable x) {
+        //满足条件
+    } error:^(NSError * _Nullable error) {
+        //发生错误
+    }];
+    
+    /// 获取数组中所有人的名称 并且过滤掉长度小于6的
+    NSArray<Account *> *dataArr = [NSArray array];
+    [[[dataArr.rac_sequence map:^id(Account *value) {
+        return value.account;
+    }] filter:^BOOL(NSString *value) {
+        return value.length > 6;
+    }] array];
+    
+    // 字典转化 map  filter 拼接
+    NSDictionary<NSString *,Account *> *dataDict = [NSDictionary dictionary];
+    [[dataDict.rac_sequence map:^id _Nullable(RACTwoTuple<NSString *,Account *> *value) {
+        return [NSString stringWithFormat:@"%@-%@",value.first,value.second.account];
+    }] array];
+    
+    [[dataDict.rac_keySequence map:^id _Nullable(NSString * _Nullable value) {
+        return value;
+    }] array];
+    
+    [[dataDict.rac_valueSequence map:^id _Nullable(Account * _Nullable value) {
+        return value.account;
+    }] array];
+    
 }
 
+// 视图模型绑定
+- (void)bindModel{
+    // 给模型的属性绑定信号 只要账号文本框一改变，就会给account赋值
+    RAC(self.loginViewModel.account, account) = _accountField.rac_textSignal;
+    RAC(self.loginViewModel.account, password) = _pwdField.rac_textSignal;
+    
+    //定义自己的规则
+    @weakify(self);
+    [[_accountField.rac_textSignal map:^id(NSString *value) {
+        return @(value.length > 3 && value.length < 12);
+    }] subscribeNext:^(NSNumber *x) {
+        @strongify(self);
+        self.accountField.backgroundColor = x.boolValue ? [UIColor whiteColor] : [UIColor redColor];
+    }];
+    
+    RAC(self.accountField,backgroundColor) = [_accountField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+        BOOL isVaild = value.length > 3 && value.length < 12;
+        return isVaild ? [UIColor whiteColor] : [UIColor redColor];
+    }];
+    
+    [[_pwdField.rac_textSignal map:^id(NSString *value) {
+        return @(value.length > 3 && value.length < 12);
+    }] subscribeNext:^(NSNumber *x) {
+        @strongify(self);
+        self.pwdField.backgroundColor = x.boolValue ? [UIColor whiteColor] : [UIColor redColor];
+    }];
+    // 绑定登录按钮
+    RAC(self.loginBtn,enabled) = self.loginViewModel.enableLoginSignal;
+
+   // 监听登录按钮点击
+    [[[_loginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] doNext:^(__kindof UIControl *x) {
+        x.enabled = NO;
+    }] subscribeNext:^(id x) {
+        @strongify(self);
+        // 执行登录事件
+        [self.loginViewModel.LoginCommand execute:nil];
+    }];
+    
+    [[[self.loginViewModel.LoginCommand executionSignals] switchToLatest] subscribeNext:^(id  _Nullable x) {
+        //监听登录状态 修改按钮的状态
+        @strongify(self);
+        self.loginBtn.enabled = YES;
+    }];
+}
+
+
+- (LoginViewModel *)loginViewModel
+{
+    if (_loginViewModel == nil) {
+
+        _loginViewModel = [[LoginViewModel alloc] init];
+        [_loginViewModel.actionSub subscribeNext:^(id x) {
+            NSLog(@"………………%@",x);
+        }];
+    }
+    return _loginViewModel;
+}
+@end
+
+@implementation LoginViewModel
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _actionSub = [RACSubject subject];
+        __weak typeof(self) weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [self.actionSub sendNext:@"我来了"];
+        });
+    }
+    return self;
+}
+
+- (void)initialBind{
+    // 监听账号的属性值改变，把他们聚合成一个信号。
+    _enableLoginSignal = [RACSignal combineLatest:@[RACObserve(self.account, account),RACObserve(self.account, password)]
+                                           reduce:^id(NSString *account,NSString *pwd){
+        return @(account.length && pwd.length);
+    }];
+
+    // 处理登录业务逻辑
+    _LoginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal createSignal:^RACDisposable *(id subscriber) {
+            // 模仿网络延迟
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [subscriber sendNext:@"登录成功"];
+                // 数据传送完毕，必须调用完成，否则命令永远处于执行状态
+                [subscriber sendCompleted];
+            });
+            return nil;
+        }];
+    }];
+
+    // 监听登录产生的数据
+    [_LoginCommand.executionSignals.switchToLatest subscribeNext:^(id x) {
+        //登录成功
+    } error:^(NSError * _Nullable error) {
+        //登录失败
+    }];
+
+    // 监听登录状态
+    [[_LoginCommand.executing skip:1] subscribeNext:^(id x) {
+        if ([x isEqualToNumber:@(YES)]) {
+            // 正在登录ing...
+        }else{
+            
+        }
+    }];
+}
+
+@end
+
+@implementation Account
 
 @end

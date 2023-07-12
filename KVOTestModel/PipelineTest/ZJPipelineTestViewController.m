@@ -17,7 +17,9 @@
 
 @property (nonatomic, strong) UIButton *cleanBtn;
 
-//@property (nonatomic, strong) ZJPipelineCenter *pipelineCenter;
+@property (nonatomic, strong) ZJPipelineCenter *pipelineCenter;
+
+@property (nonatomic, strong) NSMutableArray *changeArrs;
 
 @end
 
@@ -26,12 +28,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
+    
+    NSMutableArray *data;
+    
+    NSLog(@"测试打点====%zd",data.count);
+    
+    self.changeArrs = [NSMutableArray array];
+//    [self.changeArrs addObject:@"我就是测试展示数据"];
+//    [self.changeArrs addObject:@"哈哈哈"];
+//    NSString *tem = [self.changeArrs componentsJoinedByString:@"、"];
+//    NSLog(@"当前展示数据====%@",tem);
+    [self testNumberContain];
+}
+
+
+- (void)testNumberContain {
+    NSArray *testData = @[@133,@890,@6789678,@978];
+    
+    if([testData containsObject:@133]) {
+        NSLog(@"关系成立=====");
+    }
 }
 
 
 - (void)setUpUI {
     
-//    self.pipelineCenter = [[ZJPipelineCenter alloc] init];
+    self.pipelineCenter = [[ZJPipelineCenter alloc] init];
     
     _insertBtn = [[UIButton alloc]init];
     _insertBtn.tag = 1;
@@ -64,7 +86,7 @@
 
 - (void)testPipelineAction:(UIButton *)sender {
     if(sender.tag == 1) {
-        [[ZJPipelineCenter shareInstance] insertMsg:[NSString stringWithFormat:@"我上海测试数据===%zd",arc4random_uniform(1000)]];
+        [[ZJPipelineCenter shareInstance] insertMsg:[NSString stringWithFormat:@"我上海测试数据===%u",arc4random_uniform(1000)]];
     } else {
         [[ZJPipelineCenter shareInstance] clean];
     }
