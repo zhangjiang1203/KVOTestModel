@@ -16,6 +16,10 @@
 
 @property (nonatomic,strong) UICollectionView *myCollectionView;
 
+@property (nonatomic, strong) NSPredicate *predicate;
+
+@property (nonatomic, strong) NSRegularExpression *regex;
+
 
 @end
 
@@ -132,11 +136,30 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(7, 12, 7, 12));
     }];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddenKeyBoard:) name:UIKeyboardWillShowNotification object:nil];
 }
 
 - (void)textViewDidChange:(YYTextView *)textView{
-    NSLog(@"文字开始变化===%f",textView.contentSize.height);
+//    NSLog(@"文字开始变化===%f",textView.contentSize.height);
+//    BOOL vale = [self.predicate evaluateWithObject:textView.text];
+    NSRange range = NSMakeRange(0, textView.text.length);
+    NSUInteger emojiCount = [self.regex numberOfMatchesInString:textView.text options:0 range:range];
+    NSString *modifiedStr = [self.regex stringByReplacingMatchesInString:textView.text options:0 range:range withTemplate:@""];
+    NSLog(@"当前含有的表情个数===%zd,text:%zd",emojiCount,modifiedStr.length);
+}
+
+- (NSRegularExpression *)regex{
+    if(!_regex) {
+        _regex = [NSRegularExpression regularExpressionWithPattern:@"[^\\u0020-\\u007E\\u00A0-\\u00BE\\u2E80-\\uA4CF\\uF900-\\uFAFF\\uFE30-\\uFE4F\\uFF00-\\uFFEF\\u0080-\\u009F\\u2000-\\u201f\r\n]" options:NSRegularExpressionCaseInsensitive error:nil];
+    }
+    return _regex;
+}
+
+- (NSPredicate *)predicate {
+    if(!_predicate) {
+        NSString  *regexString = @"[^\\u0020-\\u007E\\u00A0-\\u00BE\\u2E80-\\uA4CF\\uF900-\\uFAFF\\uFE30-\\uFE4F\\uFF00-\\uFFEF\\u0080-\\u009F\\u2000-\\u201f\\u2026\\u2022\\u20ac\r\n]";
+        _predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regexString];
+    }
+    return _predicate;
 }
 
 @end

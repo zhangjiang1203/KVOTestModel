@@ -32,6 +32,11 @@
     return YES;
 }
 
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@-%zd", self.name,self.age];
+}
 @end
 
 //    Person *p = [Person new];

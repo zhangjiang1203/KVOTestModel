@@ -68,6 +68,7 @@
 
 - (void)initMyUI {
     self.showDataArr = [NSMutableArray arrayWithArray:@[
+        @{@"title":@"GCDTimer",@"class":@"GCDTimeViewController"},
         @{@"title":@"swiftTest",@"class":@"KVOTestModel.ZJAnimationViewController"},
         @{@"title":@"pipeline测试",@"class":@"ZJPipelineTestViewController"},
         @{@"title":@"组件化测试",@"class":@"ZJModuleTestViewController"},

@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 #source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '11.0'
+platform :ios, '13.0'
 inhibit_all_warnings!
 #plugin 'cocoapods-imy-bin'
 #use_binaries!
@@ -20,6 +20,7 @@ target 'KVOTestModel' do
   pod 'ReactiveObjC', :path => './ReactiveObjC' #'~> 3.1.1'
   pod 'Masonry'
   pod 'YYText'
+  pod 'MJRefresh'
 
   #奔溃搜集
   pod 'PLCrashReporter'
@@ -39,7 +40,7 @@ end
 post_install do |installer|
     installer.pods_project.targets.each do |target|
         target.build_configurations.each do |config|
-            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
         end
     end
 end

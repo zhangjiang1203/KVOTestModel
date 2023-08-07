@@ -544,11 +544,18 @@
 		C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */; };
 		DF09175029B5B6FA00A02A0A /* ZJModuleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */; };
 		DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09175229B5B77A00A02A0A /* MTMediatorModel.m */; };
+		DF15C3C42A6FA51300F456F1 /* DYHBAwardRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF15C3C22A6FA51200F456F1 /* DYHBAwardRecordCell.m */; };
 		DF6F34ED2A5E586900E61F69 /* ZJShowNameFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F34EC2A5E586900E61F69 /* ZJShowNameFunc.swift */; };
+		DF6FCB6D2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6FCB6C2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m */; };
 		DF916B4729C8865000FC92B0 /* ZJPipelineTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4629C8865000FC92B0 /* ZJPipelineTestViewController.m */; };
 		DF916B4D29C8870F00FC92B0 /* ZJPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4929C8870E00FC92B0 /* ZJPipeline.m */; };
 		DF916B5029C88C9400FC92B0 /* ZJPipelineCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4F29C88C9400FC92B0 /* ZJPipelineCenter.m */; };
 		DF916B5329C9440400FC92B0 /* ZJShowTestParserFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B5229C9440400FC92B0 /* ZJShowTestParserFilter.m */; };
+		DFCCD5662A66BA5D000D4F61 /* GCDQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCCD55E2A66BA5D000D4F61 /* GCDQueue.m */; };
+		DFCCD5672A66BA5D000D4F61 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCCD55F2A66BA5D000D4F61 /* GCDGroup.m */; };
+		DFCCD5682A66BA5D000D4F61 /* GCDSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCCD5622A66BA5D000D4F61 /* GCDSemaphore.m */; };
+		DFCCD5692A66BA5D000D4F61 /* DYGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCCD5652A66BA5D000D4F61 /* DYGCDTimer.m */; };
+		DFCCD56C2A66BA87000D4F61 /* GCDTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCCD56B2A66BA87000D4F61 /* GCDTimeViewController.m */; };
 		DFEE13EC29CB03D4005397B2 /* ZJTestQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEE13EB29CB03D4005397B2 /* ZJTestQueueManager.m */; };
 		DFF41A672A1E13CC00CF60F9 /* ZJAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF41A662A1E13CC00CF60F9 /* ZJAnimationViewController.swift */; };
 		DFF41A692A1E142A00CF60F9 /* ZJShowDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF41A682A1E142A00CF60F9 /* ZJShowDrawView.swift */; };
@@ -1193,7 +1200,11 @@
 		DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJModuleTestViewController.m; sourceTree = "<group>"; };
 		DF09175129B5B77A00A02A0A /* MTMediatorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTMediatorModel.h; sourceTree = "<group>"; };
 		DF09175229B5B77A00A02A0A /* MTMediatorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTMediatorModel.m; sourceTree = "<group>"; };
+		DF15C3C22A6FA51200F456F1 /* DYHBAwardRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHBAwardRecordCell.m; sourceTree = "<group>"; };
+		DF15C3C32A6FA51200F456F1 /* DYHBAwardRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHBAwardRecordCell.h; sourceTree = "<group>"; };
 		DF6F34EC2A5E586900E61F69 /* ZJShowNameFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJShowNameFunc.swift; sourceTree = "<group>"; };
+		DF6FCB6B2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHBLuckyBagInfoCell.h; sourceTree = "<group>"; };
+		DF6FCB6C2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHBLuckyBagInfoCell.m; sourceTree = "<group>"; };
 		DF916B4529C8865000FC92B0 /* ZJPipelineTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPipelineTestViewController.h; sourceTree = "<group>"; };
 		DF916B4629C8865000FC92B0 /* ZJPipelineTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPipelineTestViewController.m; sourceTree = "<group>"; };
 		DF916B4929C8870E00FC92B0 /* ZJPipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPipeline.m; sourceTree = "<group>"; };
@@ -1204,6 +1215,17 @@
 		DF916B4F29C88C9400FC92B0 /* ZJPipelineCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPipelineCenter.m; sourceTree = "<group>"; };
 		DF916B5129C9440400FC92B0 /* ZJShowTestParserFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJShowTestParserFilter.h; sourceTree = "<group>"; };
 		DF916B5229C9440400FC92B0 /* ZJShowTestParserFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJShowTestParserFilter.m; sourceTree = "<group>"; };
+		DFCCD55D2A66BA5D000D4F61 /* GCDSemaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDSemaphore.h; sourceTree = "<group>"; };
+		DFCCD55E2A66BA5D000D4F61 /* GCDQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDQueue.m; sourceTree = "<group>"; };
+		DFCCD55F2A66BA5D000D4F61 /* GCDGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDGroup.m; sourceTree = "<group>"; };
+		DFCCD5602A66BA5D000D4F61 /* DYGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYGCDTimer.h; sourceTree = "<group>"; };
+		DFCCD5612A66BA5D000D4F61 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
+		DFCCD5622A66BA5D000D4F61 /* GCDSemaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDSemaphore.m; sourceTree = "<group>"; };
+		DFCCD5632A66BA5D000D4F61 /* GCDQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDQueue.h; sourceTree = "<group>"; };
+		DFCCD5642A66BA5D000D4F61 /* GCDGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDGroup.h; sourceTree = "<group>"; };
+		DFCCD5652A66BA5D000D4F61 /* DYGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYGCDTimer.m; sourceTree = "<group>"; };
+		DFCCD56A2A66BA87000D4F61 /* GCDTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDTimeViewController.h; sourceTree = "<group>"; };
+		DFCCD56B2A66BA87000D4F61 /* GCDTimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDTimeViewController.m; sourceTree = "<group>"; };
 		DFEE13EA29CB03D4005397B2 /* ZJTestQueueManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTestQueueManager.h; sourceTree = "<group>"; };
 		DFEE13EB29CB03D4005397B2 /* ZJTestQueueManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTestQueueManager.m; sourceTree = "<group>"; };
 		DFF41A652A1E13CC00CF60F9 /* KVOTestModel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KVOTestModel-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1380,6 +1402,7 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				DFCCD55B2A66BA52000D4F61 /* GCDTimerTest */,
 				DFF41A642A1E139500CF60F9 /* SwiftTest */,
 				DF916B4429C8862D00FC92B0 /* PipelineTest */,
 				DF09174D29B5B6CD00A02A0A /* ModuleTrans */,
@@ -1655,6 +1678,10 @@
 			children = (
 				C2514141288E3AFB00866303 /* ZJTableLayoutViewController.h */,
 				C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */,
+				DF6FCB6B2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.h */,
+				DF6FCB6C2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m */,
+				DF15C3C32A6FA51200F456F1 /* DYHBAwardRecordCell.h */,
+				DF15C3C22A6FA51200F456F1 /* DYHBAwardRecordCell.m */,
 			);
 			path = TabViewLayout;
 			sourceTree = "<group>";
@@ -2323,6 +2350,32 @@
 			path = Pipeline;
 			sourceTree = "<group>";
 		};
+		DFCCD55B2A66BA52000D4F61 /* GCDTimerTest */ = {
+			isa = PBXGroup;
+			children = (
+				DFCCD55C2A66BA5D000D4F61 /* GCD */,
+				DFCCD56A2A66BA87000D4F61 /* GCDTimeViewController.h */,
+				DFCCD56B2A66BA87000D4F61 /* GCDTimeViewController.m */,
+			);
+			path = GCDTimerTest;
+			sourceTree = "<group>";
+		};
+		DFCCD55C2A66BA5D000D4F61 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				DFCCD5602A66BA5D000D4F61 /* DYGCDTimer.h */,
+				DFCCD5652A66BA5D000D4F61 /* DYGCDTimer.m */,
+				DFCCD5612A66BA5D000D4F61 /* GCD.h */,
+				DFCCD5642A66BA5D000D4F61 /* GCDGroup.h */,
+				DFCCD55F2A66BA5D000D4F61 /* GCDGroup.m */,
+				DFCCD5632A66BA5D000D4F61 /* GCDQueue.h */,
+				DFCCD55E2A66BA5D000D4F61 /* GCDQueue.m */,
+				DFCCD55D2A66BA5D000D4F61 /* GCDSemaphore.h */,
+				DFCCD5622A66BA5D000D4F61 /* GCDSemaphore.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
 		DFF41A642A1E139500CF60F9 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -2903,6 +2956,7 @@
 				C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */,
 				DF916B5029C88C9400FC92B0 /* ZJPipelineCenter.m in Sources */,
 				DF916B5329C9440400FC92B0 /* ZJShowTestParserFilter.m in Sources */,
+				DF15C3C42A6FA51300F456F1 /* DYHBAwardRecordCell.m in Sources */,
 				C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */,
 				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
 				C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */,
@@ -2916,6 +2970,7 @@
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
 				C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
+				DFCCD5682A66BA5D000D4F61 /* GCDSemaphore.m in Sources */,
 				C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */,
 				C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
@@ -2925,6 +2980,7 @@
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
 				C21F37AF264BADBA004F6BD1 /* KXModuleQAService.m in Sources */,
 				C21F37B4264BAE25004F6BD1 /* KXMoudleProtocolViewController.m in Sources */,
+				DF6FCB6D2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m in Sources */,
 				DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */,
 				380742C924B8202C00968CF5 /* QDUISearchEmptyView.m in Sources */,
 				C29358E92750B06200BF7B3C /* ZJContainerViewController.m in Sources */,
@@ -2940,6 +2996,8 @@
 				C2110A3127EC570F00A0C7AF /* YZCallStack.m in Sources */,
 				38CD08B2243DA84F009429C9 /* Person+Custom.m in Sources */,
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
+				DFCCD5662A66BA5D000D4F61 /* GCDQueue.m in Sources */,
+				DFCCD56C2A66BA87000D4F61 /* GCDTimeViewController.m in Sources */,
 				386B3DCE254A69910063DF3C /* ConfigurationViewController.m in Sources */,
 				C21F390D264D299A004F6BD1 /* ZJServiceModel.m in Sources */,
 				3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */,
@@ -2981,8 +3039,10 @@
 				389A751723502DD500DDBE6C /* AppDelegate.m in Sources */,
 				DF916B4D29C8870F00FC92B0 /* ZJPipeline.m in Sources */,
 				C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */,
+				DFCCD5692A66BA5D000D4F61 /* DYGCDTimer.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
+				DFCCD5672A66BA5D000D4F61 /* GCDGroup.m in Sources */,
 				C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */,
 				DF09175029B5B6FA00A02A0A /* ZJModuleTestViewController.m in Sources */,
 				C21F3912264D2E2B004F6BD1 /* ZJServiceEvent.m in Sources */,
@@ -3135,7 +3195,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3221,7 +3281,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3363,7 +3423,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

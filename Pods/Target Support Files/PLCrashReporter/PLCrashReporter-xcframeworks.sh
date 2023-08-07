@@ -17,14 +17,14 @@ RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 variant_for_slice()
 {
   case "$1" in
-  "CrashReporter.xcframework/ios-arm64_arm64e_armv7_armv7s")
+  "CrashReporter.xcframework/ios-arm64_arm64e")
     echo ""
-    ;;
-  "CrashReporter.xcframework/ios-arm64_i386_x86_64-simulator")
-    echo "simulator"
     ;;
   "CrashReporter.xcframework/ios-arm64_x86_64-maccatalyst")
     echo "maccatalyst"
+    ;;
+  "CrashReporter.xcframework/ios-arm64_x86_64-simulator")
+    echo "simulator"
     ;;
   "CrashReporter.xcframework/macos-arm64_x86_64")
     echo ""
@@ -41,13 +41,13 @@ variant_for_slice()
 archs_for_slice()
 {
   case "$1" in
-  "CrashReporter.xcframework/ios-arm64_arm64e_armv7_armv7s")
-    echo "arm64 arm64e armv7 armv7s"
-    ;;
-  "CrashReporter.xcframework/ios-arm64_i386_x86_64-simulator")
-    echo "arm64 i386 x86_64"
+  "CrashReporter.xcframework/ios-arm64_arm64e")
+    echo "arm64 arm64e"
     ;;
   "CrashReporter.xcframework/ios-arm64_x86_64-maccatalyst")
+    echo "arm64 x86_64"
+    ;;
+  "CrashReporter.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
     ;;
   "CrashReporter.xcframework/macos-arm64_x86_64")
@@ -141,5 +141,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/PLCrashReporter/CrashReporter.xcframework" "PLCrashReporter" "framework" "ios-arm64_arm64e_armv7_armv7s" "ios-arm64_i386_x86_64-simulator" "ios-arm64_x86_64-maccatalyst"
+install_xcframework "${PODS_ROOT}/PLCrashReporter/CrashReporter.xcframework" "PLCrashReporter" "framework" "ios-arm64_arm64e" "ios-arm64_x86_64-maccatalyst" "ios-arm64_x86_64-simulator"
 
