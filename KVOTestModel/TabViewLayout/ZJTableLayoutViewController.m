@@ -10,7 +10,7 @@
 #import <Masonry/Masonry.h>
 #import "DYHBLuckyBagInfoCell.h"
 #import "DYHBAwardRecordCell.h"
-
+#import <CoreText/CoreText.h>
 #import "Person.h"
 
 @interface ZJTableLayoutViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -28,7 +28,65 @@
     self.title = @"测试tableView";
     self.titleDatasArr = [NSMutableArray array];
     [self setUpTablView];
-    [self numberTest];
+//    [self arrayTest];
+//    [self showNameTest];
+    [self testMulDict];
+}
+
+- (void)testMulDict {
+    
+    NSTimeInterval interval = 0;//[DYRequestAuthUtil serverTimeDiffer];
+    NSTimeInterval currentInterval = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval duration = 1695019547 - currentInterval;
+    // 提前三天更新accessToken
+    if(duration < 3 * 24 * 60 * 60){
+        NSLog(@"更新用户token");
+    }
+    
+//    NSMutableArray *tempArr = [NSMutableArray array];
+//    for (id obj in tempArr.reverseObjectEnumerator) {
+//        NSLog(@"11111");
+//    }
+
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
+//
+//    for (int i = 0; i< 20; i++) {
+//        dict[@(i)] = @(i);
+//    }
+//    NSLog(@"当前数组中的值===%zd",dict.count);
+}
+
+- (void)showNameTest {
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithData:[@"我就是我一不要难过" dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+    [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, attrStr.length)];
+    [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12 weight:UIFontWeightBold] range:NSMakeRange(0, attrStr.length)];
+    
+    NSMutableAttributedString *copyStr = [attrStr copy];
+    
+    NSLog(@"当前设置的内容==%p,copy:%p",attrStr,copyStr);
+}
+
+- (void)arrayTest {
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:6];
+    
+    [arr insertObject:@(2) atIndex:5];
+    [arr insertObject:@(4) atIndex:0];
+    
+    NSLog(@"arr==%@",arr);
+}
+
+- (void)versionCompare {
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    
+    NSComparisonResult result = [appVersion compare:@"2.0.1"];
+    if(result == NSOrderedAscending){
+        NSLog(@"本地版本号 小于给定版本号");
+    }else if(result == NSOrderedSame){
+        NSLog(@"版本号相同");
+    }else{
+        NSLog(@"本地版本号 大于给定版本号");
+    }
 }
 
 - (void)numberTest {

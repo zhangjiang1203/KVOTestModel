@@ -29,6 +29,8 @@ target 'KVOTestModel' do
   pod 'YogaKit' , :path => './YogaKit'
   
   pod 'libpag'
+  
+#  pod 'SVGAPlayer', '2.5.7'
 
   
   #接入bugly

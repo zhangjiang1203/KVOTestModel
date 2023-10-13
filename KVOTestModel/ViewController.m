@@ -68,6 +68,8 @@
 
 - (void)initMyUI {
     self.showDataArr = [NSMutableArray arrayWithArray:@[
+        @{@"title":@"设置item",@"class":@"ZJCustomChooseViewController"},
+        @{@"title":@"SVGA播放",@"class":@"ZJSVGAPlayerViewController"},
         @{@"title":@"GCDTimer",@"class":@"GCDTimeViewController"},
         @{@"title":@"swiftTest",@"class":@"KVOTestModel.ZJAnimationViewController"},
         @{@"title":@"pipeline测试",@"class":@"ZJPipelineTestViewController"},

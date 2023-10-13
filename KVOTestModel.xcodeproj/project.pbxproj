@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -545,8 +545,16 @@
 		DF09175029B5B6FA00A02A0A /* ZJModuleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */; };
 		DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09175229B5B77A00A02A0A /* MTMediatorModel.m */; };
 		DF15C3C42A6FA51300F456F1 /* DYHBAwardRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF15C3C22A6FA51200F456F1 /* DYHBAwardRecordCell.m */; };
+		DF6AE5662AD7E3EB00DCEF78 /* ZJCustomChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6AE5652AD7E3EB00DCEF78 /* ZJCustomChooseViewController.m */; };
+		DF6AE56A2AD7E4DA00DCEF78 /* DYHBChooseItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6AE5692AD7E4DA00DCEF78 /* DYHBChooseItemView.m */; };
+		DF6AE56D2AD7E50400DCEF78 /* DYHBChooseItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6AE56C2AD7E50400DCEF78 /* DYHBChooseItemCell.m */; };
+		DF6AE5712AD7EF8E00DCEF78 /* DYHBChooseItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6AE5702AD7EF8E00DCEF78 /* DYHBChooseItemModel.m */; };
 		DF6F34ED2A5E586900E61F69 /* ZJShowNameFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6F34EC2A5E586900E61F69 /* ZJShowNameFunc.swift */; };
 		DF6FCB6D2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6FCB6C2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m */; };
+		DF7272A82AD29BF6006969DE /* ZJImageMonitorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7272A72AD29BF6006969DE /* ZJImageMonitorViewController.m */; };
+		DF7272AD2AD29C1E006969DE /* UIImageView+MonitorHook.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7272A92AD29C1D006969DE /* UIImageView+MonitorHook.m */; };
+		DF7272AE2AD29C1E006969DE /* UIImage+DYPMonitorHook.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7272AB2AD29C1E006969DE /* UIImage+DYPMonitorHook.m */; };
+		DF7272B12AD29C49006969DE /* SwizzleHook.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7272B02AD29C49006969DE /* SwizzleHook.m */; };
 		DF916B4729C8865000FC92B0 /* ZJPipelineTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4629C8865000FC92B0 /* ZJPipelineTestViewController.m */; };
 		DF916B4D29C8870F00FC92B0 /* ZJPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4929C8870E00FC92B0 /* ZJPipeline.m */; };
 		DF916B5029C88C9400FC92B0 /* ZJPipelineCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = DF916B4F29C88C9400FC92B0 /* ZJPipelineCenter.m */; };
@@ -1202,9 +1210,25 @@
 		DF09175229B5B77A00A02A0A /* MTMediatorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTMediatorModel.m; sourceTree = "<group>"; };
 		DF15C3C22A6FA51200F456F1 /* DYHBAwardRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHBAwardRecordCell.m; sourceTree = "<group>"; };
 		DF15C3C32A6FA51200F456F1 /* DYHBAwardRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHBAwardRecordCell.h; sourceTree = "<group>"; };
+		DF6AE5642AD7E3EB00DCEF78 /* ZJCustomChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomChooseViewController.h; sourceTree = "<group>"; };
+		DF6AE5652AD7E3EB00DCEF78 /* ZJCustomChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCustomChooseViewController.m; sourceTree = "<group>"; };
+		DF6AE5682AD7E4DA00DCEF78 /* DYHBChooseItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYHBChooseItemView.h; sourceTree = "<group>"; };
+		DF6AE5692AD7E4DA00DCEF78 /* DYHBChooseItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYHBChooseItemView.m; sourceTree = "<group>"; };
+		DF6AE56B2AD7E50400DCEF78 /* DYHBChooseItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYHBChooseItemCell.h; sourceTree = "<group>"; };
+		DF6AE56C2AD7E50400DCEF78 /* DYHBChooseItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYHBChooseItemCell.m; sourceTree = "<group>"; };
+		DF6AE56F2AD7EF8E00DCEF78 /* DYHBChooseItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYHBChooseItemModel.h; sourceTree = "<group>"; };
+		DF6AE5702AD7EF8E00DCEF78 /* DYHBChooseItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYHBChooseItemModel.m; sourceTree = "<group>"; };
 		DF6F34EC2A5E586900E61F69 /* ZJShowNameFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJShowNameFunc.swift; sourceTree = "<group>"; };
 		DF6FCB6B2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYHBLuckyBagInfoCell.h; sourceTree = "<group>"; };
 		DF6FCB6C2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYHBLuckyBagInfoCell.m; sourceTree = "<group>"; };
+		DF7272A62AD29BF6006969DE /* ZJImageMonitorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJImageMonitorViewController.h; sourceTree = "<group>"; };
+		DF7272A72AD29BF6006969DE /* ZJImageMonitorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJImageMonitorViewController.m; sourceTree = "<group>"; };
+		DF7272A92AD29C1D006969DE /* UIImageView+MonitorHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MonitorHook.m"; sourceTree = "<group>"; };
+		DF7272AA2AD29C1E006969DE /* UIImageView+MonitorHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MonitorHook.h"; sourceTree = "<group>"; };
+		DF7272AB2AD29C1E006969DE /* UIImage+DYPMonitorHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DYPMonitorHook.m"; sourceTree = "<group>"; };
+		DF7272AC2AD29C1E006969DE /* UIImage+DYPMonitorHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DYPMonitorHook.h"; sourceTree = "<group>"; };
+		DF7272AF2AD29C49006969DE /* SwizzleHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwizzleHook.h; sourceTree = "<group>"; };
+		DF7272B02AD29C49006969DE /* SwizzleHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwizzleHook.m; sourceTree = "<group>"; };
 		DF916B4529C8865000FC92B0 /* ZJPipelineTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPipelineTestViewController.h; sourceTree = "<group>"; };
 		DF916B4629C8865000FC92B0 /* ZJPipelineTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPipelineTestViewController.m; sourceTree = "<group>"; };
 		DF916B4929C8870E00FC92B0 /* ZJPipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPipeline.m; sourceTree = "<group>"; };
@@ -1402,6 +1426,8 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				DF6AE5632AD7E3EB00DCEF78 /* ChooseItemTest */,
+				DF7272A52AD29BC8006969DE /* ImageMonitor */,
 				DFCCD55B2A66BA52000D4F61 /* GCDTimerTest */,
 				DFF41A642A1E139500CF60F9 /* SwiftTest */,
 				DF916B4429C8862D00FC92B0 /* PipelineTest */,
@@ -2325,6 +2351,52 @@
 			path = ModuleTrans;
 			sourceTree = "<group>";
 		};
+		DF6AE5632AD7E3EB00DCEF78 /* ChooseItemTest */ = {
+			isa = PBXGroup;
+			children = (
+				DF6AE5672AD7E4BE00DCEF78 /* CustomItemView */,
+				DF6AE5642AD7E3EB00DCEF78 /* ZJCustomChooseViewController.h */,
+				DF6AE5652AD7E3EB00DCEF78 /* ZJCustomChooseViewController.m */,
+			);
+			path = ChooseItemTest;
+			sourceTree = "<group>";
+		};
+		DF6AE5672AD7E4BE00DCEF78 /* CustomItemView */ = {
+			isa = PBXGroup;
+			children = (
+				DF6AE56E2AD7EF6C00DCEF78 /* Model */,
+				DF6AE5682AD7E4DA00DCEF78 /* DYHBChooseItemView.h */,
+				DF6AE5692AD7E4DA00DCEF78 /* DYHBChooseItemView.m */,
+				DF6AE56B2AD7E50400DCEF78 /* DYHBChooseItemCell.h */,
+				DF6AE56C2AD7E50400DCEF78 /* DYHBChooseItemCell.m */,
+			);
+			path = CustomItemView;
+			sourceTree = "<group>";
+		};
+		DF6AE56E2AD7EF6C00DCEF78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF6AE56F2AD7EF8E00DCEF78 /* DYHBChooseItemModel.h */,
+				DF6AE5702AD7EF8E00DCEF78 /* DYHBChooseItemModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF7272A52AD29BC8006969DE /* ImageMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				DF7272A62AD29BF6006969DE /* ZJImageMonitorViewController.h */,
+				DF7272A72AD29BF6006969DE /* ZJImageMonitorViewController.m */,
+				DF7272AF2AD29C49006969DE /* SwizzleHook.h */,
+				DF7272B02AD29C49006969DE /* SwizzleHook.m */,
+				DF7272AC2AD29C1E006969DE /* UIImage+DYPMonitorHook.h */,
+				DF7272AB2AD29C1E006969DE /* UIImage+DYPMonitorHook.m */,
+				DF7272AA2AD29C1E006969DE /* UIImageView+MonitorHook.h */,
+				DF7272A92AD29C1D006969DE /* UIImageView+MonitorHook.m */,
+			);
+			path = ImageMonitor;
+			sourceTree = "<group>";
+		};
 		DF916B4429C8862D00FC92B0 /* PipelineTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -2946,6 +3018,7 @@
 				38A2C8662481F4F200E408BB /* ZJPreformLabel.m in Sources */,
 				DFEE13EC29CB03D4005397B2 /* ZJTestQueueManager.m in Sources */,
 				C21F371B264A3890004F6BD1 /* KXVoicePersonModel.m in Sources */,
+				DF6AE56A2AD7E4DA00DCEF78 /* DYHBChooseItemView.m in Sources */,
 				C2C7EA7626EA67E60050EA67 /* ZJFullBigCell.m in Sources */,
 				38B2B95824BD4C9E00F0F52F /* QDDepartmentListView.m in Sources */,
 				C21F372C264A3A10004F6BD1 /* KXLiveRoomViewController.m in Sources */,
@@ -2973,11 +3046,13 @@
 				DFCCD5682A66BA5D000D4F61 /* GCDSemaphore.m in Sources */,
 				C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */,
 				C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */,
+				DF6AE56D2AD7E50400DCEF78 /* DYHBChooseItemCell.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
 				DFF41A672A1E13CC00CF60F9 /* ZJAnimationViewController.swift in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
+				DF7272AD2AD29C1E006969DE /* UIImageView+MonitorHook.m in Sources */,
 				C21F37AF264BADBA004F6BD1 /* KXModuleQAService.m in Sources */,
 				C21F37B4264BAE25004F6BD1 /* KXMoudleProtocolViewController.m in Sources */,
 				DF6FCB6D2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m in Sources */,
@@ -2988,9 +3063,11 @@
 				C21F371C264A3890004F6BD1 /* KXVoiceChatRoomViewController.m in Sources */,
 				C2110A5D27ED570A00A0C7AF /* MyARKitViewController.m in Sources */,
 				C2C7EA7926EA67FC0050EA67 /* ZJSmallOneCell.m in Sources */,
+				DF7272AE2AD29C1E006969DE /* UIImage+DYPMonitorHook.m in Sources */,
 				C21F3718264A3890004F6BD1 /* KXVoiceGuestCell.m in Sources */,
 				C21F3737264A61B8004F6BD1 /* KXRippleView.m in Sources */,
 				C29358E62750B02100BF7B3C /* ZJTouchEventViewController.m in Sources */,
+				DF6AE5712AD7EF8E00DCEF78 /* DYHBChooseItemModel.m in Sources */,
 				380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */,
 				C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */,
 				C2110A3127EC570F00A0C7AF /* YZCallStack.m in Sources */,
@@ -2998,6 +3075,7 @@
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
 				DFCCD5662A66BA5D000D4F61 /* GCDQueue.m in Sources */,
 				DFCCD56C2A66BA87000D4F61 /* GCDTimeViewController.m in Sources */,
+				DF6AE5662AD7E3EB00DCEF78 /* ZJCustomChooseViewController.m in Sources */,
 				386B3DCE254A69910063DF3C /* ConfigurationViewController.m in Sources */,
 				C21F390D264D299A004F6BD1 /* ZJServiceModel.m in Sources */,
 				3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */,
@@ -3012,6 +3090,7 @@
 				38B2B6FA24BC412000F0F52F /* QDSearchMoreViewController.m in Sources */,
 				38B2BA7D24BD97B300F0F52F /* QDTableFooterView.m in Sources */,
 				380B2B9025C2A003001EAF3F /* TestBlockViewController.m in Sources */,
+				DF7272B12AD29C49006969DE /* SwizzleHook.m in Sources */,
 				C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
@@ -3049,6 +3128,7 @@
 				C21F3894264BF688004F6BD1 /* SendPersonModel.m in Sources */,
 				C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */,
 				389A752823502DDA00DDBE6C /* main.mm in Sources */,
+				DF7272A82AD29BF6006969DE /* ZJImageMonitorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3116,7 +3196,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3168,7 +3248,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -3189,17 +3269,19 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6S7ZH4W3V8;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -3276,16 +3358,18 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6S7ZH4W3V8;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -3396,7 +3480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3417,17 +3501,19 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6S7ZH4W3V8;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
