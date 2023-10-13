@@ -19,16 +19,18 @@ static CGFloat const kButtonPadding = 10;
 static NSInteger const kDefaultTag = 10;
 
 @interface DYHBChooseItemCell ()
-
+/// 文字颜色
 @property (nonatomic, strong) UIColor *titleNormalColor;
 @property (nonatomic, strong) UIColor *titleSelectedColor;
 @property (nonatomic, strong) UIColor *titleDisableColor;
-
+/// 背景颜色
 @property (nonatomic, strong) UIColor *bgNormalColor;
 @property (nonatomic, strong) UIColor *bgSelectedColor;
 @property (nonatomic, strong) UIColor *bgDisableColor;
-
-
+/// 边框颜色
+@property (nonatomic, strong) UIColor *borderNormalColor;
+@property (nonatomic, strong) UIColor *borderSelectedColor;
+@property (nonatomic, strong) UIColor *borderDisableColor;
 
 @end
 
@@ -59,12 +61,8 @@ static NSInteger const kDefaultTag = 10;
     //添加按钮
     NSInteger maxCount = _itemsArr.count;
     [_itemsArr enumerateObjectsUsingBlock:^(DYHBChooseItemModel *obj, NSUInteger idx, BOOL *stop) {
-        UIButton *button = [self createCustomViewWithObj:obj.title index:idx];
-        if(obj.status == DYHBChooseItem_Disable){
-            button.enabled = NO;
-        }else{
-            button.selected = obj.status == DYHBChooseItem_Choosed;
-        }
+        UIButton *button = [self createCustomViewWithObj:obj index:idx];
+        
         [self.contentView addSubview:button];
         //开始布局
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -88,15 +86,20 @@ static NSInteger const kDefaultTag = 10;
     }
 }
 
-- (UIButton *)createCustomViewWithObj:(NSString *)title index:(NSInteger)tag {
+- (UIButton *)createCustomViewWithObj:(DYHBChooseItemModel *)obj index:(NSInteger)tag {
     UIButton *button = [[UIButton alloc] init];
     button.titleLabel.font = [UIFont systemFontOfSize:12];
-    [button setTitle:title forState:(UIControlStateNormal)];
+    [button setTitle:obj.title forState:(UIControlStateNormal)];
     [button setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
     [button setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
     [button setTitleColor:[UIColor orangeColor] forState:(UIControlStateDisabled)];
     [button addTarget:self action:@selector(itemButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     button.tag = tag + kDefaultTag;
+    if(obj.status == DYHBChooseItem_Disable){
+        button.enabled = NO;
+    }else{
+        button.selected = obj.status == DYHBChooseItem_Choosed;
+    }
     
     button.layer.masksToBounds = YES;
     button.layer.cornerRadius = 12.5;
