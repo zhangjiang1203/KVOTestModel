@@ -10,7 +10,7 @@ import ObjectiveC.runtime
 
 var kEmptyView: Void?
 
-extension UIScrollView {
+extension UITableView {
     var emptyView: UIView? {
         get {  return objc_getAssociatedObject(self, &kEmptyView) as? UIView }
         set {
@@ -20,12 +20,46 @@ extension UIScrollView {
         }
     }
     
+    /// 数据是否为空
+    func isEmpty() -> Bool {
+        
+        if let dataSource = self.dataSource, let count = self.dataSource?.numberOfSections?(in: self), count > 0 {
+            return (0..<count).contains(where: { dataSource.tableView(self, numberOfRowsInSection: $0) > 0 || hasHeaderOrFooter(in: $0 )}) == false
+        } else if self.numberOfSections > 0 {
+            return (0..<self.numberOfSections).contains(where: { self.numberOfRows(inSection: $0) > 0 || hasHeaderOrFooter(in: $0) }) == false
+        }
+        
+        return true
+    }
+    
+    /// 是否有头尾
+    func hasHeaderOrFooter(in section: Int) -> Bool {
+        guard let delegate = self.delegate else {
+            return false
+        }
+        
+        if delegate.tableView?(self, viewForHeaderInSection: section) != nil,
+           (delegate.tableView?(self, heightForHeaderInSection: section) ?? self.sectionHeaderHeight) > 0 {
+            return true
+        }
+        
+        if delegate.tableView?(self, viewForFooterInSection: section) != nil,
+           (delegate.tableView?(self, heightForFooterInSection: section) ?? self.sectionFooterHeight) > 0 {
+            return true
+        }
+        
+        return false
+    }
     
     
     @objc func zj_reloadData() {
         print("开始调用更新了====哈哈哈哈")
         //设置展示数据
-//        self.numberOfSections
+        if isEmpty() {
+            //添加视图
+        } else {
+            //移除视图
+        }
         
         self.zj_reloadData();
     }
