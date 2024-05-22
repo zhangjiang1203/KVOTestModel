@@ -3,7 +3,6 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - libpag (4.3.8)
   - LookinServer (1.1.7):
     - LookinServer/Core (= 1.1.7)
   - LookinServer/Core (1.1.7)
@@ -20,15 +19,11 @@ PODS:
   - SDWebImage (5.17.0):
     - SDWebImage/Core (= 5.17.0)
   - SDWebImage/Core (5.17.0)
-  - Yoga (1.14.0)
-  - YogaKit (1.18.1):
-    - Yoga (~> 1.14)
   - YYText (1.0.7)
 
 DEPENDENCIES:
   - FLAnimatedImage
   - FMDB (~> 2.7.5)
-  - libpag
   - LookinServer
   - Masonry
   - MJRefresh
@@ -37,15 +32,12 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDWebImage
-  - Yoga (from `./Yoga`)
-  - YogaKit (from `./YogaKit`)
   - YYText
 
 SPEC REPOS:
   trunk:
     - FLAnimatedImage
     - FMDB
-    - libpag
     - LookinServer
     - Masonry
     - MJRefresh
@@ -59,15 +51,10 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   ReactiveObjC:
     :path: "./ReactiveObjC"
-  Yoga:
-    :path: "./Yoga"
-  YogaKit:
-    :path: "./YogaKit"
 
 SPEC CHECKSUMS:
   FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  libpag: 212f7cb31fd1b9354da2ec28da1402cbec55afa8
   LookinServer: 4ce0469b066871525611d009d8d16a7a50c23491
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
@@ -77,10 +64,8 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
-  Yoga: b130e399352ced9afb7adfaba58e8af1a473e709
-  YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: e5bf76e4463ae9bef4e3a488d026f36f8bf730a2
+PODFILE CHECKSUM: 06da4771fb687e2caef78efe10b72f167170db7e
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.15.2

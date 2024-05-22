@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *sex;
 
+@property (nonatomic, strong) NSArray *students;
+
 @end
 
 NS_ASSUME_NONNULL_END

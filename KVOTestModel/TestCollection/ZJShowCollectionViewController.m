@@ -8,7 +8,7 @@
 
 #import "ZJShowCollectionViewController.h"
 #import "ZJFullBigCell.h"
-#import <libpag/PAGView.h>
+//#import <libpag/PAGView.h>
 #import <Masonry/Masonry.h>
 
 #define kWidth [UIScreen mainScreen].bounds.size.width

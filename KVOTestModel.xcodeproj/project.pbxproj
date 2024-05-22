@@ -88,6 +88,7 @@
 		C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */; };
 		C2495078277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */; };
 		C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */; };
+		C24B05662BFE27270099A8C8 /* ZJEmptyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */; };
 		C2514143288E3AFB00866303 /* ZJTableLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */; };
 		C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */; };
 		C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */; };
@@ -541,6 +542,7 @@
 		C2C7EA7C26EA693D0050EA67 /* ZJShowContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C7EA7B26EA693D0050EA67 /* ZJShowContentView.m */; };
 		C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54426A71B630057941B /* ZJTextViewController.m */; };
 		C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */; };
+		C2C9D2202BD1251F0060DCBB /* PythonScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9D21F2BD1251F0060DCBB /* PythonScriptViewController.swift */; };
 		C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */; };
 		DF09175029B5B6FA00A02A0A /* ZJModuleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */; };
 		DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09175229B5B77A00A02A0A /* MTMediatorModel.m */; };
@@ -726,6 +728,7 @@
 		C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaSpecialLayoutViewController.m; sourceTree = "<group>"; };
 		C24995F727741EFB003EC8F2 /* YogaKitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaKitTestViewController.h; sourceTree = "<group>"; };
 		C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaKitTestViewController.m; sourceTree = "<group>"; };
+		C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJEmptyPageView.swift; sourceTree = "<group>"; };
 		C2514141288E3AFB00866303 /* ZJTableLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTableLayoutViewController.h; sourceTree = "<group>"; };
 		C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTableLayoutViewController.m; sourceTree = "<group>"; };
 		C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTSegmentSlider.m; sourceTree = "<group>"; };
@@ -1201,6 +1204,7 @@
 		C2C9B54426A71B630057941B /* ZJTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTextViewController.m; sourceTree = "<group>"; };
 		C2C9B54626A9D5230057941B /* ZTHorizontalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTHorizontalLayout.h; sourceTree = "<group>"; };
 		C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTHorizontalLayout.m; sourceTree = "<group>"; };
+		C2C9D21F2BD1251F0060DCBB /* PythonScriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonScriptViewController.swift; sourceTree = "<group>"; };
 		C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		C2CEDA3627F7384D009E7934 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
@@ -1426,6 +1430,8 @@
 		389A751423502DD500DDBE6C /* KVOTestModel */ = {
 			isa = PBXGroup;
 			children = (
+				C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */,
+				C2C9D21E2BD121F10060DCBB /* PythonScript */,
 				DF6AE5632AD7E3EB00DCEF78 /* ChooseItemTest */,
 				DF7272A52AD29BC8006969DE /* ImageMonitor */,
 				DFCCD55B2A66BA52000D4F61 /* GCDTimerTest */,
@@ -2329,6 +2335,14 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		C2C9D21E2BD121F10060DCBB /* PythonScript */ = {
+			isa = PBXGroup;
+			children = (
+				C2C9D21F2BD1251F0060DCBB /* PythonScriptViewController.swift */,
+			);
+			path = PythonScript;
+			sourceTree = "<group>";
+		};
 		C2CEDA3427F7383B009E7934 /* CrashHandle */ = {
 			isa = PBXGroup;
 			children = (
@@ -3020,6 +3034,7 @@
 				C21F371B264A3890004F6BD1 /* KXVoicePersonModel.m in Sources */,
 				DF6AE56A2AD7E4DA00DCEF78 /* DYHBChooseItemView.m in Sources */,
 				C2C7EA7626EA67E60050EA67 /* ZJFullBigCell.m in Sources */,
+				C2C9D2202BD1251F0060DCBB /* PythonScriptViewController.swift in Sources */,
 				38B2B95824BD4C9E00F0F52F /* QDDepartmentListView.m in Sources */,
 				C21F372C264A3A10004F6BD1 /* KXLiveRoomViewController.m in Sources */,
 				DFF41A692A1E142A00CF60F9 /* ZJShowDrawView.swift in Sources */,
@@ -3041,6 +3056,7 @@
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,
 				C2C7EA7C26EA693D0050EA67 /* ZJShowContentView.m in Sources */,
 				C21F37AE264BADBA004F6BD1 /* KXModuleManager.m in Sources */,
+				C24B05662BFE27270099A8C8 /* ZJEmptyPageView.swift in Sources */,
 				C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
 				DFCCD5682A66BA5D000D4F61 /* GCDSemaphore.m in Sources */,
@@ -3271,7 +3287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6S7ZH4W3V8;
+				DEVELOPMENT_TEAM = 2V9T7J797B;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
@@ -3335,12 +3351,12 @@
 					"-iframework",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zj.KVOTestModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVOTestModel/KVOTestModel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3359,7 +3375,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6S7ZH4W3V8;
+				DEVELOPMENT_TEAM = 2V9T7J797B;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
@@ -3421,11 +3437,11 @@
 					"-iframework",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zj.KVOTestModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVOTestModel/KVOTestModel-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -3503,7 +3519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6S7ZH4W3V8;
+				DEVELOPMENT_TEAM = 2V9T7J797B;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
@@ -3567,12 +3583,12 @@
 					"-iframework",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/YogaKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.com.KVOTestModel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zj.KVOTestModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVOTestModel/KVOTestModel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = myTest;

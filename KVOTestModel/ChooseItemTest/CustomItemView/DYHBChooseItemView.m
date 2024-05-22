@@ -61,18 +61,39 @@
             DYHBChooseItemModel *infoModel = [[DYHBChooseItemModel alloc] init];
             infoModel.title = [NSString stringWithFormat:@"内容=%d",j];
             infoModel.itemId = j;
-            if(j == 0){
-                infoModel.status = DYHBChooseItem_Choosed;
-            }else if (j > 3){
+//            if(j == 0){
+//                infoModel.status = DYHBChooseItem_Choosed;
+//            }else if (j > 3){
                 infoModel.status = DYHBChooseItem_UnChoosed;
-            }else{
-                infoModel.status = DYHBChooseItem_Disable;
-            }
+//            }else{
+//                infoModel.status = DYHBChooseItem_Disable;
+//            }
             [tempArr addObject:infoModel];
         }
         infoModel.items = [tempArr copy];
         [self.itemDataArr addObject:infoModel];
     }
+    
+//    [self.itemDataArr enumerateObjectsUsingBlock:^(DYHBItemInfoModel *obj, NSUInteger idx, BOOL *stop) {
+//        [obj.items enumerateObjectsUsingBlock:^(DYHBChooseItemModel *item, NSUInteger index, BOOL *stop) {
+//            item.status = index % 2 == 0 ? DYHBChooseItem_UnChoosed : DYHBChooseItem_Choosed;
+//        }];
+//    }];
+    
+    
+    DYHBChooseItemModel *infoModel = [[DYHBChooseItemModel alloc] init];
+    infoModel.title = @"内容=5";
+    infoModel.itemId = 5;
+    
+    [self.itemDataArr enumerateObjectsUsingBlock:^(DYHBItemInfoModel *obj, NSUInteger idx, BOOL *stop) {
+        if ([obj.items containsObject:infoModel]) {
+            NSInteger index = [obj.items indexOfObject:infoModel];
+            DYHBChooseItemModel *chooseItem = obj.items[index];
+            chooseItem.status = DYHBChooseItem_Choosed;
+            NSLog(@"当前内容对比==%@,所在位置=%zd",obj.sectionTitle,index);
+        }
+    }];
+    
     //刷新数据
     [self.itemTableView reloadData];
 }

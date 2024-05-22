@@ -29,16 +29,16 @@
     [super viewDidLoad];
     [self setUpUI];
     
-    NSMutableArray *data;
+//    NSMutableArray *data;
     
-    NSLog(@"测试打点====%zd",data.count);
+//    NSLog(@"测试打点====%zd",data.count);
     
-    self.changeArrs = [NSMutableArray array];
+//    self.changeArrs = [NSMutableArray array];
 //    [self.changeArrs addObject:@"我就是测试展示数据"];
 //    [self.changeArrs addObject:@"哈哈哈"];
 //    NSString *tem = [self.changeArrs componentsJoinedByString:@"、"];
 //    NSLog(@"当前展示数据====%@",tem);
-    [self testNumberContain];
+//    [self testNumberContain];
 }
 
 

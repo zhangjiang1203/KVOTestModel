@@ -9,7 +9,7 @@
 #import "YogaKitTestViewController.h"
 #import "YogaNormalLayoutViewController.h"
 
-#import <YogaKit/UIView+Yoga.h>
+//#import <YogaKit/UIView+Yoga.h>
 
 @interface YogaKitTestViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -25,14 +25,14 @@
     [super viewDidLoad];
     self.title = @"YogaKit Test";
     self.view.backgroundColor = [UIColor whiteColor];
-    //设置主界面的layout
-    [self.view configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.paddingTop = YGPointValue(100);
-    }];
-    [self setUpTableView];
-    //父视图执行布局计算并使用结果更新层次结构中视图的帧
-    [self.view.yoga applyLayoutPreservingOrigin:YES];
+//    //设置主界面的layout
+//    [self.view configureLayoutWithBlock:^(YGLayout *layout) {
+//        layout.isEnabled = YES;
+//        layout.paddingTop = YGPointValue(100);
+//    }];
+//    [self setUpTableView];
+//    //父视图执行布局计算并使用结果更新层次结构中视图的帧
+//    [self.view.yoga applyLayoutPreservingOrigin:YES];
     
     [self test_dispatch_time];
 }
@@ -75,11 +75,11 @@
     
     
     
-    [self.myTableView configureLayoutWithBlock:^(YGLayout *layout) {
-        layout.isEnabled = YES;
-        layout.margin = YGPointValue(0);
-        layout.flexDirection = YGFlexDirectionColumn;
-    }];
+//    [self.myTableView configureLayoutWithBlock:^(YGLayout *layout) {
+//        layout.isEnabled = YES;
+//        layout.margin = YGPointValue(0);
+//        layout.flexDirection = YGFlexDirectionColumn;
+//    }];
 }
 
 #pragma mark - tableview

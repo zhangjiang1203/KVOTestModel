@@ -51,8 +51,18 @@
     [self.showLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.height.mas_equalTo(20);
-        make.top.mas_equalTo(70);
+        make.top.mas_equalTo(100);
     }];
+    
+    NSString *titleStr = @"测试展示数据 | hahahah | 我来了兄弟们 | 测试展示数据";
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\|" options:(NSRegularExpressionCaseInsensitive) error:nil];
+    NSArray<NSTextCheckingResult *> *resultArr = [regex matchesInString:titleStr options:0 range:NSMakeRange(0, titleStr.length)];
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:titleStr attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+    [resultArr enumerateObjectsUsingBlock:^(NSTextCheckingResult *obj, NSUInteger idx, BOOL *stop) {
+        [attStr addAttributes:@{NSForegroundColorAttributeName:[UIColor redColor]} range:obj.range];
+    }];
+    _showLabel.attributedText = attStr;
     
     _insertBtn = [[UIButton alloc]init];
     _insertBtn.tag = 1;
@@ -65,7 +75,7 @@
         make.centerX.mas_equalTo(0);
         make.height.mas_equalTo(40);
         make.width.mas_equalTo(200);
-        make.top.mas_equalTo(100);
+        make.top.mas_equalTo(130);
     }];
     
     _cleanBtn = [[UIButton alloc]init];
@@ -80,6 +90,18 @@
         make.height.mas_equalTo(40);
         make.width.mas_equalTo(200);
         make.top.mas_equalTo(_insertBtn.mas_bottom).offset(10);
+    }];
+    
+    
+    UIView *testView = [[UIView alloc] init];
+    testView.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:testView];
+    [testView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.right.mas_equalTo(-40);
+        make.top.mas_equalTo(250);
+        make.height.mas_equalTo(100);
     }];
 }
 

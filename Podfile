@@ -25,10 +25,10 @@ target 'KVOTestModel' do
   #奔溃搜集
   pod 'PLCrashReporter'
   #Yogakit 盒子布局设置
-  pod 'Yoga', :path => './Yoga'
-  pod 'YogaKit' , :path => './YogaKit'
+#  pod 'Yoga', :path => './Yoga'
+#  pod 'YogaKit' , :path => './YogaKit'
   
-  pod 'libpag'
+#  pod 'libpag'
   
 #  pod 'SVGAPlayer', '2.5.7'
 
