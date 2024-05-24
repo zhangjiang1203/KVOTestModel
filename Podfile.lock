@@ -19,6 +19,7 @@ PODS:
   - SDWebImage (5.17.0):
     - SDWebImage/Core (= 5.17.0)
   - SDWebImage/Core (5.17.0)
+  - SnapKit (5.7.1)
   - YYText (1.0.7)
 
 DEPENDENCIES:
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDWebImage
+  - SnapKit
   - YYText
 
 SPEC REPOS:
@@ -46,6 +48,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SDWebImage
+    - SnapKit
     - YYText
 
 EXTERNAL SOURCES:
@@ -64,8 +67,9 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 06da4771fb687e2caef78efe10b72f167170db7e
+PODFILE CHECKSUM: d1703d18c2e673f70de1fedee72a9b266d60d965
 
 COCOAPODS: 1.15.2

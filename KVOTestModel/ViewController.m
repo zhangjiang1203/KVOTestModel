@@ -68,6 +68,7 @@
 
 - (void)initMyUI {
     self.showDataArr = [NSMutableArray arrayWithArray:@[
+        @{@"title":@"空视图设置",@"class":@"KVOTestModel.EmptyListViewController"},
         @{@"title":@"PythonScript脚本测试",@"class":@"KVOTestModel.PythonScriptViewController"},
         @{@"title":@"addView层级关系",@"class":@"ZJImageMonitorViewController"},
         @{@"title":@"设置item",@"class":@"ZJCustomChooseViewController"},
