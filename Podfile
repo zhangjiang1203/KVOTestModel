@@ -21,7 +21,10 @@ target 'KVOTestModel' do
   pod 'Masonry'
   pod 'YYText'
   pod 'MJRefresh'
+
   pod 'JXCategoryView', :path => './JXCategoryView'
+
+  pod 'SnapKit'
 
   #奔溃搜集
   pod 'PLCrashReporter'
