@@ -546,6 +546,9 @@
 		C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C9B54726A9D5230057941B /* ZTHorizontalLayout.m */; };
 		C2C9D2202BD1251F0060DCBB /* PythonScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C9D21F2BD1251F0060DCBB /* PythonScriptViewController.swift */; };
 		C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */; };
+		C2F73D502C10AEC000E7E161 /* ZJCustomCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F73D4F2C10AEC000E7E161 /* ZJCustomCategoryView.m */; };
+		C2F73D532C10AEDF00E7E161 /* ZJCustomCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F73D522C10AEDF00E7E161 /* ZJCustomCategoryCell.m */; };
+		C2F73D562C10AF0500E7E161 /* ZJCustomCategoryCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F73D552C10AF0500E7E161 /* ZJCustomCategoryCellModel.m */; };
 		DF09175029B5B6FA00A02A0A /* ZJModuleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */; };
 		DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF09175229B5B77A00A02A0A /* MTMediatorModel.m */; };
 		DF15C3C42A6FA51300F456F1 /* DYHBAwardRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF15C3C22A6FA51200F456F1 /* DYHBAwardRecordCell.m */; };
@@ -1211,6 +1214,12 @@
 		C2C9D21F2BD1251F0060DCBB /* PythonScriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythonScriptViewController.swift; sourceTree = "<group>"; };
 		C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		C2CEDA3627F7384D009E7934 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		C2F73D4E2C10AEC000E7E161 /* ZJCustomCategoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCustomCategoryView.h; sourceTree = "<group>"; };
+		C2F73D4F2C10AEC000E7E161 /* ZJCustomCategoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCustomCategoryView.m; sourceTree = "<group>"; };
+		C2F73D512C10AEDF00E7E161 /* ZJCustomCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCustomCategoryCell.h; sourceTree = "<group>"; };
+		C2F73D522C10AEDF00E7E161 /* ZJCustomCategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCustomCategoryCell.m; sourceTree = "<group>"; };
+		C2F73D542C10AF0500E7E161 /* ZJCustomCategoryCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJCustomCategoryCellModel.h; sourceTree = "<group>"; };
+		C2F73D552C10AF0500E7E161 /* ZJCustomCategoryCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCustomCategoryCellModel.m; sourceTree = "<group>"; };
 		C3C86E274EF3D4C3C6687536 /* Pods-KVOTestModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVOTestModel.release.xcconfig"; path = "Target Support Files/Pods-KVOTestModel/Pods-KVOTestModel.release.xcconfig"; sourceTree = "<group>"; };
 		DF09174E29B5B6FA00A02A0A /* ZJModuleTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJModuleTestViewController.h; sourceTree = "<group>"; };
 		DF09174F29B5B6FA00A02A0A /* ZJModuleTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJModuleTestViewController.m; sourceTree = "<group>"; };
@@ -1725,6 +1734,7 @@
 		C27448C62717DA4C00D8BF28 /* segmentTest */ = {
 			isa = PBXGroup;
 			children = (
+				C2F73D4D2C10AE8000E7E161 /* CustomCategoryView */,
 				C27448C82717DA5C00D8BF28 /* ZTSegmentSlider.h */,
 				C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */,
 				C27448CA2717DA9F00D8BF28 /* ZJSegmentViewController.h */,
@@ -2364,6 +2374,19 @@
 				C2CEDA3527F7384D009E7934 /* UncaughtExceptionHandler.m */,
 			);
 			path = CrashHandle;
+			sourceTree = "<group>";
+		};
+		C2F73D4D2C10AE8000E7E161 /* CustomCategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				C2F73D4E2C10AEC000E7E161 /* ZJCustomCategoryView.h */,
+				C2F73D4F2C10AEC000E7E161 /* ZJCustomCategoryView.m */,
+				C2F73D512C10AEDF00E7E161 /* ZJCustomCategoryCell.h */,
+				C2F73D522C10AEDF00E7E161 /* ZJCustomCategoryCell.m */,
+				C2F73D542C10AF0500E7E161 /* ZJCustomCategoryCellModel.h */,
+				C2F73D552C10AF0500E7E161 /* ZJCustomCategoryCellModel.m */,
+			);
+			path = CustomCategoryView;
 			sourceTree = "<group>";
 		};
 		DF09174D29B5B6CD00A02A0A /* ModuleTrans */ = {
@@ -3078,6 +3101,7 @@
 				C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */,
 				DF6AE56D2AD7E50400DCEF78 /* DYHBChooseItemCell.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
+				C2F73D532C10AEDF00E7E161 /* ZJCustomCategoryCell.m in Sources */,
 				DFF41A672A1E13CC00CF60F9 /* ZJAnimationViewController.swift in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
@@ -3121,11 +3145,13 @@
 				38A2C8652481F4F200E408BB /* LHPerformanceUtil.m in Sources */,
 				38B2B6FA24BC412000F0F52F /* QDSearchMoreViewController.m in Sources */,
 				38B2BA7D24BD97B300F0F52F /* QDTableFooterView.m in Sources */,
+				C2F73D502C10AEC000E7E161 /* ZJCustomCategoryView.m in Sources */,
 				380B2B9025C2A003001EAF3F /* TestBlockViewController.m in Sources */,
 				DF7272B12AD29C49006969DE /* SwizzleHook.m in Sources */,
 				C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
 				380742CD24B8588900968CF5 /* UIButton+ChangeImagePosition.m in Sources */,
+				C2F73D562C10AF0500E7E161 /* ZJCustomCategoryCellModel.m in Sources */,
 				C2514143288E3AFB00866303 /* ZJTableLayoutViewController.m in Sources */,
 				C21F37B9264BB6BF004F6BD1 /* KXMoudleProtocolTestModel.m in Sources */,
 				38A2C8672481F4F200E408BB /* ZJPopView.m in Sources */,
