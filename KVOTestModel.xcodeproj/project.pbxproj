@@ -95,6 +95,7 @@
 		C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4D827B635BE0009C755 /* ShowLayerViewController.m */; };
 		C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4DB27B635DC0009C755 /* CustomShowView.m */; };
 		C28954FD2C009419007DC1D7 /* EmptyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */; };
+		C28954FF2C047352007DC1D7 /* ZJJSONTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28954FE2C047352007DC1D7 /* ZJJSONTest.swift */; };
 		C29358E62750B02100BF7B3C /* ZJTouchEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358E52750B02100BF7B3C /* ZJTouchEventViewController.m */; };
 		C29358E92750B06200BF7B3C /* ZJContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358E82750B06200BF7B3C /* ZJContainerViewController.m */; };
 		C29358EC2750B0BF00BF7B3C /* ZJLivingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358EB2750B0BF00BF7B3C /* ZJLivingViewController.m */; };
@@ -741,6 +742,7 @@
 		C288C4DA27B635DC0009C755 /* CustomShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShowView.h; sourceTree = "<group>"; };
 		C288C4DB27B635DC0009C755 /* CustomShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomShowView.m; sourceTree = "<group>"; };
 		C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewController.swift; sourceTree = "<group>"; };
+		C28954FE2C047352007DC1D7 /* ZJJSONTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJSONTest.swift; sourceTree = "<group>"; };
 		C29358E42750B02100BF7B3C /* ZJTouchEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTouchEventViewController.h; sourceTree = "<group>"; };
 		C29358E52750B02100BF7B3C /* ZJTouchEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTouchEventViewController.m; sourceTree = "<group>"; };
 		C29358E72750B06200BF7B3C /* ZJContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJContainerViewController.h; sourceTree = "<group>"; };
@@ -1747,6 +1749,7 @@
 			children = (
 				C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */,
 				C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */,
+				C28954FE2C047352007DC1D7 /* ZJJSONTest.swift */,
 			);
 			path = EmptyViewTest;
 			sourceTree = "<group>";
@@ -3099,6 +3102,7 @@
 				380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */,
 				C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */,
 				C2110A3127EC570F00A0C7AF /* YZCallStack.m in Sources */,
+				C28954FF2C047352007DC1D7 /* ZJJSONTest.swift in Sources */,
 				38CD08B2243DA84F009429C9 /* Person+Custom.m in Sources */,
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
 				DFCCD5662A66BA5D000D4F61 /* GCDQueue.m in Sources */,

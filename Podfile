@@ -22,6 +22,10 @@ target 'KVOTestModel' do
   pod 'YYText'
   pod 'MJRefresh'
   pod 'SnapKit'
+  
+  pod 'SwiftyJSON'
+  pod 'HandyJSON'
+  pod 'ObjectMapper'
 
   #奔溃搜集
   pod 'PLCrashReporter'
