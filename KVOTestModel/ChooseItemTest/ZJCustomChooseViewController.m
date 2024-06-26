@@ -40,7 +40,23 @@ typedef NS_ENUM(NSUInteger, DYMessageProgressType) {
     [super viewDidLoad];
     self.title = @"选择列表";
     
-    [self testHTMLString];
+    [self test1];
+}
+
+- (void)test1 {
+    NSArray *showData = @[@"123",@"456",@"789",@"098"];
+    
+    NSString *capId = @"12123";
+    if (capId.length <= 0) {
+        capId = @"456";
+    }
+    for (NSString *record in showData) {
+        if (!capId || [record containsString:capId]) {
+            return;
+        }
+    }
+    
+    NSLog(@"我开始执行了 ===");
 }
 
 - (void)testHTMLString {

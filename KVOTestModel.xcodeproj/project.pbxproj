@@ -83,6 +83,13 @@
 		C21F3926264D4719004F6BD1 /* ZJAnswerDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJAnswerDefine.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */; };
 		C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */; };
+		C23288342C2A9C7600697209 /* ZJHandyJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288332C2A9C7600697209 /* ZJHandyJSONModel.swift */; };
+		C23288382C2A9CD300697209 /* ZJSmartCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288372C2A9CD300697209 /* ZJSmartCodableModel.swift */; };
+		C232883A2C2A9CE600697209 /* ZJExCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288392C2A9CE600697209 /* ZJExCodableModel.swift */; };
+		C232883C2C2A9D1500697209 /* ZJCodableWrapperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C232883B2C2A9D1500697209 /* ZJCodableWrapperModel.swift */; };
+		C232883E2C2A9D2E00697209 /* ZJMetaCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C232883D2C2A9D2E00697209 /* ZJMetaCodableModel.swift */; };
+		C23288402C2A9D3F00697209 /* ZJKakaJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C232883F2C2A9D3F00697209 /* ZJKakaJSONModel.swift */; };
+		C23288422C2A9E1000697209 /* ZJCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288412C2A9E1000697209 /* ZJCodableModel.swift */; };
 		C233ACE62721105100D0FE39 /* ZTArrayContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */; };
 		C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE82721108500D0FE39 /* ZJPersonModel.m */; };
 		C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */; };
@@ -95,7 +102,6 @@
 		C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4D827B635BE0009C755 /* ShowLayerViewController.m */; };
 		C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4DB27B635DC0009C755 /* CustomShowView.m */; };
 		C28954FD2C009419007DC1D7 /* EmptyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */; };
-		C28954FF2C047352007DC1D7 /* ZJJSONTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28954FE2C047352007DC1D7 /* ZJJSONTest.swift */; };
 		C29358E62750B02100BF7B3C /* ZJTouchEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358E52750B02100BF7B3C /* ZJTouchEventViewController.m */; };
 		C29358E92750B06200BF7B3C /* ZJContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358E82750B06200BF7B3C /* ZJContainerViewController.m */; };
 		C29358EC2750B0BF00BF7B3C /* ZJLivingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29358EB2750B0BF00BF7B3C /* ZJLivingViewController.m */; };
@@ -572,7 +578,7 @@
 		DFCCD5692A66BA5D000D4F61 /* DYGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCCD5652A66BA5D000D4F61 /* DYGCDTimer.m */; };
 		DFCCD56C2A66BA87000D4F61 /* GCDTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCCD56B2A66BA87000D4F61 /* GCDTimeViewController.m */; };
 		DFEE13EC29CB03D4005397B2 /* ZJTestQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DFEE13EB29CB03D4005397B2 /* ZJTestQueueManager.m */; };
-		DFF41A672A1E13CC00CF60F9 /* ZJAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF41A662A1E13CC00CF60F9 /* ZJAnimationViewController.swift */; };
+		DFF41A672A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF41A662A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift */; };
 		DFF41A692A1E142A00CF60F9 /* ZJShowDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF41A682A1E142A00CF60F9 /* ZJShowDrawView.swift */; };
 /* End PBXBuildFile section */
 
@@ -723,6 +729,13 @@
 		C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MulDelegateViewController.m; sourceTree = "<group>"; };
 		C21F39B9264E650A004F6BD1 /* TeseSingleInstanceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeseSingleInstanceModel.h; sourceTree = "<group>"; };
 		C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeseSingleInstanceModel.m; sourceTree = "<group>"; };
+		C23288332C2A9C7600697209 /* ZJHandyJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJHandyJSONModel.swift; sourceTree = "<group>"; };
+		C23288372C2A9CD300697209 /* ZJSmartCodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJSmartCodableModel.swift; sourceTree = "<group>"; };
+		C23288392C2A9CE600697209 /* ZJExCodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJExCodableModel.swift; sourceTree = "<group>"; };
+		C232883B2C2A9D1500697209 /* ZJCodableWrapperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJCodableWrapperModel.swift; sourceTree = "<group>"; };
+		C232883D2C2A9D2E00697209 /* ZJMetaCodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJMetaCodableModel.swift; sourceTree = "<group>"; };
+		C232883F2C2A9D3F00697209 /* ZJKakaJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJKakaJSONModel.swift; sourceTree = "<group>"; };
+		C23288412C2A9E1000697209 /* ZJCodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJCodableModel.swift; sourceTree = "<group>"; };
 		C233ACE42721105100D0FE39 /* ZTArrayContainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTArrayContainViewController.h; sourceTree = "<group>"; };
 		C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTArrayContainViewController.m; sourceTree = "<group>"; };
 		C233ACE72721108500D0FE39 /* ZJPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPersonModel.h; sourceTree = "<group>"; };
@@ -745,7 +758,6 @@
 		C288C4DA27B635DC0009C755 /* CustomShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShowView.h; sourceTree = "<group>"; };
 		C288C4DB27B635DC0009C755 /* CustomShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomShowView.m; sourceTree = "<group>"; };
 		C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewController.swift; sourceTree = "<group>"; };
-		C28954FE2C047352007DC1D7 /* ZJJSONTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJSONTest.swift; sourceTree = "<group>"; };
 		C29358E42750B02100BF7B3C /* ZJTouchEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTouchEventViewController.h; sourceTree = "<group>"; };
 		C29358E52750B02100BF7B3C /* ZJTouchEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTouchEventViewController.m; sourceTree = "<group>"; };
 		C29358E72750B06200BF7B3C /* ZJContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJContainerViewController.h; sourceTree = "<group>"; };
@@ -1270,7 +1282,7 @@
 		DFEE13EA29CB03D4005397B2 /* ZJTestQueueManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTestQueueManager.h; sourceTree = "<group>"; };
 		DFEE13EB29CB03D4005397B2 /* ZJTestQueueManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTestQueueManager.m; sourceTree = "<group>"; };
 		DFF41A652A1E13CC00CF60F9 /* KVOTestModel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KVOTestModel-Bridging-Header.h"; sourceTree = "<group>"; };
-		DFF41A662A1E13CC00CF60F9 /* ZJAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJAnimationViewController.swift; sourceTree = "<group>"; };
+		DFF41A662A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJSONToModelTestViewController.swift; sourceTree = "<group>"; };
 		DFF41A682A1E142A00CF60F9 /* ZJShowDrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJShowDrawView.swift; sourceTree = "<group>"; };
 		E1DDB1FBA884FABB2A389356 /* Pods_KVOTestModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KVOTestModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1694,6 +1706,20 @@
 			path = MultDelegateMode;
 			sourceTree = "<group>";
 		};
+		C23288302C2A9C1100697209 /* ModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				C23288332C2A9C7600697209 /* ZJHandyJSONModel.swift */,
+				C23288372C2A9CD300697209 /* ZJSmartCodableModel.swift */,
+				C23288392C2A9CE600697209 /* ZJExCodableModel.swift */,
+				C232883B2C2A9D1500697209 /* ZJCodableWrapperModel.swift */,
+				C232883D2C2A9D2E00697209 /* ZJMetaCodableModel.swift */,
+				C232883F2C2A9D3F00697209 /* ZJKakaJSONModel.swift */,
+				C23288412C2A9E1000697209 /* ZJCodableModel.swift */,
+			);
+			path = ModelTest;
+			sourceTree = "<group>";
+		};
 		C233ACE32721102E00D0FE39 /* ArrayContain */ = {
 			isa = PBXGroup;
 			children = (
@@ -1759,7 +1785,6 @@
 			children = (
 				C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */,
 				C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */,
-				C28954FE2C047352007DC1D7 /* ZJJSONTest.swift */,
 			);
 			path = EmptyViewTest;
 			sourceTree = "<group>";
@@ -2502,7 +2527,8 @@
 		DFF41A642A1E139500CF60F9 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
-				DFF41A662A1E13CC00CF60F9 /* ZJAnimationViewController.swift */,
+				C23288302C2A9C1100697209 /* ModelTest */,
+				DFF41A662A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift */,
 				DFF41A682A1E142A00CF60F9 /* ZJShowDrawView.swift */,
 				DF6F34EC2A5E586900E61F69 /* ZJShowNameFunc.swift */,
 			);
@@ -3083,6 +3109,7 @@
 				DF916B5329C9440400FC92B0 /* ZJShowTestParserFilter.m in Sources */,
 				DF15C3C42A6FA51300F456F1 /* DYHBAwardRecordCell.m in Sources */,
 				C29EC5AC26452F6400B7E26D /* RACTestViewController.m in Sources */,
+				C23288402C2A9D3F00697209 /* ZJKakaJSONModel.swift in Sources */,
 				C21F391C264D3EF6004F6BD1 /* ZJServiceManager.m in Sources */,
 				C2CEDA3727F7384D009E7934 /* UncaughtExceptionHandler.m in Sources */,
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
@@ -3099,10 +3126,11 @@
 				DFCCD5682A66BA5D000D4F61 /* GCDSemaphore.m in Sources */,
 				C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */,
 				C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */,
+				C232883C2C2A9D1500697209 /* ZJCodableWrapperModel.swift in Sources */,
 				DF6AE56D2AD7E50400DCEF78 /* DYHBChooseItemCell.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
 				C2F73D532C10AEDF00E7E161 /* ZJCustomCategoryCell.m in Sources */,
-				DFF41A672A1E13CC00CF60F9 /* ZJAnimationViewController.swift in Sources */,
+				DFF41A672A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
@@ -3112,6 +3140,7 @@
 				DF6FCB6D2A6136CD00E61F69 /* DYHBLuckyBagInfoCell.m in Sources */,
 				DF09175329B5B77A00A02A0A /* MTMediatorModel.m in Sources */,
 				380742C924B8202C00968CF5 /* QDUISearchEmptyView.m in Sources */,
+				C23288382C2A9CD300697209 /* ZJSmartCodableModel.swift in Sources */,
 				C29358E92750B06200BF7B3C /* ZJContainerViewController.m in Sources */,
 				C21F3898264BFE51004F6BD1 /* SecondModel.m in Sources */,
 				C28954FD2C009419007DC1D7 /* EmptyListViewController.swift in Sources */,
@@ -3126,12 +3155,12 @@
 				380B2B9425C2A235001EAF3F /* BlockModelTest.m in Sources */,
 				C21F3920264D4091004F6BD1 /* TestServiceManagerModel.m in Sources */,
 				C2110A3127EC570F00A0C7AF /* YZCallStack.m in Sources */,
-				C28954FF2C047352007DC1D7 /* ZJJSONTest.swift in Sources */,
 				38CD08B2243DA84F009429C9 /* Person+Custom.m in Sources */,
 				389A751D23502DD500DDBE6C /* ViewController.m in Sources */,
 				DFCCD5662A66BA5D000D4F61 /* GCDQueue.m in Sources */,
 				DFCCD56C2A66BA87000D4F61 /* GCDTimeViewController.m in Sources */,
 				DF6AE5662AD7E3EB00DCEF78 /* ZJCustomChooseViewController.m in Sources */,
+				C232883E2C2A9D2E00697209 /* ZJMetaCodableModel.swift in Sources */,
 				386B3DCE254A69910063DF3C /* ConfigurationViewController.m in Sources */,
 				C21F390D264D299A004F6BD1 /* ZJServiceModel.m in Sources */,
 				3807427924B6B6E700968CF5 /* QDUISearchBar.m in Sources */,
@@ -3140,6 +3169,7 @@
 				C21F371A264A3890004F6BD1 /* KXVoiceSeatModel.m in Sources */,
 				DF6F34ED2A5E586900E61F69 /* ZJShowNameFunc.swift in Sources */,
 				C2C7EA7226EA66E50050EA67 /* ZJShowCollectionViewController.m in Sources */,
+				C23288422C2A9E1000697209 /* ZJCodableModel.swift in Sources */,
 				C29EC598264525A200B7E26D /* ZJDownloadOperation.m in Sources */,
 				C29358EC2750B0BF00BF7B3C /* ZJLivingViewController.m in Sources */,
 				38A2C8652481F4F200E408BB /* LHPerformanceUtil.m in Sources */,
@@ -3168,6 +3198,7 @@
 				38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */,
 				C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */,
 				380742C024B8174100968CF5 /* ZJBaseViewController.m in Sources */,
+				C23288342C2A9C7600697209 /* ZJHandyJSONModel.swift in Sources */,
 				38E015FA257A11C000C52175 /* TestCodeViewController.m in Sources */,
 				C29EC59F2645265700B7E26D /* DownloadViewController.m in Sources */,
 				C233ACE62721105100D0FE39 /* ZTArrayContainViewController.m in Sources */,
@@ -3178,6 +3209,7 @@
 				C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */,
 				DFCCD5692A66BA5D000D4F61 /* DYGCDTimer.m in Sources */,
 				389A753023502E1900DDBE6C /* Person.m in Sources */,
+				C232883A2C2A9CE600697209 /* ZJExCodableModel.swift in Sources */,
 				C29EC59A264525A200B7E26D /* ZJFileManager.m in Sources */,
 				DFCCD5672A66BA5D000D4F61 /* GCDGroup.m in Sources */,
 				C2C9B54826A9D5230057941B /* ZTHorizontalLayout.m in Sources */,
@@ -3398,7 +3430,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVOTestModel/KVOTestModel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -3483,7 +3515,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVOTestModel/KVOTestModel-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -3630,7 +3662,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KVOTestModel/KVOTestModel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = myTest;

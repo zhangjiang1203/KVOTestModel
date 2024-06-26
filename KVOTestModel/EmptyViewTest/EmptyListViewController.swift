@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class EmptyListViewController: UIViewController {
     
@@ -38,10 +37,6 @@ class EmptyListViewController: UIViewController {
     
     /// 模型解析
     func testModel() {
-        let test = ZJJSONTest()
-//        test.testObjcMapper()
-//        test.testHandyJSON()
-        test.testCodableJSON()
     }
     
     func showTestScrollView() {

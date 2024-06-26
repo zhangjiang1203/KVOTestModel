@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <dlfcn.h>
-#import <libkern/OSAtomic.h>
+//#import <dlfcn.h>
+//#import <libkern/OSAtomic.h>
 
 //void __sanitizer_cov_trace_pc_guard_init(uint32_t *start,
 //                                                    uint32_t *stop) {
@@ -46,24 +46,6 @@
     self.title = @"测试";
     self.view.backgroundColor = [UIColor whiteColor];
     [self initMyUI];
-//    [self testDictSort];
-}
-
-
-- (void)testDictSort{
-    NSDictionary *dict = @{@"name":@"zhangsan",@"age":@"18",@"sex":@"女",@"address":@"上海市浦东",@"salary":@"12000"};
-    NSLog(@"sortArr:%@",[dict allKeys]);
-    NSArray *sortedKeysArr = [[dict allKeys] sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
-        return [obj1 compare:obj2];
-    }];
-    
-    NSLog(@"sortedArr:%@",sortedKeysArr);
-    __block NSString *sign = @"";
-    [sortedKeysArr enumerateObjectsUsingBlock:^(NSString  *obj, NSUInteger idx, BOOL *stop) {
-        NSString *value = dict[obj];
-        sign = [sign stringByAppendingFormat:@"%@:%@",obj,value];
-    }];
-    NSLog(@"拼接字符串===%@",sign);
 }
 
 - (void)initMyUI {
@@ -74,7 +56,7 @@
         @{@"title":@"设置item",@"class":@"ZJCustomChooseViewController"},
         @{@"title":@"SVGA播放",@"class":@"ZJSVGAPlayerViewController"},
         @{@"title":@"GCDTimer",@"class":@"GCDTimeViewController"},
-        @{@"title":@"swiftTest",@"class":@"KVOTestModel.ZJAnimationViewController"},
+        @{@"title":@"swiftTest",@"class":@"KVOTestModel.ZJJSONToModelTestViewController"},
         @{@"title":@"pipeline测试",@"class":@"ZJPipelineTestViewController"},
         @{@"title":@"组件化测试",@"class":@"ZJModuleTestViewController"},
         @{@"title":@"tableView高度",@"class":@"ZJTableLayoutViewController"},

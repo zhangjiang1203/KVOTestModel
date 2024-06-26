@@ -1,0 +1,6 @@
+framework module MetaCodable {
+  umbrella header "MetaCodableMacro-umbrella.h"
+
+  export *
+  module * { export * }
+}

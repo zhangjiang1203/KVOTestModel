@@ -15,6 +15,10 @@
 
 - (void)initializeData{
     [super initializeData];
+    self.cellWidth = 80;
+    self.cellSpacing = 10;
+    self.contentEdgeInsetLeft = 15;
+    self.contentEdgeInsetRight = 10;
 }
 
 - (void)initializeViews {
