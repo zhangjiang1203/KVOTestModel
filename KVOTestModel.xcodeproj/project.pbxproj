@@ -92,6 +92,7 @@
 		C23288422C2A9E1000697209 /* ZJCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288412C2A9E1000697209 /* ZJCodableModel.swift */; };
 		C233ACE62721105100D0FE39 /* ZTArrayContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */; };
 		C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE82721108500D0FE39 /* ZJPersonModel.m */; };
+		C2488EAF2C2E5670006EEC10 /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2488EAE2C2E5670006EEC10 /* Codable+Extension.swift */; };
 		C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */; };
 		C2495078277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */; };
 		C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */; };
@@ -740,6 +741,7 @@
 		C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTArrayContainViewController.m; sourceTree = "<group>"; };
 		C233ACE72721108500D0FE39 /* ZJPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPersonModel.h; sourceTree = "<group>"; };
 		C233ACE82721108500D0FE39 /* ZJPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPersonModel.m; sourceTree = "<group>"; };
+		C2488EAE2C2E5670006EEC10 /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		C2495073277AB8470026BA32 /* YogaNormalLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaNormalLayoutViewController.h; sourceTree = "<group>"; };
 		C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaNormalLayoutViewController.m; sourceTree = "<group>"; };
 		C2495076277AC1DF0026BA32 /* YogaSpecialLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaSpecialLayoutViewController.h; sourceTree = "<group>"; };
@@ -1716,6 +1718,7 @@
 				C232883D2C2A9D2E00697209 /* ZJMetaCodableModel.swift */,
 				C232883F2C2A9D3F00697209 /* ZJKakaJSONModel.swift */,
 				C23288412C2A9E1000697209 /* ZJCodableModel.swift */,
+				C2488EAE2C2E5670006EEC10 /* Codable+Extension.swift */,
 			);
 			path = ModelTest;
 			sourceTree = "<group>";
@@ -3115,6 +3118,7 @@
 				C29EC59B264525A200B7E26D /* ZJDownloadModel.m in Sources */,
 				3807428324B7185D00968CF5 /* QDSearchResultCell.m in Sources */,
 				C2C9B54526A71B630057941B /* ZJTextViewController.m in Sources */,
+				C2488EAF2C2E5670006EEC10 /* Codable+Extension.swift in Sources */,
 				C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */,
 				38E01606257A131D00C52175 /* NSObject+Coding.m in Sources */,
 				383B11F123978E6F00E9DCB9 /* DebenDataManager.m in Sources */,

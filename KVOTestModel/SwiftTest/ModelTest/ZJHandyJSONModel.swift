@@ -54,22 +54,22 @@ struct ZJHandyJSONTest {
     static func testHandyJSON() {
         var start = CFAbsoluteTimeGetCurrent()
         
-        var people: ZJTestHandyJSONModel = ZJTestHandyJSONModel()
+//        var people: ZJTestHandyJSONModel = ZJTestHandyJSONModel()
         for _ in 0..<maxCount {
-            people = ZJTestHandyJSONModel.deserialize(from: jsonStr)!
+            let people = ZJTestHandyJSONModel.deserialize(from: jsonStr)!
         }
         
         var executionTime = CFAbsoluteTimeGetCurrent() - start
         print("test HandyJSON deserialize time totals: ", executionTime)
         
-        start = CFAbsoluteTimeGetCurrent()
-        
-        for _ in 0..<maxCount {
-            _ = people.toJSONString()!
-        }
-        
-        executionTime = CFAbsoluteTimeGetCurrent() - start
-        print("test HandyJSON toJSONString time totals: ", executionTime)
+//        start = CFAbsoluteTimeGetCurrent()
+//        
+//        for _ in 0..<maxCount {
+//            _ = people.toJSONString()!
+//        }
+//        
+//        executionTime = CFAbsoluteTimeGetCurrent() - start
+//        print("test HandyJSON toJSONString time totals: ", executionTime)
     }
 }
 
@@ -77,7 +77,6 @@ struct ZJHandyJSONTest {
 
 // MARK: HandyJSON
 struct ZJTestHandyJSONModel: HandyJSON {
-    
     var username: String?
     var age: Int?
     var weight: Double?
@@ -94,8 +93,6 @@ struct ZJTestHandyJSONModel: HandyJSON {
 }
 
 struct ZJThreeDayHandyJSONModel: HandyJSON {
-    init() { }
-    
     var conditions: String?
     var day: String?
     var temperature: Int?

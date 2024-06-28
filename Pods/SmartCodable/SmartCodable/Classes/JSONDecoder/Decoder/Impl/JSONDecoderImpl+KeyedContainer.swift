@@ -294,22 +294,13 @@ extension JSONDecoderImpl.KeyedContainer {
             }
         }
         
-        
-        if let type = type as? FlatType.Type {
-            if type.isArray {
-                return try T(from: superDecoder(forKey: key))
-            } else {
-                return try T(from: impl)
-            }
-        } else {
-            do {
-                let newDecoder = try decoderForKeyCompatibleForJson(key, type: type)
-                let decoded = try newDecoder.unwrap(as: type)
-                return didFinishMapping(decoded)
-            } catch {
-                let decoded: T = try forceDecode(forKey: key)
-                return didFinishMapping(decoded)
-            }
+        do {
+            let newDecoder = try decoderForKeyCompatibleForJson(key, type: type)
+            let decoded = try newDecoder.unwrap(as: type)
+            return didFinishMapping(decoded)
+        } catch {
+            let decoded: T = try forceDecode(forKey: key)
+            return didFinishMapping(decoded)
         }
     }
 }

@@ -46,10 +46,10 @@ struct ZJMetaCodableModelTest {
     static func testMetaCodable() {
         var start = CFAbsoluteTimeGetCurrent()
 
-        var people: ZJMetaCodableModel = ZJMetaCodableModel()
+//        var people: ZJMetaCodableModel = ZJMetaCodableModel()
         for _ in 0..<maxCount {
             do{
-                people = try JSONDecoder().decode(ZJMetaCodableModel.self, from: jsonStr.data(using: .utf8)!)
+                let people = try JSONDecoder().decode(ZJMetaCodableModel.self, from: jsonStr.data(using: .utf8)!)
             } catch {
                 print("测试数据==\(error)")
             }
@@ -58,20 +58,20 @@ struct ZJMetaCodableModelTest {
         var executionTime = CFAbsoluteTimeGetCurrent() - start
         print("test MetaCodable deserialize time totals: ", executionTime)
 
-        start = CFAbsoluteTimeGetCurrent()
-
-        for _ in 0..<maxCount {
-            let data = try! JSONEncoder().encode(people)
-            _ = String(data: data, encoding: .utf8)!
-        }
-
-        executionTime = CFAbsoluteTimeGetCurrent() - start
-//        print(res)
-        print("test MetaCodable toJSONString time totals: ", executionTime)
+//        start = CFAbsoluteTimeGetCurrent()
+//
+//        for _ in 0..<maxCount {
+//            let data = try! JSONEncoder().encode(people)
+//            _ = String(data: data, encoding: .utf8)!
+//        }
+//
+//        executionTime = CFAbsoluteTimeGetCurrent() - start
+////        print(res)
+//        print("test MetaCodable toJSONString time totals: ", executionTime)
     }
 }
 /*
- test MetaCodable deserialize time totals:  7.452168941497803
+ test MetaCodable deserialize time totals:  7.369415998458862
  test MetaCodable toJSONString time totals:  3.383513927459717
  CPU: 100%  highest
  Memory: 17.6MB
@@ -91,13 +91,6 @@ struct ZJMetaCodableModel {
     var weight: Double?
     var sex: Int?
     var location: String?
-    //指定使用 address中的country 隐射到 country上
-    @CodedAt("address","city")
-    var country: String?
-    //从 address这层路径开始解析
-    @CodedIn("address")
-    var province:String?
-    
     @CodedAt("three_day_forecast")
     var threeDayForecast: [ZJThreeDayMetaCodableModel] = []
 }

@@ -84,8 +84,6 @@ extension Dictionary {
                 } else {
                     return nil
                 }
-            } else if case JSONValue.object(let object) = currentAny, let temp = object[key] {
-                currentAny = temp
             } else {
                 return nil
             }

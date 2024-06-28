@@ -17,19 +17,14 @@ class ZJJSONToModelTestViewController: UIViewController {
     }
     
     func testJSONModel() {
-//        ZJMetaCodableModelTest.testMetaCodable()
         
-//        ZJKakaJSONModelTest.testKakaJSON()
-        
-//        ZJCodableModelTest.testCodableJSON()
-        
-//        ZJCodableWrapperModelTest.testCodableWrapper()
-        
-//        ZJSmartCodableModelTest.testSmartCodableJSON()
-        
-//        ZJHandyJSONTest.testHandyJSON()
-        
-        ZJExCodableTest.testExCodable()
+    ZJCodableModelTest.testCodableJSON()
+//    ZJHandyJSONTest.testHandyJSON()
+//    ZJKakaJSONModelTest.testKakaJSON()
+//    ZJSmartCodableModelTest.testSmartCodableJSON()
+//    ZJExCodableTest.testExCodable()
+//    ZJMetaCodableModelTest.testMetaCodable()
+//    ZJCodableWrapperModelTest.testCodableWrapper()
     }
 
 }

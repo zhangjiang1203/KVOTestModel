@@ -9,33 +9,42 @@
 import Foundation
 import SmartCodable
 
-fileprivate let maxCount = 100000
+fileprivate let maxCount = 1
 fileprivate let jsonStr = """
 {
     "username": "yuhanle",
-    "age": 18,
+    "age": "18",
     "weight": 65.4,
     "sex": 1,
-    "location": "Toronto, Canada",
-    "three_day_forecast": [
-        {
-            "conditions": "Partly cloudy",
-            "day": "Monday",
-            "temperature": 20
-        },
-        {
-            "conditions": "Showers",
-            "day": "Tuesday",
-            "temperature": 22
-        },
-        {
-            "conditions": "Sunny",
-            "day": "Wednesday",
-            "temperature": 28
-        }
-    ]
+    "location": "Toronto, Canada"
 }
 """
+//fileprivate let jsonStr = """
+//{
+//    "username": "yuhanle",
+//    "age": "18",
+//    "weight": 65.4,
+//    "sex": 1,
+//    "location": "Toronto, Canada",
+//    "three_day_forecast": [
+//        {
+//            "conditions": "Partly cloudy",
+//            "day": "Monday",
+//            "temperature": 20
+//        },
+//        {
+//            "conditions": "Showers",
+//            "day": "Tuesday",
+//            "temperature": 22
+//        },
+//        {
+//            "conditions": "Sunny",
+//            "day": "Wednesday",
+//            "temperature": 28
+//        }
+//    ]
+//}
+//"""
 
 /**
  1.支持Any
@@ -55,23 +64,24 @@ struct ZJSmartCodableModelTest {
     static func testSmartCodableJSON() {
         var start = CFAbsoluteTimeGetCurrent()
 
-        var people: ZJSmartCodableModel = ZJSmartCodableModel()
+//        var people: ZJSmartCodableModel = ZJSmartCodableModel()
         for _ in 0..<maxCount {
-            people = ZJSmartCodableModel.deserialize(from: jsonStr)!
+            let people = ZJSmartCodableModel.deserialize(from: jsonStr)!
+            print("测试")
         }
 
         var executionTime = CFAbsoluteTimeGetCurrent() - start
         print("test SmartCodableJSON deserialize time totals: ", executionTime)
 
-        start = CFAbsoluteTimeGetCurrent()
-
-        for _ in 0..<maxCount {
-            _ = people.toJSONString() ?? ""
-        }
-
-        executionTime = CFAbsoluteTimeGetCurrent() - start
-//        print(res)
-        print("test SmartCodable toJSONString time totals: ", executionTime)
+//        start = CFAbsoluteTimeGetCurrent()
+//
+//        for _ in 0..<maxCount {
+//            _ = people.toJSONString() ?? ""
+//        }
+//
+//        executionTime = CFAbsoluteTimeGetCurrent() - start
+////        print(res)
+//        print("test SmartCodable toJSONString time totals: ", executionTime)
     }
 }
 
@@ -82,7 +92,14 @@ struct ZJSmartCodableModel: SmartCodable {
     var weight: Double?
     var sex: Int?
     var location: String?
-    var threeDayForecast: [ZJThreeDaySmartCodableModel] = []
+//    var threeDayForecast: [ZJThreeDaySmartCodableModel] = []
+//    
+//    static func mappingForKey() -> [SmartKeyTransformer]? {
+//        [
+//            CodingKeys.threeDayForecast <--- "three_day_forecast",
+//            CodingKeys.username <--- ["username", "title"]
+//        ]
+//    }
 }
 struct ZJThreeDaySmartCodableModel: SmartCodable {
     var conditions: String?

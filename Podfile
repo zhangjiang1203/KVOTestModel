@@ -29,7 +29,7 @@ target 'KVOTestModel' do
   pod 'SwiftyJSON', '5.0.2'
   pod 'HandyJSON', '5.0.2'
   pod 'ObjectMapper', '4.4.2'
-  pod 'SmartCodable', '4.0.4'
+  pod 'SmartCodable', '4.0.3'
   pod 'ExCodable', '0.6.0'
 #  pod 'CodableWrappers', '2.0.7'
   pod 'CodableWrapper', :path => './localPod/CodableWrapper'

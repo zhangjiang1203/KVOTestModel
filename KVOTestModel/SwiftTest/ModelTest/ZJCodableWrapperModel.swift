@@ -67,10 +67,10 @@ struct ZJCodableWrapperModelTest {
     static func testCodableWrapper() {
         var start = CFAbsoluteTimeGetCurrent()
 
-        var people: ZJTestCodableWrapperModel = ZJTestCodableWrapperModel()
+//        var people: ZJTestCodableWrapperModel = ZJTestCodableWrapperModel()
         for _ in 0..<maxCount {
             do{
-                people = try JSONDecoder().decode(ZJTestCodableWrapperModel.self, from: jsonStr.data(using: .utf8)!)
+                let people = try JSONDecoder().decode(ZJTestCodableWrapperModel.self, from: jsonStr.data(using: .utf8)!)
             } catch {
                 print("测试数据==\(error)")
             }
@@ -79,16 +79,16 @@ struct ZJCodableWrapperModelTest {
         var executionTime = CFAbsoluteTimeGetCurrent() - start
         print("test CodableWrapper deserialize time totals: ", executionTime)
 
-        start = CFAbsoluteTimeGetCurrent()
-
-        for _ in 0..<maxCount {
-            let data = try! JSONEncoder().encode(people)
-            _ = String(data: data, encoding: .utf8)!
-        }
-
-        executionTime = CFAbsoluteTimeGetCurrent() - start
-//        print(res)
-        print("test CodableWrapper toJSONString time totals: ", executionTime)
+//        start = CFAbsoluteTimeGetCurrent()
+//
+//        for _ in 0..<maxCount {
+//            let data = try! JSONEncoder().encode(people)
+//            _ = String(data: data, encoding: .utf8)!
+//        }
+//
+//        executionTime = CFAbsoluteTimeGetCurrent() - start
+////        print(res)
+//        print("test CodableWrapper toJSONString time totals: ", executionTime)
     }
 }
 
@@ -96,7 +96,7 @@ struct ZJCodableWrapperModelTest {
 struct ZJTestCodableWrapperModel {
     @CodingKey("username", "title")
     var username: String?
-    var age: String?
+    var age: Int?
     var weight: Double?
     var sex: Int?
     var location: String?

@@ -9,31 +9,31 @@
 import Foundation
 import ExCodable
 
-fileprivate let maxCount = 10
+fileprivate let maxCount = 100000
 fileprivate let jsonStr = """
 {
-//    "username": "yuhanle",
-    "age": "18",
+    "username": "yuhanle",
+    "age": 18,
     "weight": 65.4,
-//    "sex": 1,
-//    "location": "Toronto, Canada",
-//    "three_day_forecast": [
-//        {
-//            "conditions": "Partly cloudy",
-//            "day": "Monday",
-//            "temperature": 20
-//        },
-//        {
-//            "conditions": "Showers",
-//            "day": "Tuesday",
-//            "temperature": 22
-//        },
-//        {
-//            "conditions": "Sunny",
-//            "day": "Wednesday",
-//            "temperature": 28
-//        }
-//    ]
+    "sex": 1,
+    "location": "Toronto, Canada",
+    "three_day_forecast": [
+        {
+            "conditions": "Partly cloudy",
+            "day": "Monday",
+            "temperature": 20
+        },
+        {
+            "conditions": "Showers",
+            "day": "Tuesday",
+            "temperature": 22
+        },
+        {
+            "conditions": "Sunny",
+            "day": "Wednesday",
+            "temperature": 28
+        }
+    ]
 }
 """
 
@@ -70,11 +70,10 @@ struct ZJExCodableTest {
     static func testExCodable() {
         var start = CFAbsoluteTimeGetCurrent()
         
-        var people: ZJExcodableModel = ZJExcodableModel()
+//        var people: ZJExcodableModel = ZJExcodableModel()
         for _ in 0..<maxCount {
             do {
-                people = try ZJExcodableModel.decoded(from: jsonStr.data(using: .utf8)!)
-                print("展示数据")
+                let people = try ZJExcodableModel.decoded(from: jsonStr.data(using: .utf8)!)
             }catch {
                 print("excodable decode error:\(error.localizedDescription)")
             }
@@ -83,39 +82,39 @@ struct ZJExCodableTest {
         var executionTime = CFAbsoluteTimeGetCurrent() - start
         print("test Excodable deserialize time totals: ", executionTime)
         
-        start = CFAbsoluteTimeGetCurrent()
-        
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-         for _ in 0..<maxCount {
-             let jsonData = try? encoder.encode(people)
-             _ = String(data: jsonData ?? Data(), encoding: .utf8) ?? ""
-         }
-        
-        executionTime = CFAbsoluteTimeGetCurrent() - start
-        print("test Excodable toJSONString time totals: ", executionTime)
+//        start = CFAbsoluteTimeGetCurrent()
+//        
+//        let encoder = JSONEncoder()
+//        encoder.outputFormatting = .prettyPrinted
+//         for _ in 0..<maxCount {
+//             let jsonData = try? encoder.encode(people)
+//             _ = String(data: jsonData ?? Data(), encoding: .utf8) ?? ""
+//         }
+//        
+//        executionTime = CFAbsoluteTimeGetCurrent() - start
+//        print("test Excodable toJSONString time totals: ", executionTime)
     }
 }
 
 
 //MARK: Excodable
 struct ZJExcodableModel {
-//    var username: String?
+    var username: String?
     var age: Int?
     var weight: Double?
-//    var sex: Int?
-//    var location: String?
-//    var three_day_forecast: [ZJThreeDayExcodableModel]?
+    var sex: Int?
+    var location: String?
+    var three_day_forecast: [ZJThreeDayExcodableModel]?
 }
 
 extension ZJExcodableModel: ExCodable {
     static var keyMapping: [KeyMap<Self>] = [
-//        KeyMap(\.username, to: "username","title"),
+        KeyMap(\.username, to: "username","title"),
         KeyMap(\.age, to: "age"),
         KeyMap(\.weight, to: "weight"),
-//        KeyMap(\.sex, to: "sex"),
-//        KeyMap(\.location, to: "location"),
-//        KeyMap(\.three_day_forecast, to: "three_day_forecast")
+        KeyMap(\.sex, to: "sex"),
+        KeyMap(\.location, to: "location"),
+        KeyMap(\.three_day_forecast, to: "three_day_forecast")
     ]
 }
 

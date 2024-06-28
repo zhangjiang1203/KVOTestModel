@@ -47,7 +47,7 @@ fileprivate let jsonStr = """
  test KakaJSON toJSONString time totals:  14.10849404335022
  
  CPU: 101%
- MEMORY: 503.6MB
+ MEMORY: 91.3MB
  测试机器: iPhone XR
  */
 
@@ -55,24 +55,24 @@ struct ZJKakaJSONModelTest {
     static func testKakaJSON() {
         var start = CFAbsoluteTimeGetCurrent()
 
-        var people: ZJKakaJSONModel = ZJKakaJSONModel()
+//        var people: ZJKakaJSONModel = ZJKakaJSONModel()
         for _ in 0..<maxCount {
-            people = jsonStr.kj.model(ZJKakaJSONModel.self)!
+           let people = jsonStr.kj.model(ZJKakaJSONModel.self)!
         }
 
         var executionTime = CFAbsoluteTimeGetCurrent() - start
         print("test KakaJSON deserialize time totals: ", executionTime)
 
-        start = CFAbsoluteTimeGetCurrent()
-        
-        for _ in 0..<maxCount {
-            _ = people.kj.JSONString()
-
-        }
-
-        executionTime = CFAbsoluteTimeGetCurrent() - start
-//        print(res)
-        print("test KakaJSON toJSONString time totals: ", executionTime)
+//        start = CFAbsoluteTimeGetCurrent()
+//        
+//        for _ in 0..<maxCount {
+//            _ = people.kj.JSONString()
+//
+//        }
+//
+//        executionTime = CFAbsoluteTimeGetCurrent() - start
+////        print(res)
+//        print("test KakaJSON toJSONString time totals: ", executionTime)
     }
 }
 

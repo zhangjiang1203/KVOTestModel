@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate let maxCount = 100000
+fileprivate let maxCount = 1
 fileprivate let jsonStr = """
 {
     "username": "yuhanle",
@@ -16,6 +16,7 @@ fileprivate let jsonStr = """
     "weight": 65.4,
     "sex": 1,
     "location": "Toronto, Canada",
+    "show_name_test": nil,
     "three_day_forecast": [
         {
             "conditions": "Partly cloudy",
@@ -54,28 +55,34 @@ fileprivate let jsonStr = """
 struct ZJCodableModelTest {
    static func testCodableJSON() {
         var start = CFAbsoluteTimeGetCurrent()
-
-        var people: ZJTestCodableModel = ZJTestCodableModel()
+       let encoder = JSONEncoder()
+       encoder.outputFormatting = .prettyPrinted
+       
         for _ in 0..<maxCount {
             let data = jsonStr.data(using: .utf8)
-            people = try! JSONDecoder().decode(ZJTestCodableModel.self, from: data!)
+            let people = try? JSONDecoder().decode(ZJTestCodableModel.self, from: data!)
+            
+            let jsonData = try? encoder.encode(people)
+            let jsonStr = String(data: jsonData ?? Data(), encoding: .utf8) ?? ""
+            print("展示数据==\(jsonStr)")
+            
         }
 
         var executionTime = CFAbsoluteTimeGetCurrent() - start
         print("test CodableJSON deserialize time totals: ", executionTime)
 
-        start = CFAbsoluteTimeGetCurrent()
-
-       let encoder = JSONEncoder()
-       encoder.outputFormatting = .prettyPrinted
-        for _ in 0..<maxCount {
-            let jsonData = try? encoder.encode(people)
-            _ = String(data: jsonData ?? Data(), encoding: .utf8) ?? ""
-        }
-
-        executionTime = CFAbsoluteTimeGetCurrent() - start
-//        print(res)
-        print("test CodableJSON toJSONString time totals: ", executionTime)
+//        start = CFAbsoluteTimeGetCurrent()
+//
+//       let encoder = JSONEncoder()
+//       encoder.outputFormatting = .prettyPrinted
+//        for _ in 0..<maxCount {
+//            let jsonData = try? encoder.encode(people)
+//            _ = String(data: jsonData ?? Data(), encoding: .utf8) ?? ""
+//        }
+//
+//        executionTime = CFAbsoluteTimeGetCurrent() - start
+////        print(res)
+//        print("test CodableJSON toJSONString time totals: ", executionTime)
     }
 }
 
@@ -86,11 +93,36 @@ struct ZJTestCodableModel: Codable {
     var weight: Double?
     var sex: Int?
     var location: String?
-    var threeDayForecast: [ZJThreeDayCodableModel]?
+//    var threeDayForecast: [ZJThreeDayCodableModel]?
+    var show_name_test: [String : Any]?
+    var three_day_forecast: [Any]?
 
     enum CodingKeys: String, CodingKey {
-        case username, age, weight, sex, location
-        case threeDayForecast = "three_day_forecast"
+        case username, age, weight, sex, location, three_day_forecast, show_name_test
+//        case threeDayForecast = "three_day_forecast"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.username = try container.decodeIfPresent(String.self, forKey: .username)
+        self.age = try container.decodeIfPresent(Int.self, forKey: .age)
+        self.weight = try container.decodeIfPresent(Double.self, forKey: .weight)
+        self.sex = try container.decodeIfPresent(Int.self, forKey: .sex)
+        self.location = try container.decodeIfPresent(String.self, forKey: .location)
+        self.three_day_forecast = try container.decodeIfPresent(Array<Any>.self, forKey: .three_day_forecast)
+        self.show_name_test = try container.decodeIfPresent(Dictionary<String, Any>.self, forKey: .show_name_test)
+
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(self.username, forKey: .username)
+        try container.encodeIfPresent(self.age, forKey: .age)
+        try container.encodeIfPresent(self.weight, forKey: .weight)
+        try container.encodeIfPresent(self.sex, forKey: .sex)
+        try container.encodeIfPresent(self.location, forKey: .location)
+        try container.encode(self.three_day_forecast, forKey: .three_day_forecast)
+        try container.encode(self.show_name_test, forKey: .show_name_test)
     }
 }
 

@@ -29,7 +29,7 @@ PODS:
   - SDWebImage (5.19.2):
     - SDWebImage/Core (= 5.19.2)
   - SDWebImage/Core (5.19.2)
-  - SmartCodable (4.0.4)
+  - SmartCodable (4.0.3)
   - SnapKit (5.7.1)
   - SwiftyJSON (5.0.2)
   - YYText (1.0.7)
@@ -51,7 +51,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDWebImage
-  - SmartCodable (= 4.0.4)
+  - SmartCodable (= 4.0.3)
   - SnapKit
   - SwiftyJSON (= 5.0.2)
   - YYText
@@ -106,11 +106,11 @@ SPEC CHECKSUMS:
   RxRelay: 4151ba01152436b08271e08410135e099880eae5
   RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
   SDWebImage: dfe95b2466a9823cf9f0c6d01217c06550d7b29a
-  SmartCodable: 91f469249cf9cd8c1ef4777bffe902e167293846
+  SmartCodable: 2942912f5be0af9224465681dd1fcfca52f3a3a0
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: b7385fb5106c8563c83140015cdefa75b59a4762
+PODFILE CHECKSUM: 8f0a65bfca73f40c1d81e802d0f6d2f06d7617d0
 
 COCOAPODS: 1.15.2
