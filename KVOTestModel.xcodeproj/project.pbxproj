@@ -98,8 +98,11 @@
 		C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24995F827741EFB003EC8F2 /* YogaKitTestViewController.m */; };
 		C24B05662BFE27270099A8C8 /* ZJEmptyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */; };
 		C2514143288E3AFB00866303 /* ZJTableLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */; };
+		C2701A1F2C48E46F0003258B /* CALayer+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = C2701A1E2C48E46F0003258B /* CALayer+Border.m */; };
+		C271C0942C4F4EDB0036F8A2 /* SwiftUITestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271C0932C4F4EDB0036F8A2 /* SwiftUITestPage.swift */; };
 		C27448C92717DA5C00D8BF28 /* ZTSegmentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */; };
 		C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */; };
+		C281D2432C3F9059004135A0 /* Timer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C281D2422C3F9059004135A0 /* Timer+Extension.swift */; };
 		C288C4D927B635BE0009C755 /* ShowLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4D827B635BE0009C755 /* ShowLayerViewController.m */; };
 		C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C288C4DB27B635DC0009C755 /* CustomShowView.m */; };
 		C28954FD2C009419007DC1D7 /* EmptyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */; };
@@ -751,10 +754,14 @@
 		C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJEmptyPageView.swift; sourceTree = "<group>"; };
 		C2514141288E3AFB00866303 /* ZJTableLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJTableLayoutViewController.h; sourceTree = "<group>"; };
 		C2514142288E3AFB00866303 /* ZJTableLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJTableLayoutViewController.m; sourceTree = "<group>"; };
+		C2701A1D2C48E46F0003258B /* CALayer+Border.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Border.h"; sourceTree = "<group>"; };
+		C2701A1E2C48E46F0003258B /* CALayer+Border.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Border.m"; sourceTree = "<group>"; };
+		C271C0932C4F4EDB0036F8A2 /* SwiftUITestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestPage.swift; sourceTree = "<group>"; };
 		C27448C72717DA5C00D8BF28 /* ZTSegmentSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTSegmentSlider.m; sourceTree = "<group>"; };
 		C27448C82717DA5C00D8BF28 /* ZTSegmentSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTSegmentSlider.h; sourceTree = "<group>"; };
 		C27448CA2717DA9F00D8BF28 /* ZJSegmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSegmentViewController.h; sourceTree = "<group>"; };
 		C27448CB2717DA9F00D8BF28 /* ZJSegmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSegmentViewController.m; sourceTree = "<group>"; };
+		C281D2422C3F9059004135A0 /* Timer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Extension.swift"; sourceTree = "<group>"; };
 		C288C4D727B635BE0009C755 /* ShowLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowLayerViewController.h; sourceTree = "<group>"; };
 		C288C4D827B635BE0009C755 /* ShowLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowLayerViewController.m; sourceTree = "<group>"; };
 		C288C4DA27B635DC0009C755 /* CustomShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShowView.h; sourceTree = "<group>"; };
@@ -1719,6 +1726,7 @@
 				C232883F2C2A9D3F00697209 /* ZJKakaJSONModel.swift */,
 				C23288412C2A9E1000697209 /* ZJCodableModel.swift */,
 				C2488EAE2C2E5670006EEC10 /* Codable+Extension.swift */,
+				C281D2422C3F9059004135A0 /* Timer+Extension.swift */,
 			);
 			path = ModelTest;
 			sourceTree = "<group>";
@@ -1758,6 +1766,14 @@
 				DF15C3C22A6FA51200F456F1 /* DYHBAwardRecordCell.m */,
 			);
 			path = TabViewLayout;
+			sourceTree = "<group>";
+		};
+		C271C0922C4F4EC50036F8A2 /* SwiftUITest */ = {
+			isa = PBXGroup;
+			children = (
+				C271C0932C4F4EDB0036F8A2 /* SwiftUITestPage.swift */,
+			);
+			path = SwiftUITest;
 			sourceTree = "<group>";
 		};
 		C27448C62717DA4C00D8BF28 /* segmentTest */ = {
@@ -2448,6 +2464,8 @@
 				DF6AE5692AD7E4DA00DCEF78 /* DYHBChooseItemView.m */,
 				DF6AE56B2AD7E50400DCEF78 /* DYHBChooseItemCell.h */,
 				DF6AE56C2AD7E50400DCEF78 /* DYHBChooseItemCell.m */,
+				C2701A1D2C48E46F0003258B /* CALayer+Border.h */,
+				C2701A1E2C48E46F0003258B /* CALayer+Border.m */,
 			);
 			path = CustomItemView;
 			sourceTree = "<group>";
@@ -2530,6 +2548,7 @@
 		DFF41A642A1E139500CF60F9 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				C271C0922C4F4EC50036F8A2 /* SwiftUITest */,
 				C23288302C2A9C1100697209 /* ModelTest */,
 				DFF41A662A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift */,
 				DFF41A682A1E142A00CF60F9 /* ZJShowDrawView.swift */,
@@ -3128,6 +3147,7 @@
 				C288C4DC27B635DC0009C755 /* CustomShowView.m in Sources */,
 				3807427624B6B69C00968CF5 /* QDBaseSearchViewController.m in Sources */,
 				DFCCD5682A66BA5D000D4F61 /* GCDSemaphore.m in Sources */,
+				C2701A1F2C48E46F0003258B /* CALayer+Border.m in Sources */,
 				C27448CC2717DA9F00D8BF28 /* ZJSegmentViewController.m in Sources */,
 				C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */,
 				C232883C2C2A9D1500697209 /* ZJCodableWrapperModel.swift in Sources */,
@@ -3137,6 +3157,7 @@
 				DFF41A672A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
+				C271C0942C4F4EDB0036F8A2 /* SwiftUITestPage.swift in Sources */,
 				383B12012398A82800E9DCB9 /* SortCodeManager.m in Sources */,
 				DF7272AD2AD29C1E006969DE /* UIImageView+MonitorHook.m in Sources */,
 				C21F37AF264BADBA004F6BD1 /* KXModuleQAService.m in Sources */,
@@ -3181,6 +3202,7 @@
 				38B2BA7D24BD97B300F0F52F /* QDTableFooterView.m in Sources */,
 				C2F73D502C10AEC000E7E161 /* ZJCustomCategoryView.m in Sources */,
 				380B2B9025C2A003001EAF3F /* TestBlockViewController.m in Sources */,
+				C281D2432C3F9059004135A0 /* Timer+Extension.swift in Sources */,
 				DF7272B12AD29C49006969DE /* SwizzleHook.m in Sources */,
 				C21F38FD264CF3B6004F6BD1 /* KXShowAnimationView.m in Sources */,
 				38980BBA253056DD00F75BB4 /* ClassTestViewController.m in Sources */,
@@ -3370,7 +3392,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3458,7 +3480,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3602,7 +3624,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KVOTestModel/KVOTestModel_header.h";
 				INFOPLIST_FILE = KVOTestModel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
