@@ -313,7 +313,7 @@ extension DelegateProxyType where ParentObject: HasPrefetchDataSource, Self.Dele
     }
 }
 
-    #if os(iOS) || os(tvOS) || os(visionOS)
+    #if os(iOS) || os(tvOS)
         import UIKit
 
         extension ObservableType {

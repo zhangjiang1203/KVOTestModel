@@ -34,7 +34,17 @@
 #import "PLCrashReportThreadInfo.h"
 #endif
 
-@interface PLCrashReportExceptionInfo : NSObject
+@interface PLCrashReportExceptionInfo : NSObject {
+@private
+    /** Name */
+    __strong NSString *_name;
+
+    /** Reason */
+    __strong NSString *_reason;
+
+    /** Ordered list of PLCrashReportStackFrame instances, or nil if unavailable. */
+    __strong NSArray *_stackFrames;
+}
 
 - (id) initWithExceptionName: (NSString *) name reason: (NSString *) reason;
 

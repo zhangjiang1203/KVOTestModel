@@ -6,7 +6,7 @@
 //  Copyright © 2021 Krunoslav Zaher. All rights reserved.
 //
 
-#if swift(>=5.6) && canImport(_Concurrency) && !os(Linux)
+#if swift(>=5.5.2) && canImport(_Concurrency) && !os(Linux)
 import Foundation
 
 // MARK: - Shared Sequence
@@ -29,12 +29,12 @@ public extension SharedSequence {
             let disposable = self.asObservable()
                 .subscribe(
                     onNext: { value in continuation.yield(value) },
-                    onCompleted: { continuation.finish() }
+                    onCompleted: { continuation.finish() },
+                    onDisposed: { continuation.onTermination?(.cancelled) }
                 )
-            continuation.onTermination = { @Sendable termination in
-                if termination == .cancelled {
-                    disposable.dispose()
-                }
+
+            continuation.onTermination = { @Sendable _ in
+                disposable.dispose()
             }
         }
     }

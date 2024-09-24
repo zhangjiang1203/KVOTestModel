@@ -8,7 +8,7 @@
 
 import RxSwift
 
-#if os(iOS) || os(tvOS) || os(visionOS)
+#if os(iOS) || os(tvOS)
     import UIKit
 
     /// Represents text input with reactive extensions.

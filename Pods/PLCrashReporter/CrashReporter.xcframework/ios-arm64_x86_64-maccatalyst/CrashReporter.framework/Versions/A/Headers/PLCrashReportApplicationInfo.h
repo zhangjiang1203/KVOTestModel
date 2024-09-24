@@ -28,7 +28,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PLCrashReportApplicationInfo : NSObject
+@interface PLCrashReportApplicationInfo : NSObject {
+@private
+    /** Application identifier */
+    __strong NSString *_applicationIdentifier;
+    
+    /** Application version */
+    __strong NSString *_applicationVersion;
+    
+    /** Application marketing version */
+    __strong NSString *_applicationMarketingVersion;
+}
 
 - (id) initWithApplicationIdentifier: (NSString *) applicationIdentifier 
                   applicationVersion: (NSString *) applicationVersion

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) || os(visionOS)
+#if os(iOS) || os(tvOS)
 
 import RxSwift
 import UIKit
@@ -64,7 +64,7 @@ extension Reactive where Base: UISearchBar {
         return ControlProperty(values: source, valueSink: bindingObserver)
     }
     
-#if os(iOS) || os(visionOS)
+#if os(iOS)
     /// Reactive wrapper for delegate method `searchBarCancelButtonClicked`.
     public var cancelButtonClicked: ControlEvent<Void> {
         let source: Observable<Void> = self.delegate.methodInvoked(#selector(UISearchBarDelegate.searchBarCancelButtonClicked(_:)))

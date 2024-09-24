@@ -14,17 +14,6 @@
 
 @implementation UIBlurEffect (LookinServer)
 
-#ifdef LOOKIN_SERVER_DISABLE_HOOK
-
-- (void)setLks_effectStyleNumber:(NSNumber *)lks_effectStyleNumber {
-}
-
-- (NSNumber *)lks_effectStyleNumber {
-    return nil;
-}
-
-#else
-
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -49,8 +38,6 @@
 - (NSNumber *)lks_effectStyleNumber {
     return [self lookin_getBindObjectForKey:@"lks_effectStyleNumber"];
 }
-
-#endif /* LOOKIN_SERVER_DISABLE_HOOK */
 
 @end
 

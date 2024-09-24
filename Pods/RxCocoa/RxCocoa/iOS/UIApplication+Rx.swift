@@ -6,25 +6,19 @@
 //  Copyright © 2016 Krunoslav Zaher. All rights reserved.
 //
 
-#if os(iOS) || os(visionOS)
+#if os(iOS)
 
 import UIKit
 import RxSwift
-#endif
 
-#if os(iOS)
 extension Reactive where Base: UIApplication {
-  /// Bindable sink for `isNetworkActivityIndicatorVisible`.
-  public var isNetworkActivityIndicatorVisible: Binder<Bool> {
-    return Binder(self.base) { application, active in
-      application.isNetworkActivityIndicatorVisible = active
+    /// Bindable sink for `isNetworkActivityIndicatorVisible`.
+    public var isNetworkActivityIndicatorVisible: Binder<Bool> {
+        return Binder(self.base) { application, active in
+            application.isNetworkActivityIndicatorVisible = active
+        }
     }
-  }
-}
-#endif
-
-#if os(iOS) || os(visionOS)
-extension Reactive where Base: UIApplication {
+    
     /// Reactive wrapper for `UIApplication.didEnterBackgroundNotification`
     public static var didEnterBackground: ControlEvent<Void> {
         let source = NotificationCenter.default.rx.notification(UIApplication.didEnterBackgroundNotification).map { _ in }

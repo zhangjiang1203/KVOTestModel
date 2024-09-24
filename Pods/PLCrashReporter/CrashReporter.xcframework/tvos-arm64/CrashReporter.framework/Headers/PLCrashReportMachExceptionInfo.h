@@ -28,7 +28,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PLCrashReportMachExceptionInfo : NSObject
+@interface PLCrashReportMachExceptionInfo : NSObject {
+@private
+    /** The Mach exception type. */
+    uint64_t _type;
+    
+    /** The Mach exception codes, represented as an ordered array of NSNumber instances. */
+    __strong NSArray *_codes;
+}
 
 - (id) initWithType: (uint64_t) type codes: (NSArray *) codes;
 

@@ -144,7 +144,20 @@ typedef NS_OPTIONS(NSUInteger, PLCrashReporterSymbolicationStrategy) {
     PLCrashReporterSymbolicationStrategyAll = (PLCrashReporterSymbolicationStrategySymbolTable|PLCrashReporterSymbolicationStrategyObjC)
 };
 
-@interface PLCrashReporterConfig : NSObject
+@interface PLCrashReporterConfig : NSObject {
+@private
+    /** The configured signal handler type. */
+    PLCrashReporterSignalHandlerType _signalHandlerType;
+    
+    /** The configured symbolication strategy. */
+    PLCrashReporterSymbolicationStrategy _symbolicationStrategy;
+  
+   /**
+    * Flag indicating if the uncaughtExceptionHandler should be initialized or not. It usually is, except in a
+    * Xamarin environment.
+    */
+  BOOL _shouldRegisterUncaughtExceptionHandler;
+}
 
 + (instancetype) defaultConfiguration;
 

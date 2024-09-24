@@ -6,7 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS) || os(visionOS)
+#if os(iOS) || os(tvOS)
 
 import UIKit
 import RxSwift
@@ -15,7 +15,7 @@ import RxSwift
 final class GestureTarget<Recognizer: UIGestureRecognizer>: RxTarget {
     typealias Callback = (Recognizer) -> Void
     
-    let selector = #selector(GestureTarget.eventHandler(_:))
+    let selector = #selector(ControlTarget.eventHandler(_:))
     
     weak var gestureRecognizer: Recognizer?
     var callback: Callback?

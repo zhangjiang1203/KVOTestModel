@@ -276,14 +276,7 @@
             
             attribute.attrType = [LookinDashboardBlueprint objectAttrTypeWithAttrID:identifier];
             if (attribute.attrType == LookinAttrTypeUIColor) {
-                if (returnObjValue == nil) {
-                    attribute.value = nil;
-                } else if ([returnObjValue isKindOfClass:[UIColor class]] && [returnObjValue respondsToSelector:@selector(lks_rgbaComponents)]) {
-                    attribute.value = [returnObjValue lks_rgbaComponents];
-                } else {
-                    // https://github.com/QMUI/LookinServer/issues/124
-                    return nil;
-                }
+                attribute.value = [returnObjValue lks_rgbaComponents];
             } else {
                 attribute.value = returnObjValue;
             }

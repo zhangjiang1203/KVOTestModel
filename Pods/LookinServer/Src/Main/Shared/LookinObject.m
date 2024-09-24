@@ -8,8 +8,11 @@
 //  https://lookin.work
 //
 
+
+
 #import "LookinObject.h"
 #import "LookinIvarTrace.h"
+
 #import "NSArray+Lookin.h"
 #import "NSString+Lookin.h"
 
@@ -25,7 +28,7 @@
     lookinObj.oid = [object lks_registerOid];
     
     lookinObj.memoryAddress = [NSString stringWithFormat:@"%p", object];
-    lookinObj.classChainList = [object lks_classChainList];
+    lookinObj.classChainList = [object lks_classChainListWithSwiftPrefix:YES];
     
     lookinObj.specialTrace = object.lks_specialTrace;
     lookinObj.ivarTraces = object.lks_ivarTraces;
@@ -69,12 +72,20 @@
     return self;
 }
 
+- (void)setClassChainList:(NSArray<NSString *> *)classChainList {
+    _classChainList = classChainList;
+}
+
 + (BOOL)supportsSecureCoding {
     return YES;
 }
 
-- (NSString *)rawClassName {
+- (NSString *)completedSelfClassName {
     return self.classChainList.firstObject;
+}
+
+- (NSString *)shortSelfClassName {
+    return [[self completedSelfClassName] lookin_shortClassNameString];
 }
 
 @end

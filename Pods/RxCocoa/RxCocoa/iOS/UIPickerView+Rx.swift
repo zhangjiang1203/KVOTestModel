@@ -6,7 +6,7 @@
 //  Copyright © 2016 Krunoslav Zaher. All rights reserved.
 //
 
-#if os(iOS) || os(visionOS)
+#if os(iOS)
     
     import RxSwift
     import UIKit
@@ -98,7 +98,7 @@
          
             items
                 .bind(to: pickerView.rx.itemTitles) { (row, element) in
-                    return element
+                    return element.title
                 }
                 .disposed(by: disposeBag)
          
@@ -131,7 +131,7 @@
          
          items
             .bind(to: pickerView.rx.itemAttributedTitles) { (row, element) in
-                return NSAttributedString(string: element)
+                return NSAttributedString(string: element.title)
             }
             .disposed(by: disposeBag)
         

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-#if os(iOS) || os(visionOS)
+#if os(iOS)
 
 import UIKit
 import RxSwift

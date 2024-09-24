@@ -12,10 +12,10 @@
 #import "Lookin_PTChannel.h"
 #import "LKS_RequestHandler.h"
 #import "LookinConnectionResponseAttachment.h"
+#import "LKS_LocalInspectManager.h"
 #import "LKS_ExportManager.h"
+#import "LKS_PerspectiveManager.h"
 #import "LookinServerDefines.h"
-#import "LKS_TraceManager.h"
-#import "LKS_MultiplatformAdapter.h"
 
 NSString *const LKS_ConnectionDidEndNotificationName = @"LKS_ConnectionDidEndNotificationName";
 
@@ -50,15 +50,11 @@ NSString *const LKS_ConnectionDidEndNotificationName = @"LKS_ConnectionDidEndNot
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handleApplicationDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handleWillResignActiveNotification) name:UIApplicationWillResignActiveNotification object:nil];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handleLocalInspect:) name:@"Lookin_2D" object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handleLocalInspect:) name:@"Lookin_3D" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handleLocalInspectIn2D:) name:@"Lookin_2D" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_handleLocalInspectIn3D:) name:@"Lookin_3D" object:nil];
         [[NSNotificationCenter defaultCenter] addObserverForName:@"Lookin_Export" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
             [[LKS_ExportManager sharedInstance] exportAndShare];
         }];
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"Lookin_RelationSearch" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-            [[LKS_TraceManager sharedInstance] addSearchTarger:note.object];
-        }];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleGetLookinInfo:) name:@"GetLookinInfo" object:nil];
         
         self.requestHandler = [LKS_RequestHandler new];
     }
@@ -67,27 +63,15 @@ NSString *const LKS_ConnectionDidEndNotificationName = @"LKS_ConnectionDidEndNot
 
 - (void)_handleWillResignActiveNotification {
     self.applicationIsActive = NO;
-    
-    if (self.peerChannel_ && ![self.peerChannel_ isConnected]) {
-        [self.peerChannel_ close];
-        self.peerChannel_ = nil;
-    }
 }
 
 - (void)_handleApplicationDidBecomeActive {
+//    NSLog(@"LookinServer(0.8.0) - UIApplicationDidBecomeActiveNotification");
     self.applicationIsActive = YES;
-    [self searchPortToListenIfNoConnection];
-}
-
-- (void)searchPortToListenIfNoConnection {
-    if ([self.peerChannel_ isConnected]) {
-        NSLog(@"LookinServer - Abort to search ports. Already has connected channel.");
+    if (self.peerChannel_ && (self.peerChannel_.isConnected || self.peerChannel_.isListening)) {
         return;
     }
-    NSLog(@"LookinServer - Searching port to listen...");
-    [self.peerChannel_ close];
-    self.peerChannel_ = nil;
-    
+    NSLog(@"LookinServer - Trying to connect ...");
     if ([self isiOSAppOnMac]) {
         [self _tryToListenOnPortFrom:LookinSimulatorIPv4PortNumberStart to:LookinSimulatorIPv4PortNumberEnd current:LookinSimulatorIPv4PortNumberStart];
     } else {
@@ -98,28 +82,21 @@ NSString *const LKS_ConnectionDidEndNotificationName = @"LKS_ConnectionDidEndNot
 - (BOOL)isiOSAppOnMac {
 #if TARGET_OS_SIMULATOR
     return YES;
-#else
+#endif
+
+#ifdef IOS14_SDK_ALLOWED
     if (@available(iOS 14.0, *)) {
-        // isiOSAppOnMac 这个 API 看似在 iOS 14.0 上可用，但其实在 iOS 14 beta 上是不存在的、有 unrecognized selector 问题，因此这里要用 respondsToSelector 做一下保护
-        NSProcessInfo *info = [NSProcessInfo processInfo];
-        if ([info respondsToSelector:@selector(isiOSAppOnMac)]) {
-            return [info isiOSAppOnMac];
-        } else if ([info respondsToSelector:@selector(isMacCatalystApp)]) {
-            return [info isMacCatalystApp];
-        } else {
-            return NO;
-        }
+        return [NSProcessInfo processInfo].isiOSAppOnMac || [NSProcessInfo processInfo].isMacCatalystApp;
     }
+#endif
     if (@available(iOS 13.0, tvOS 13.0, *)) {
         return [NSProcessInfo processInfo].isMacCatalystApp;
     }
     return NO;
-#endif
 }
 
 - (void)_tryToListenOnPortFrom:(int)fromPort to:(int)toPort current:(int)currentPort  {
     Lookin_PTChannel *channel = [Lookin_PTChannel channelWithDelegate:self];
-    channel.targetPort = currentPort;
     [channel listenOnPort:currentPort IPv4Address:INADDR_LOOPBACK callback:^(NSError *error) {
         if (error) {
             if (error.code == 48) {
@@ -135,14 +112,15 @@ NSString *const LKS_ConnectionDidEndNotificationName = @"LKS_ConnectionDidEndNot
             } else {
                 // 所有端口都尝试完毕，全部失败
                 NSLog(@"LookinServer - 127.0.0.1:%d is unavailable(%@).", currentPort, error);
-                NSLog(@"LookinServer - Connect failed in the end.");
+                NSLog(@"LookinServer - Connect failed in the end. Ask for help: lookin@lookin.work");
             }
             
         } else {
             // 成功
             NSLog(@"LookinServer - Connected successfully on 127.0.0.1:%d", currentPort);
-            // 此时 peerChannel_ 状态为 listening
-            self.peerChannel_ = channel;
+        
+//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@", @(currentPort)] message:nil preferredStyle:UIAlertControllerStyleAlert];
+//            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
         }
     }];
 }
@@ -152,6 +130,10 @@ NSString *const LKS_ConnectionDidEndNotificationName = @"LKS_ConnectionDidEndNot
         [self.peerChannel_ close];
     }
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (BOOL)isConnected {
+    return self.peerChannel_ && self.peerChannel_.isConnected;
 }
 
 - (void)respond:(LookinConnectionResponseAttachment *)data requestType:(uint32_t)requestType tag:(uint32_t)tag {
@@ -201,56 +183,96 @@ NSString *const LKS_ConnectionDidEndNotificationName = @"LKS_ConnectionDidEndNot
     [self.requestHandler handleRequestType:type tag:tag object:object];
 }
 
-/// 当 Client 端链接成功时，该方法会被调用，然后 channel 的状态会变成 connected
-- (void)ioFrameChannel:(Lookin_PTChannel*)channel didAcceptConnection:(Lookin_PTChannel*)otherChannel fromAddress:(Lookin_PTAddress*)address {
-    NSLog(@"LookinServer - channel:%@, acceptConnection:%@", channel.debugTag, otherChannel.debugTag);
-
-    Lookin_PTChannel *previousChannel = self.peerChannel_;
-    
-    otherChannel.targetPort = address.port;
-    self.peerChannel_ = otherChannel;
-    
-    [previousChannel cancel];
-}
-
 /// 当连接过 Lookin 客户端，然后 Lookin 客户端又被关闭时，会走到这里
 - (void)ioFrameChannel:(Lookin_PTChannel*)channel didEndWithError:(NSError*)error {
-    if (self.peerChannel_ != channel) {
-        // Client 端第一次连接上时，之前 listen 的 port 会被 Peertalk 内部 cancel（并在 didAcceptConnection 方法里给业务抛一个新建的 connected 状态的 channel），那个被 cancel 的 channel 会走到这里
-        NSLog(@"LookinServer - Ignore channel%@ end.", channel.debugTag);
-        return;
-    }
-    // Client 端关闭时，会走到这里
-    NSLog(@"LookinServer - channel%@ DidEndWithError:%@", channel.debugTag, error);
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:LKS_ConnectionDidEndNotificationName object:self];
-    [self searchPortToListenIfNoConnection];
+}
+
+- (void)ioFrameChannel:(Lookin_PTChannel*)channel didAcceptConnection:(Lookin_PTChannel*)otherChannel fromAddress:(Lookin_PTAddress*)address {
+    if (self.peerChannel_) {
+        [self.peerChannel_ cancel];
+    }
+    
+    self.peerChannel_ = otherChannel;
+    self.peerChannel_.userInfo = address;
 }
 
 #pragma mark - Handler
 
-- (void)_handleLocalInspect:(NSNotification *)note {
-    UIAlertController  *alertController = [UIAlertController  alertControllerWithTitle:@"Lookin" message:@"Failed to run local inspection. The feature has been removed. Please use the computer version of Lookin or consider SDKs like FLEX for similar functionality."  preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction  = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [alertController addAction:okAction];
-    UIWindow *keyWindow = [LKS_MultiplatformAdapter keyWindow];
-    UIViewController *rootViewController = [keyWindow rootViewController];
-    [rootViewController presentViewController:alertController animated:YES completion:nil];
-    
-    NSLog(@"LookinServer - Failed to run local inspection. The feature has been removed. Please use the computer version of Lookin or consider SDKs like FLEX for similar functionality.");
+- (void)_handleLocalInspectIn2D:(NSNotification *)note {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSArray<UIWindow *> *includedWindows = nil;
+        NSArray<UIWindow *> *excludedWindows = nil;
+        [self parseUserInfo:note.userInfo toIncludedWindows:&includedWindows excludedWindows:&excludedWindows];
+
+        [[LKS_LocalInspectManager sharedInstance] startLocalInspectWithIncludedWindows:includedWindows excludedWindows:excludedWindows];
+    });
 }
 
-- (void)handleGetLookinInfo:(NSNotification *)note {
-    NSDictionary* userInfo = note.userInfo;
-    if (!userInfo) {
-        return;
+- (void)_handleLocalInspectIn3D:(NSNotification *)note {
+    NSArray<UIWindow *> *includedWindows = nil;
+    NSArray<UIWindow *> *excludedWindows = nil;
+    [self parseUserInfo:note.userInfo toIncludedWindows:&includedWindows excludedWindows:&excludedWindows];
+    
+    [[LKS_PerspectiveManager sharedInstance] showWithIncludedWindows:includedWindows excludedWindows:excludedWindows];
+}
+
+- (void)parseUserInfo:(NSDictionary *)info toIncludedWindows:(NSArray<UIWindow *> **)includedWindowsPtr excludedWindows:(NSArray<UIWindow *> **)excludedWindowsPtr {
+    if (info[@"includedWindows"] && info[@"excludedWindows"]) {
+        NSLog(@"LookinServer - Do not pass 'includedWindows' and 'excludedWindows' in the same time. Learn more: https://lookin.work/faq/lookin-ios/");
     }
-    NSMutableDictionary* infoWrapper = userInfo[@"infos"];
-    if (![infoWrapper isKindOfClass:[NSMutableDictionary class]]) {
-        NSLog(@"LookinServer - GetLookinInfo failed. Params invalid.");
-        return;
+    
+    [info enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([key isEqual:@"includedWindows"] || [key isEqual:@"excludedWindows"]) {
+            return;
+        }
+        NSLog(@"LookinServer - The key '%@' you passed is not valid. Learn more: https://lookin.work/faq/lookin-ios/", key);
+    }];
+    
+    NSArray<UIWindow *> *includedWindows = [info objectForKey:@"includedWindows"];
+    if (includedWindows) {
+        if ([includedWindows isKindOfClass:[NSArray class]]) {
+            includedWindows = [includedWindows lookin_filter:^BOOL(UIWindow *obj) {
+                if ([obj isKindOfClass:[UIWindow class]]) {
+                    return YES;
+                }
+                NSLog(@"LookinServer - Error. The class of element in 'includedWindows' array must be UIWindow, but you've passed '%@'. Learn more: https://lookin.work/faq/lookin-ios/", NSStringFromClass(obj.class));
+                return NO;
+            }];
+            
+        } else {
+            NSLog(@"LookinServer - Error. The 'includedWindows' must be a NSArray, but you've passed '%@'. Learn more: https://lookin.work/faq/lookin-ios/", NSStringFromClass([includedWindows class]));
+            includedWindows = nil;
+        }
     }
-    infoWrapper[@"lookinServerVersion"] = LOOKIN_SERVER_READABLE_VERSION;
+    
+    NSArray<UIWindow *> *excludedWindows = nil;
+    // 只有当 includedWindows 无效时，才会应用 excludedWindows
+    if (includedWindows.count == 0) {
+        excludedWindows = [info objectForKey:@"excludedWindows"];
+        if (excludedWindows) {
+            if ([excludedWindows isKindOfClass:[NSArray class]]) {
+                excludedWindows = [excludedWindows lookin_filter:^BOOL(UIWindow *obj) {
+                    if ([obj isKindOfClass:[UIWindow class]]) {
+                        return YES;
+                    }
+                    NSLog(@"LookinServer - Error. The class of element in 'excludedWindows' array must be UIWindow, but you've passed '%@'. Learn more: https://lookin.work/faq/lookin-ios/", NSStringFromClass(obj.class));
+                    return NO;
+                }];
+                
+            } else {
+                NSLog(@"LookinServer - Error. The 'excludedWindows' must be a NSArray, but you've passed '%@'. Learn more: https://lookin.work/faq/lookin-ios/", NSStringFromClass([excludedWindows class]));
+                excludedWindows = nil;
+            }
+        }
+    }
+    
+    if (includedWindowsPtr) {
+        *includedWindowsPtr = includedWindows;
+    }
+    if (excludedWindowsPtr) {
+        *excludedWindowsPtr = excludedWindows;
+    }
 }
 
 @end

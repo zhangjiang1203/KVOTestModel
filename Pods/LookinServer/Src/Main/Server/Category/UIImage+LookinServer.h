@@ -12,7 +12,6 @@
 
 @interface UIImage (LookinServer)
 
-/// 该方法的实现需要 Hook，因此若定义了 LOOKIN_SERVER_DISABLE_HOOK 宏，则属性会返回 nil
 @property(nonatomic, copy) NSString *lks_imageSourceName;
 
 - (NSData *)lookin_data;

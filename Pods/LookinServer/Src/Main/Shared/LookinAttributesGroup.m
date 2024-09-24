@@ -13,7 +13,7 @@
 #import "LookinAttributesGroup.h"
 #import "LookinAttribute.h"
 #import "LookinAttributesSection.h"
-#import "LookinDashboardBlueprint.h"
+
 #import "NSArray+Lookin.h"
 
 @implementation LookinAttributesGroup
@@ -22,7 +22,6 @@
 
 - (id)copyWithZone:(NSZone *)zone {
     LookinAttributesGroup *newGroup = [[LookinAttributesGroup allocWithZone:zone] init];
-    newGroup.userCustomTitle = self.userCustomTitle;
     newGroup.identifier = self.identifier;
     newGroup.attrSections = [self.attrSections lookin_map:^id(NSUInteger idx, LookinAttributesSection *value) {
         return value.copy;
@@ -33,14 +32,12 @@
 #pragma mark - <NSCoding>
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.userCustomTitle forKey:@"userCustomTitle"];
     [aCoder encodeObject:self.identifier forKey:@"identifier"];
     [aCoder encodeObject:self.attrSections forKey:@"attrSections"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
-        self.userCustomTitle = [aDecoder decodeObjectForKey:@"userCustomTitle"];
         self.identifier = [aDecoder decodeObjectForKey:@"identifier"];
         self.attrSections = [aDecoder decodeObjectForKey:@"attrSections"];
     }
@@ -48,7 +45,7 @@
 }
 
 - (NSUInteger)hash {
-    return self.uniqueKey.hash;
+    return self.identifier.hash;
 }
 
 - (BOOL)isEqual:(id)object {
@@ -58,33 +55,14 @@
     if (![object isKindOfClass:[LookinAttributesGroup class]]) {
         return NO;
     }
-    LookinAttributesGroup *targetObject = object;
-    
-    if (![self.identifier isEqualToString:targetObject.identifier]) {
-        return false;
+    if (self.identifier == ((LookinAttributesGroup *)object).identifier) {
+        return YES;
     }
-    if ([self.identifier isEqualToString:LookinAttrGroup_UserCustom]) {
-        BOOL ret = [self.userCustomTitle isEqualToString:targetObject.userCustomTitle];
-        return ret;
-    } else {
-        return true;
-    }
+    return NO;
 }
 
 + (BOOL)supportsSecureCoding {
     return YES;
-}
-
-- (NSString *)uniqueKey {
-    if ([self.identifier isEqualToString:LookinAttrGroup_UserCustom]) {
-        return self.userCustomTitle;
-    } else {
-        return self.identifier;
-    }
-}
-
-- (BOOL)isUserCustom {
-    return [self.identifier isEqualToString:LookinAttrSec_UserCustom];
 }
 
 @end
