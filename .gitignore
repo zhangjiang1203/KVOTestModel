@@ -1,20 +1,14 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-# Mac OS X Finder and whatnot
+# OS X
 .DS_Store
 
-## Build generated
+# CocoaPods
+Pods
+Podfile.lock
+# dev_rn
+react-native
+
+# Xcode
 build/
-DerivedData/
-
-## fastlane
-#fastlane/
-*.mobileprovision
-appstore/
-
-## Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -24,28 +18,39 @@ appstore/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-
-## Other
+*.xcodeproj/xcuserdata
 *.xccheckout
+profile
 *.moved-aside
-*.xcuserstate
-*.xcscmblueprint
-.idea
-.svn
-.DS_Store
-
-## Obj-C/Swift specific
+DerivedData
 *.hmap
 *.ipa
-*.dSYM.zip
-*.dSYM
-xcuserdata 
+*.gcno
 
-# CocoaPods
-#
+# Bundler
+.bundle
+
+Carthage
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
-# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
+# 
+# Note: if you ignore the Pods directory, make sure to uncomment
+# `pod install` in .travis.yml
 #
+Pods/
 
+# fastlane
+fastlane/report.xml
+fastlane/README.md
+
+# vscode
+.vscode
+# appcode
+.idea
+.gitlab
+
+# batch git
+bg
+.bgconfig
 
