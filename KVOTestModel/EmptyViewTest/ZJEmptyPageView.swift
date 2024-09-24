@@ -227,9 +227,6 @@ enum DYEmptyOrFailType {
     
 }
 
-/// 定义一个泛型的闭包
-public typealias GenericityClosure<T> = (T) -> ()
-
 class DYEmptyOrFailView: UIView {
     //设置大标题 小标题 图片 和 操作按钮
     var titleLabel: UILabel!
@@ -242,11 +239,14 @@ class DYEmptyOrFailView: UIView {
     
     var emptyType: DYEmptyOrFailType = .common
     /// 按钮点击事件
-    var actionClosure: GenericityClosure<Void>?
+    var actionClosure: (() -> ())?
     
-    init(frame: CGRect, emptyType: DYEmptyOrFailType) {
+    var offset: CGFloat = .zero
+    
+    init(frame: CGRect, emptyType: DYEmptyOrFailType, offset: CGFloat = 0) {
         super.init(frame: frame)
         self.emptyType = emptyType
+        self.offset = offset
         
         setupEmptyUI()
     }
@@ -274,14 +274,25 @@ class DYEmptyOrFailView: UIView {
         addSubview(emptyImageView)
         
         actionBtn = UIButton()
+        if #available(iOS 15.0, *) {
+            var config =  UIButton.Configuration.plain()
+            config.titlePadding = 20
+            actionBtn.configuration = config
+        } else {
+            actionBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        }
         actionBtn.layer.cornerRadius = 15
         actionBtn.layer.masksToBounds = true
+        actionBtn.backgroundColor = emptyType.actionBGColor
+        actionBtn.titleLabel?.font = .systemFont(ofSize: 12)
         actionBtn.setTitle(emptyType.actionTitle, for: .normal)
         actionBtn.setTitleColor(emptyType.actionTitleColor, for: .normal)
+        actionBtn.addTarget(self, action: #selector(emptyButtonAction(_:)), for: .touchUpInside)
         addSubview(actionBtn)
         
         titleLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(offset)
             make.height.equalTo(20)
         }
         
@@ -302,7 +313,11 @@ class DYEmptyOrFailView: UIView {
             make.size.equalTo(CGSize(width: 60, height: 60))
             make.bottom.equalTo(titleLabel.snp.top).offset(-10)
         }
-        
+    }
+    
+    
+    @objc func emptyButtonAction(_ sender: UIButton) {
+        actionClosure?()
     }
     
 }

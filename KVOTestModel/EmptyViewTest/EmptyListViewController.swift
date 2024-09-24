@@ -18,7 +18,11 @@ class EmptyListViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "systemCell")
-        table.emptyView = DYEmptyOrFailView(frame: self.view.bounds, emptyType: .common)
+        let emptyView = DYEmptyOrFailView(frame: self.view.bounds, emptyType: .common)
+        emptyView.actionClosure = {
+            print("按钮被点击")
+        }
+        table.emptyView = emptyView
         self.view.addSubview(table)
         
         return table
@@ -27,7 +31,12 @@ class EmptyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "测试空白页面"
-        showTestScrollView()
+//        showTestScrollView()
+        testModel()
+    }
+    
+    /// 模型解析
+    func testModel() {
     }
     
     func showTestScrollView() {

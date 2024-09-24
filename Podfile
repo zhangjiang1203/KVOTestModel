@@ -1,7 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 #source 'https://github.com/CocoaPods/Specs.git'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
-platform :ios, '13.0'
+platform :ios, '14.0'
 inhibit_all_warnings!
 #plugin 'cocoapods-imy-bin'
 #use_binaries!
@@ -17,17 +18,27 @@ target 'KVOTestModel' do
   pod 'RxCocoa'
   pod 'SDWebImage'
   pod 'FLAnimatedImage'
-  pod 'ReactiveObjC', :path => './ReactiveObjC' #'~> 3.1.1'
+  pod 'ReactiveObjC', :path => './localPod/ReactiveObjC' #'~> 3.1.1'
   pod 'Masonry'
   pod 'YYText'
   pod 'MJRefresh'
-
-  pod 'JXCategoryView', :path => './JXCategoryView'
-
+  pod 'JXCategoryView', :path => './localPod/JXCategoryView'
   pod 'SnapKit'
+  
+  # json模型库
+  pod 'SwiftyJSON', '5.0.2'
+  pod 'HandyJSON', '5.0.2'
+  pod 'ObjectMapper', '4.4.2'
+  pod 'SmartCodable', '4.0.3'
+  pod 'ExCodable', '0.6.0'
+#  pod 'CodableWrappers', '2.0.7'
+  pod 'CodableWrapper', :path => './localPod/CodableWrapper'
+  pod 'MetaCodable', '1.3.0'
+  pod 'KakaJSON', '1.1.2'
 
+  
   #奔溃搜集
-  pod 'PLCrashReporter'
+#  pod 'PLCrashReporter'
   #Yogakit 盒子布局设置
 #  pod 'Yoga', :path => './Yoga'
 #  pod 'YogaKit' , :path => './YogaKit'

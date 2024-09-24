@@ -9,7 +9,8 @@
 #import "ZJCustomChooseViewController.h"
 #import "DYHBChooseItemView.h"
 #import "ZJPerson.h"
-
+#import <YYText/NSAttributedString+YYText.h>
+#import <YYText/YYLabel.h>
 #import <Masonry/Masonry.h>
 
 typedef NS_ENUM(NSUInteger, ZJTestEnum) {
@@ -40,7 +41,70 @@ typedef NS_ENUM(NSUInteger, DYMessageProgressType) {
     [super viewDidLoad];
     self.title = @"选择列表";
     
-    [self testHTMLString];
+    [self showTestData];
+}
+
+- (void)showTestData {
+    NSString *diamonStr = [NSString stringWithFormat:@"%d 钻石", 3000];
+    NSMutableAttributedString *attstr = [[NSMutableAttributedString alloc] initWithString:diamonStr attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14 weight:(UIFontWeightBold)],NSForegroundColorAttributeName:[UIColor redColor]}];
+
+    [attstr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:34 weight:(UIFontWeightBold)]}
+                    range:NSMakeRange(0, diamonStr.length-3)];
+    
+    //展示内容数据
+    UILabel *showLabel = [UILabel new];
+    showLabel.numberOfLines = 0;
+    showLabel.attributedText = attstr;
+    showLabel.layer.borderWidth = 0.5;
+    showLabel.layer.borderColor = [UIColor redColor].CGColor;
+    showLabel.layer.cornerRadius = 15;
+    showLabel.layer.masksToBounds = YES;
+    [self.view addSubview:showLabel];
+    [showLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+        make.top.mas_equalTo(100);
+        make.height.mas_equalTo(30);
+    }];
+    
+    CGFloat width = [self contentWidthWithFont:[UIFont systemFontOfSize:34 weight:(UIFontWeightBold)] string:@"3000"];
+    //设置view
+    UIView *backView = [UIView new];
+    backView.backgroundColor = [UIColor blueColor];
+    [self.view insertSubview:backView atIndex:0];
+    [backView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(showLabel.mas_left);
+        make.width.mas_equalTo(width);
+        make.bottom.mas_equalTo(showLabel.mas_bottom).offset(-3);
+        make.height.mas_equalTo(6.5);
+    }];
+}
+
+- (CGFloat)contentWidthWithFont:(UIFont *)font string:(NSString *)str
+{
+    CGSize contentSize = CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
+    contentSize = [str boundingRectWithSize:contentSize
+                              options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                           attributes:attributeDict
+                              context:nil].size;
+    return contentSize.width;
+}
+
+- (void)test1 {
+    NSArray *showData = @[@"123",@"456",@"789",@"098"];
+    
+    NSString *capId = @"12123";
+    if (capId.length <= 0) {
+        capId = @"456";
+    }
+    for (NSString *record in showData) {
+        if (!capId || [record containsString:capId]) {
+            return;
+        }
+    }
+    
+    NSLog(@"我开始执行了 ===");
 }
 
 - (void)testHTMLString {
