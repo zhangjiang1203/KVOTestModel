@@ -83,6 +83,7 @@
 		C21F3926264D4719004F6BD1 /* ZJAnswerDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3925264D4719004F6BD1 /* ZJAnswerDefine.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		C21F3942264E1AC8004F6BD1 /* MulDelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F3941264E1AC8004F6BD1 /* MulDelegateViewController.m */; };
 		C21F39BB264E650A004F6BD1 /* TeseSingleInstanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21F39BA264E650A004F6BD1 /* TeseSingleInstanceModel.m */; };
+		C22AD5C32CEC77680061BD24 /* SmartCodable in Frameworks */ = {isa = PBXBuildFile; productRef = C22AD5C22CEC77680061BD24 /* SmartCodable */; };
 		C23288342C2A9C7600697209 /* ZJHandyJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288332C2A9C7600697209 /* ZJHandyJSONModel.swift */; };
 		C23288382C2A9CD300697209 /* ZJSmartCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288372C2A9CD300697209 /* ZJSmartCodableModel.swift */; };
 		C232883A2C2A9CE600697209 /* ZJExCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288392C2A9CE600697209 /* ZJExCodableModel.swift */; };
@@ -92,6 +93,8 @@
 		C23288422C2A9E1000697209 /* ZJCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23288412C2A9E1000697209 /* ZJCodableModel.swift */; };
 		C233ACE62721105100D0FE39 /* ZTArrayContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */; };
 		C233ACE92721108500D0FE39 /* ZJPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C233ACE82721108500D0FE39 /* ZJPersonModel.m */; };
+		C240A0E22CC6467A00210DFA /* ZJShowEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C240A0E12CC6467A00210DFA /* ZJShowEmptyCell.swift */; };
+		C240A0E42CC6559100210DFA /* ZJShowEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C240A0E32CC6559100210DFA /* ZJShowEmptyCollectionViewCell.swift */; };
 		C2488EAF2C2E5670006EEC10 /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2488EAE2C2E5670006EEC10 /* Codable+Extension.swift */; };
 		C2495075277AB8470026BA32 /* YogaNormalLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */; };
 		C2495078277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2495077277AC1DF0026BA32 /* YogaSpecialLayoutViewController.m */; };
@@ -744,6 +747,8 @@
 		C233ACE52721105100D0FE39 /* ZTArrayContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTArrayContainViewController.m; sourceTree = "<group>"; };
 		C233ACE72721108500D0FE39 /* ZJPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJPersonModel.h; sourceTree = "<group>"; };
 		C233ACE82721108500D0FE39 /* ZJPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJPersonModel.m; sourceTree = "<group>"; };
+		C240A0E12CC6467A00210DFA /* ZJShowEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJShowEmptyCell.swift; sourceTree = "<group>"; };
+		C240A0E32CC6559100210DFA /* ZJShowEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJShowEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2488EAE2C2E5670006EEC10 /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		C2495073277AB8470026BA32 /* YogaNormalLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YogaNormalLayoutViewController.h; sourceTree = "<group>"; };
 		C2495074277AB8470026BA32 /* YogaNormalLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YogaNormalLayoutViewController.m; sourceTree = "<group>"; };
@@ -1302,6 +1307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89ED52639989DC4663B75F97 /* Pods_KVOTestModel.framework in Frameworks */,
+				C22AD5C32CEC77680061BD24 /* SmartCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1804,6 +1810,8 @@
 			children = (
 				C24B05652BFE27270099A8C8 /* ZJEmptyPageView.swift */,
 				C28954FC2C009419007DC1D7 /* EmptyListViewController.swift */,
+				C240A0E12CC6467A00210DFA /* ZJShowEmptyCell.swift */,
+				C240A0E32CC6559100210DFA /* ZJShowEmptyCollectionViewCell.swift */,
 			);
 			path = EmptyViewTest;
 			sourceTree = "<group>";
@@ -2603,6 +2611,9 @@
 				Base,
 			);
 			mainGroup = 389A750923502DD500DDBE6C;
+			packageReferences = (
+				C22AD5C12CEC77680061BD24 /* XCRemoteSwiftPackageReference "SmartCodable" */,
+			);
 			productRefGroup = 389A751323502DD500DDBE6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -3154,6 +3165,7 @@
 				DF6AE56D2AD7E50400DCEF78 /* DYHBChooseItemCell.m in Sources */,
 				C29EC599264525A200B7E26D /* ZJDownloadermanager.m in Sources */,
 				C2F73D532C10AEDF00E7E161 /* ZJCustomCategoryCell.m in Sources */,
+				C240A0E42CC6559100210DFA /* ZJShowEmptyCollectionViewCell.swift in Sources */,
 				DFF41A672A1E13CC00CF60F9 /* ZJJSONToModelTestViewController.swift in Sources */,
 				383B11FE2398A3A600E9DCB9 /* CorasickTreeManager.mm in Sources */,
 				38A2C85124811BE100E408BB /* QDFirstLeaderView.m in Sources */,
@@ -3220,6 +3232,7 @@
 				3807428024B6F10C00968CF5 /* QDSearchResultModel.m in Sources */,
 				38E015F32578E8FC00C52175 /* UIMonitorinManager.m in Sources */,
 				386B3DD2254A69BB0063DF3C /* TestConfigurationCell.m in Sources */,
+				C240A0E22CC6467A00210DFA /* ZJShowEmptyCell.swift in Sources */,
 				C21B579C27CDB76A004FC028 /* InterviewViewController.m in Sources */,
 				38E015FE257A11DB00C52175 /* CodePersonModel.m in Sources */,
 				C24995F927741EFB003EC8F2 /* YogaKitTestViewController.m in Sources */,
@@ -3717,6 +3730,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C22AD5C12CEC77680061BD24 /* XCRemoteSwiftPackageReference "SmartCodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/intsig171/SmartCodable";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C22AD5C22CEC77680061BD24 /* SmartCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C22AD5C12CEC77680061BD24 /* XCRemoteSwiftPackageReference "SmartCodable" */;
+			productName = SmartCodable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 389A750A23502DD500DDBE6C /* Project object */;
 }

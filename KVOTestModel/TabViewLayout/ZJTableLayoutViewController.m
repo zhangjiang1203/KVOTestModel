@@ -13,6 +13,10 @@
 #import <CoreText/CoreText.h>
 #import "Person.h"
 
+#import <YYText/YYText.h>
+
+static NSString *const kSplitKey = @"*&!&*";
+
 @interface ZJTableLayoutViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *myTableView;
@@ -27,10 +31,42 @@
     [super viewDidLoad];
     self.title = @"测试tableView";
     self.titleDatasArr = [NSMutableArray array];
-    [self setUpTablView];
+    
+    NSString *tem = [NSString stringWithFormat:@"数量客服经理可视对讲%@878978787",kSplitKey];
+    NSString *key = [tem componentsSeparatedByString:kSplitKey].firstObject;
+    NSLog(@"当前获取的key:%@",key);
+    
+    UIImageView *avatarImageView = [UIImageView new];
+    avatarImageView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:avatarImageView];
+    [avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(50, 50));
+        make.centerY.mas_equalTo(0);
+        make.centerX.mas_equalTo(0);
+    }];
+    
+    UILabel *giftNameLabel = [[UILabel alloc] init];
+    giftNameLabel.text = @"我就是我";
+    giftNameLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+    giftNameLabel.font = [UIFont systemFontOfSize:16];
+    [self.view addSubview:giftNameLabel];
+    [giftNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.height.mas_equalTo(20);
+        make.top.mas_equalTo(avatarImageView.mas_bottom).mas_equalTo(40);
+    }];
+    
+    
+    
+//    for (int i = 0; i<10; i++) {
+//        NSString *temStr = [NSString stringWithFormat:@"%d",i];
+//        temStr = [temStr stringByAppendingString:i%2 == 0 ? @"我是偶数斐林试剂防晒衣一哦送达飞机发撒发大水发大水水电费水电费" : @"我是奇数"];
+//        [self.titleDatasArr addObject:temStr];
+//    }
+//    [self setUpTablView];
 //    [self arrayTest];
 //    [self showNameTest];
-    [self testMulDict];
+//    [self testMulDict];
 }
 
 - (void)testMulDict {
@@ -183,6 +219,7 @@
     self.myTableView.estimatedRowHeight = 55;
     self.myTableView.rowHeight = UITableViewAutomaticDimension;
     [self.myTableView registerClass:[DYHBAwardRecordCell class] forCellReuseIdentifier:[DYHBAwardRecordCell reuseIdentifier]];
+    [self.myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"systemCell"];
     [self.view addSubview:self.myTableView];
     [self.myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
@@ -216,8 +253,12 @@
 //}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DYHBAwardRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:[DYHBAwardRecordCell reuseIdentifier]];
-    [cell setWinInfoModel:self.titleDatasArr[indexPath.row]];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"systemCell"];
+    if (cell != nil) {
+        cell = [tableView dequeueReusableCellWithIdentifier:[DYHBAwardRecordCell reuseIdentifier]];
+        DYHBAwardRecordCell *awardCell = ( DYHBAwardRecordCell *)cell;
+        [awardCell setWinInfoModel:self.titleDatasArr[indexPath.row]];
+    }
     return cell;
 }
 

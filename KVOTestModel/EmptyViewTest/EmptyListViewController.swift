@@ -18,6 +18,7 @@ class EmptyListViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "systemCell")
+        table.register(ZJShowEmptyCell.self, forCellReuseIdentifier: "ZJShowEmptyCell")
         let emptyView = DYEmptyOrFailView(frame: self.view.bounds, emptyType: .common)
         emptyView.actionClosure = {
             print("按钮被点击")
@@ -27,12 +28,39 @@ class EmptyListViewController: UIViewController {
         
         return table
     }()
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 80, height: 100)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(ZJShowEmptyCollectionViewCell.self, forCellWithReuseIdentifier: "ZJShowEmptyCollectionViewCell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        self.view.addSubview(collectionView);
+        
+        return collectionView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "测试空白页面"
 //        showTestScrollView()
-        testModel()
+//        testModel()
+//        self.showData = ["123","4543","23432","23423"]
+//        self.tableView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
+        
+        self.showData = ["123","4543","23432","23423"]
+        self.collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     /// 模型解析
@@ -79,8 +107,32 @@ extension EmptyListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "systemCell")!
+        var cell = tableView.dequeueReusableCell(withIdentifier: "systemCell", for: indexPath)
+        if(cell != nil) {
+            cell = tableView.dequeueReusableCell(withIdentifier: "ZJShowEmptyCell", for: indexPath)
+            
+            
+        }
         cell.textLabel?.text = "我就是我==\(indexPath.row)"
+        return cell
+    }
+}
+
+extension EmptyListViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return showData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+        if (cell != nil) {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ZJShowEmptyCollectionViewCell", for: indexPath)
+        }
+        //展示数据
         return cell
     }
 }

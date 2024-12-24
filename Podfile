@@ -20,7 +20,7 @@ target 'KVOTestModel' do
   pod 'FLAnimatedImage'
   pod 'ReactiveObjC', :path => './localPod/ReactiveObjC' #'~> 3.1.1'
   pod 'Masonry'
-  pod 'YYText'
+  pod 'YYText', :path => '/Users/zhangjiang/Documents/斗鱼极速版SPM/SPMFinder/YYText'
   pod 'MJRefresh'
   pod 'JXCategoryView', :path => './localPod/JXCategoryView'
   pod 'SnapKit'

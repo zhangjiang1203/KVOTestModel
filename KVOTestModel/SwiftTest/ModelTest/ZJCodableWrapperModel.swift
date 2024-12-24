@@ -69,11 +69,11 @@ struct ZJCodableWrapperModelTest {
 
 //        var people: ZJTestCodableWrapperModel = ZJTestCodableWrapperModel()
         for _ in 0..<maxCount {
-            do{
-                let people = try JSONDecoder().decode(ZJTestCodableWrapperModel.self, from: jsonStr.data(using: .utf8)!)
-            } catch {
-                print("测试数据==\(error)")
-            }
+//            do{
+//                let people = try JSONDecoder().decode(ZJTestCodableWrapperModel.self, from: jsonStr.data(using: .utf8)!)
+//            } catch {
+//                print("测试数据==\(error)")
+//            }
         }
 
         var executionTime = CFAbsoluteTimeGetCurrent() - start
@@ -92,23 +92,23 @@ struct ZJCodableWrapperModelTest {
     }
 }
 
-@Codable
-struct ZJTestCodableWrapperModel {
-    @CodingKey("username", "title")
-    var username: String?
-    var age: Int?
-    var weight: Double?
-    var sex: Int?
-    var location: String?
-    
-    //自定义转化的key值
-    @CodingKey("three_day_forecast")
-    var threeDayForecast: [ZJThreeDayCodableWrapperModel] = []
-}
+//@Codable
+//struct ZJTestCodableWrapperModel {
+//    @CodingKey("username", "title")
+//    var username: String?
+//    var age: Int?
+//    var weight: Double?
+//    var sex: Int?
+//    var location: String?
+//    
+//    //自定义转化的key值
+//    @CodingKey("three_day_forecast")
+//    var threeDayForecast: [ZJThreeDayCodableWrapperModel] = []
+//}
 
-@Codable
-struct ZJThreeDayCodableWrapperModel {
-    var conditions: String?
-    var day: String?
-    var temperature: String = ""
-}
+//@Codable
+//struct ZJThreeDayCodableWrapperModel {
+//    var conditions: String?
+//    var day: String?
+//    var temperature: String = ""
+//}

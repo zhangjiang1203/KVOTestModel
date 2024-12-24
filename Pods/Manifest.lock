@@ -54,7 +54,7 @@ DEPENDENCIES:
   - SmartCodable (= 4.0.3)
   - SnapKit
   - SwiftyJSON (= 5.0.2)
-  - YYText
+  - "YYText (from `/Users/zhangjiang/Documents/斗鱼极速版SPM/SPMFinder/YYText`)"
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
@@ -77,7 +77,6 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SnapKit
-    - YYText
 
 EXTERNAL SOURCES:
   CodableWrapper:
@@ -86,6 +85,8 @@ EXTERNAL SOURCES:
     :path: "./localPod/JXCategoryView"
   ReactiveObjC:
     :path: "./localPod/ReactiveObjC"
+  YYText:
+    :path: "/Users/zhangjiang/Documents/斗鱼极速版SPM/SPMFinder/YYText"
 
 SPEC CHECKSUMS:
   CodableWrapper: 0e3e8aa1f82709a515c0754174834856c192b2ec
@@ -111,6 +112,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 8f0a65bfca73f40c1d81e802d0f6d2f06d7617d0
+PODFILE CHECKSUM: 3f2e9e9b9d7cb93137f1ae0d1dbcca807662a523
 
 COCOAPODS: 1.15.2

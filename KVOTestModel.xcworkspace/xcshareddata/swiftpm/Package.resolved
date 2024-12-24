@@ -1,0 +1,15 @@
+{
+  "originHash" : "134fc30a3c41d998213ed85a88b8407852ce580bf5c8f0f1a3d75082a8f53f7a",
+  "pins" : [
+    {
+      "identity" : "smartcodable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/intsig171/SmartCodable",
+      "state" : {
+        "revision" : "1bff60f8033f07cb540277446a8ef7832a269dd1",
+        "version" : "4.0.3"
+      }
+    }
+  ],
+  "version" : 3
+}
